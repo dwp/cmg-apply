@@ -1,0 +1,291 @@
+{% extends "layout.html" %} {% block pageTitle %} Apply for help arranging child maintenance {% endblock %} {% block
+content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrarper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form method="get" action="op-question-list.html" novalidate>
+                    <h2 class="govuk-heading-xl">Check your answers</h2>
+
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{data['rp-title'] }} {{data['rp-first-name'] }} {{data['rp-middle-name'] }}
+                                {{data['rp-last-name']
+                                }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-name">
+                                    Change
+                                    <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Previous name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">{{data['different-name'] }} <br> {{data['rp-different-first-name']
+                                    }} </p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-name">
+                                    Change
+                                    <span class="govuk-visually-hidden"> previous name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Date of birth
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body"> 14 July 1996 </p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-name">
+                                    Change
+                                    <span class="govuk-visually-hidden"> date of birth</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                National Insurance number
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body"> {{data['national-insurance-number'] }}</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-nino">
+                                    Change
+                                    <span class="govuk-visually-hidden"> national insurance number</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Address</dt>
+                            <dd class="govuk-summary-list__value">
+                                1 The Towers
+                                <br>
+                                Hill Top Road
+                                <br>
+                                Newtown
+                                <br>
+                                West Yorkshire
+                                <br>
+                                NN1 1TT
+                                <br>
+                                England
+                                <br>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-text">
+                                    Change
+                                    <span class="govuk-visually-hidden"> address</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Can we send letters to this address?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">No</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-nino">
+                                    Change
+                                    <span class="govuk-visually-hidden"> whether we can send letters ot this
+                                        address</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Address for letters</dt>
+                            <dd class="govuk-summary-list__value">
+                                47 Arple Tree Walk
+                                <br>
+                                Newtown
+                                <br>
+                                West Yorkshire
+                                <br>
+                                NN2 4RT
+                                <br>
+                                England
+                                <br>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-text">
+                                    Change
+                                    <span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Email address</dt>
+                            <dd class="govuk-summary-list__value">
+                                example.email@snail.mail.com, verified
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-phone-time">
+                                    Change
+                                    <span class="govuk-visually-hidden"> email address</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                How do you want to get updates about your case?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Online</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-nino">
+                                    Change
+                                    <span class="govuk-visually-hidden"> if you want updated by email</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Contact number <br>
+                                Is this your own number?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                07777777777 <br>
+                                Yes
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-phone">
+                                    Change
+                                    <span class="govuk-visually-hidden"> contact number</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Preferred call time</dt>
+                            <dd class="govuk-summary-list__value">
+                                Any time
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-phone-time">
+                                    Change
+                                    <span class="govuk-visually-hidden"> preferred call time</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Voicemails</dt>
+                            <dd class="govuk-summary-list__value">
+                                Yes
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-phone-time">
+                                    Change
+                                    <span class="govuk-visually-hidden"> whether we can leave voicemails</span>
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <h2 class="govuk-heading-m">
+                        How we will contact you
+                    </h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Do you need us to use any different formats when we contact you by letter or phone?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body"> Yes </p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-nino">
+                                    Change
+                                    <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                When we write to you
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Letter with changes to font, paper colour, spacing or print size
+                                    <br>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Tahoma</li>
+                                    <li>Light blue paper</li>
+                                    <li>Font size 18 point</li>
+                                </ul>
+                                </p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-nino">
+                                    Change
+                                    <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                When we speak to you
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Textphone <br>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>0300 4567890</li>
+                                </ul></p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rp-nino">
+                                    Change
+                                    <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                    </dl>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}

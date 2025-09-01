@@ -1,0 +1,87 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <form method="get" action="rp-check-ans.html" novalidate>
+                    <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                What is your National Insurance number?
+                            </h1>
+                        </legend>
+
+                        <div class="govuk-inset-text">We will not share your answers with the other parent.</div>
+
+                        <div id="national-insurance-number-hint" class="govuk-hint">
+                            It’s on your National Insurance card, benefit letter, payslip or P60. For example, QQ 12 34
+                            56 C
+                        </div>
+                        <input class="govuk-input govuk-input--width-10" id="national-insurance-number"
+                            name="national-insurance-number" type="text" spellcheck="false"
+                            aria-describedby="national-insurance-number-hint">
+                    </div> <!-- govuk-form-group -->
+
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                I do not have my National Insurance number
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p>You can find your National Insurance number on your payslip, P60, or letters about tax,
+                                pensions
+                                and benefits. You can also find it through your personal tax account and download a
+                                confirmation
+                                letter.
+                            </p>
+                            <p>If you still cannot find it, you can either:</p>
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>
+                                    <a
+                                        href="https://www.gov.uk/government/publications/national-insurance-get-your-national-insurance-number-in-writing-ca5403">fill
+                                        in form CA5403</a> and send it to the address on the form
+                                </li>
+                                <li>contact the
+                                    <a
+                                        href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/national-insurance-numbers">National
+                                        Insurance numbers helpline</a> and answer some questions (you’ll need to fill in
+                                    form CA5403 if you cannot answer the questions)
+                                </li>
+                            </ul>
+
+                            <p> HM Revenue and Customs (HMRC) will not tell you your National Insurance number over the
+                                phone. They’ll
+                                post it to you and it will arrive within 15 working days.
+                            </p>
+
+                            <p>You do not need a National Insurance plastic card. HMRC no longer sends these cards out.
+                            </p>
+
+                            <h2 class="govuk-heading-m">If you’ve never had a National Insurance number</h2>
+                            <p>You can
+                                <a href="https://www.gov.uk/apply-national-insurance-number">apply for a National
+                                    Insurance number</a> if you’ve never had one.
+                            </p>
+                        </div> <!-- govuk-details__text -->
+                    </details>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}
