@@ -144,6 +144,48 @@ router.post('/apply/february2025/better-information-for-tracing/op-anything-else
   }
  
 });
+
+router.post('/apply/february2025/better-information-for-tracing/op-previous-address', function (req, res, next) {
+  // if selection is not full/partial address then move onto next journey from list
+
+  const previosuAddressOptions = ["I know the town or city of the other parents previous address", "Iknow the area of the other parents previous address", "I don't know about the other parents previous address"]
+
+  const selectedOption = req.body['op-prev-address'];
+
+  if (previosuAddressOptions.some(option => selectedOption.includes(option))) {
+    OPJourneyCount(req);
+    const journeyFlow = req.session.data['op-journey-flow'];
+    const nextPage = journeyFlow[req.session.data.currentOPStep];
+
+    if (nextPage) {
+    return res.redirect(nextPage);
+    } else {
+    // End of journey — redirect to summary or final page
+    return res.redirect('/apply/february2025/better-information-for-tracing/check-your-answers');
+    }
+
+  } else {
+    // No match
+    console.log("Selected option does not match any known options.");
+    next();
+  }
+
+});
+
+router.post('/apply/february2025/better-information-for-tracing/op-previous-replay', function (req, res, next) {
+    OPJourneyCount(req);
+    const journeyFlow = req.session.data['op-journey-flow'];
+    const nextPage = journeyFlow[req.session.data.currentOPStep];
+
+    if (nextPage) {
+    return res.redirect(nextPage);
+    } else {
+    // End of journey — redirect to summary or final page
+    return res.redirect('/apply/february2025/better-information-for-tracing/check-your-answers');
+    }
+
+
+});
  
 }
 // module export ends
