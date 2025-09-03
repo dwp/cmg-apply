@@ -148,7 +148,7 @@ router.post('/apply/february2025/better-information-for-tracing/op-anything-else
 router.post('/apply/february2025/better-information-for-tracing/op-previous-address', function (req, res, next) {
   // if selection is not full/partial address then move onto next journey from list
 
-  const previosuAddressOptions = ["I know the town or city of the other parents previous address", "Iknow the area of the other parents previous address", "I don't know about the other parents previous address"]
+  const previosuAddressOptions = ["I know the town or city of the other parents previous address", "I know the area of the other parents previous address", "I don't know about the other parents previous address"]
 
   const selectedOption = req.body['op-prev-address'];
 

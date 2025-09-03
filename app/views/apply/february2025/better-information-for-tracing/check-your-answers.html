@@ -56,7 +56,7 @@
                             Has the other parent been known by a different name?
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{data['op-other-name']}}
+                            {{data['op-other-name']}} <br> {{data['previous-first-name']}} {{data['previous-middle-name']}} {{data['previous-last-name']}}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="op-name.html">
@@ -75,6 +75,7 @@
                             Age or date of birth
                         </dt>
                         <dd class="govuk-summary-list__value">
+                            {{data['op-dob']}} <br>
                             {{data['op-dob-day']}} {{data['op-dob-month']}} {{data['op-dob-year']}} 
                             {{data['op-dob-part-day']}} {{data['op-dob-part-month']}} {{data['op-dob-part-year']}} 
                             {{data['op-age']}}
@@ -135,7 +136,7 @@
                             Current address
                         </dt>
                         <dd class="govuk-summary-list__value">
-
+                            {{data['op-address']}} <br>
                             1 The Towers <br />
                             Hill Top Road <br />
                             Leeds <br />
@@ -156,8 +157,11 @@
                             How you know their current address
                         </dt>
                         <dd class="govuk-summary-list__value">
-                             I have dropped my child off at this address:
-                             08 - 2025
+                             {{data['op-address-know']}} <br>
+                             {{data['dropped-month']}} {{data['dropped-year']}}
+                             {{data['court-day']}} {{data['court-month']}} {{data['court-year']}}
+                             {{data['op-address-know-other']}}
+
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="op-address-3.html">
@@ -185,6 +189,7 @@
                         </dd>
                     </div>
 
+                     {% if data['op-details'].includes('Address') %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             How you know their previous address
@@ -201,6 +206,8 @@
                         </dd>
                     </div>
                     {% endif %}
+
+                    {% endif %}
                     <!-- previous address end -->
 
                     <!-- any other information start -->
@@ -211,7 +218,8 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
                             
-                            {{data['op-other-info']}}
+                            {{data['op-other-info']}} <br>
+                            {{data['jobs-benefits']}} {{data['post']}} {{data['anything-else']}} 
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
