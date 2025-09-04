@@ -7,7 +7,7 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form method="post" novalidate>
+        <form method="get" action="op-previous-address.html" novalidate>
           <!--start-->
           <div class="govuk-form-group">
 
@@ -46,9 +46,10 @@
 
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="op-address-know-1" name="op-address-know" type="checkbox" value="I have droppped my child off at this address"
+                  <input class="govuk-checkboxes__input" id="op-address-how-know-1" name="op-address-how-know"
+                    type="checkbox" value="I have droppped my child off at this address"
                     data-aria-controls="conditional-op-address-know-1">
-                  <label class="govuk-label govuk-checkboxes__label" for="op-address-know-1">
+                  <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-1">
                     I have dropped my child off at this address
                   </label>
                 </div>
@@ -79,9 +80,11 @@
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="op-address-know-2" name="op-address-know" type="checkbox" value="I have court papers, letters or documents that confirm the other parent’s address"
+                  <input class="govuk-checkboxes__input" id="op-address-how-know-2" name="op-address-how-know"
+                    type="checkbox"
+                    value="I have court papers, letters or documents that confirm the other parent’s address"
                     data-aria-controls="conditional-op-address-know-2">
-                  <label class="govuk-label govuk-checkboxes__label" for="op-address-know-2">
+                  <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-2">
                     I have court papers, letters or documents that confirm the other parent’s address
                   </label>
                 </div>
@@ -121,25 +124,26 @@
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="op-address-know-3" name="op-address-know" type="checkbox"
+                  <input class="govuk-checkboxes__input" id="op-address-how-know-3" name="op-address-how-know"
+                    type="checkbox"
                     value="I used to live at this address with the other parent within the last 90 days">
-                  <label class="govuk-label govuk-checkboxes__label" for="op-address-know-3">
+                  <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-3">
                     I used to live at this address with the other parent within the last 90 days
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="op-address-know-4" name="op-address-know" type="checkbox"
-                    value="The other parent told me their address">
-                  <label class="govuk-label govuk-checkboxes__label" for="op-address-know-4">
+                  <input class="govuk-checkboxes__input" id="op-address-how-know-4" name="op-address-how-know"
+                    type="checkbox" value="The other parent told me their address">
+                  <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-4">
                     The other parent told me their address
                   </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="op-address-know-5" name="op-address-know" type="checkbox"
-                    value="Another reason" data-aria-controls="conditional-op-address-know-5">
-                  <label class="govuk-label govuk-checkboxes__label" for="op-address-know-5">
+                  <input class="govuk-checkboxes__input" id="op-address-how-know-5" name="op-address-how-know"
+                    type="checkbox" value="Another reason" data-aria-controls="conditional-op-address-know-5">
+                  <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-5">
                     Another reason
                   </label>
                 </div>
@@ -148,7 +152,8 @@
                   <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="700">
                     <div class="govuk-form-group">
                       <p>Explain how you know this is the other parent's address </p>
-                      <textarea class="govuk-textarea govuk-js-character-count" id="op-address-know-other-hint" name="op-address-know-other" rows="5"
+                      <textarea class="govuk-textarea govuk-js-character-count" id="op-address-know-other-hint"
+                        name="op-address-know-other" rows="5"
                         aria-describedby="with-hint-info with-hint-hint"></textarea>
                     </div>
                     <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
@@ -162,10 +167,14 @@
           </div>
           <!--Stop-->
 
-          <a href="op-previous-address.html" role="button" draggable="false" class="govuk-button">
+          <!-- <a href="op-previous-address.html" role="button" draggable="false" class="govuk-button">
             Continue
 
-          </a>
+          </a> -->
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
         </form>
       </div>
       {% include "exit-button.html" %}
