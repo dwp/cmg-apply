@@ -73,7 +73,7 @@
                     {% if data['op-details'].includes('Date of birth') %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Age or date of birth
+                            Date of birth or age
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {{data['op-dob']}} <br>
@@ -90,45 +90,6 @@
                     </div>
                     {% endif %}
                     <!-- date of birth end -->
-
-                    <!-- nino start -->
-                    {% if data['op-details'].includes('National Insurance number') %}
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            National Insurance number
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            {{data['op-nino']}}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="op-nino.html">
-                                Change
-                                <span class="govuk-visually-hidden"> name</span>
-                            </a>
-                        </dd>
-                    </div>
-                    {% endif %}
-                    <!-- nino end -->
-
-                    <!-- telehone number start -->
-                    {% if data['op-details'].includes('Phone number') %}
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Contact number
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            Main: {{data['op-phone-number-1']}} <br>
-                            Alternative: {{data['op-phone-number-2']}} - {{data['phone-type']}}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="op-phone.html">
-                                Change
-                                <span class="govuk-visually-hidden"> name</span>
-                            </a>
-                        </dd>
-                    </div>
-                    {% endif %}
-                    <!-- telephone number end -->
 
                     <!-- current address start  -->
                     {% if data['op-details'].includes('Address') %}
@@ -211,6 +172,45 @@
                      {% endif %}
                     <!-- previous address end -->
 
+                    <!-- telehone number start -->
+                    {% if data['op-details'].includes('Phone number') %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Contact number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Main: {{data['op-phone-number-1']}} <br>
+                            Alternative: {{data['op-phone-number-2']}} - {{data['phone-type']}}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="op-phone.html">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
+                    <!-- telephone number end -->
+
+                     <!-- nino start -->
+                    {% if data['op-details'].includes('National Insurance number') %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            National Insurance number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{data['op-nino']}}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="op-nino.html">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
+                    <!-- nino end -->
+
                     <!-- any other information start -->
                     {% if data['op-details'].includes('Other information') %}
                     <div class="govuk-summary-list__row">
@@ -247,7 +247,7 @@
                 </form>
 
                 <button type="reset" class="govuk-button govuk-button--secondary"
-                    onclick="deleteMatchingCookiesAndRedirect('govuk-prototype-kit-', '/apply/february2025/better-information-for-tracing/op-question-list')">
+                    onclick="deleteMatchingCookiesAndRedirect('govuk-prototype-kit-', '/apply/february2025/better-information-for-tracing/welcome.html')">
                     Start again
                 </button>
                 <!-- <a class="govuk-link" href="../sections">Return to Index</a> -->
