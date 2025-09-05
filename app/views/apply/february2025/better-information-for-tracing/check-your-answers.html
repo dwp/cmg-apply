@@ -136,6 +136,7 @@
                     <!-- current address end -->
 
                     <!-- previous address start -->
+                    
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             Previous address
@@ -152,13 +153,14 @@
                         </dd>
                     </div>
 
+                    {% if data['op-prev-address'] and data['op-prev-address'] !== "I don't know about the other parents previous address" %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             How you know their previous address
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                             {{data['op-prev-address-know']}}
+                            {{data['op-prev-address-know']}}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -168,8 +170,9 @@
                             </a>
                         </dd>
                     </div>
+                    {% endif %}
 
-                     {% endif %}
+                    {% endif %}
                     <!-- previous address end -->
 
                     <!-- telehone number start -->
@@ -192,7 +195,7 @@
                     {% endif %}
                     <!-- telephone number end -->
 
-                     <!-- nino start -->
+                    <!-- nino start -->
                     {% if data['op-details'].includes('National Insurance number') %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
