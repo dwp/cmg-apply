@@ -99,11 +99,12 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {{data['op-address']}} <br>
-                            1 The Towers <br />
+                            {% if data['op-address'] == "I know the full address" %} 1 The Towers <br />
                             Hill Top Road <br />
                             Leeds <br />
                             West Yorkshire <br />
-                            LS1 1SL <br />
+                            LS1 1SL <br /> {% endif %}
+
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -136,14 +137,19 @@
                     <!-- current address end -->
 
                     <!-- previous address start -->
-                    
+
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             Previous address
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {{data['op-prev-address']}}
+                            {{data['op-prev-address']}} <br>
+                            {% if data['op-prev-address'] == "I know the other parent's full previous address and postcode" %} 22 Far View<br>
+                            Gosforth<br>
+                            Newcastle <br>
+                            Tyne and Wear<br>
+                            NE1 1EN {% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="op-previous-address.html">
@@ -153,7 +159,8 @@
                         </dd>
                     </div>
 
-                    {% if data['op-prev-address'] and data['op-prev-address'] !== "I don't know about the other parents previous address" %}
+                    {% if data['op-prev-address'] and data['op-prev-address'] !== "I don't know about the other parents
+                    previous address" %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             How you know their previous address
@@ -183,7 +190,9 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
                             Main: {{data['op-phone-number-1']}} <br>
-                            Alternative: {{data['op-phone-number-2']}} - {{data['phone-type']}}
+                            {% if data['op-phone'] == "Alternative" %} Alternative: {{data['op-phone-number-2']}} -
+                            {{data['phone-type']}} {% endif %}
+
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="op-phone.html">

@@ -45,7 +45,7 @@
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-prev-address-know-1" name="op-prev-address-know"
                     type="checkbox" value="The other parent told me they have moved to a different address"
-                    data-aria-controls="conditional-contact">
+                    data-aria-controls="conditional-contact" {% if data['op-prev-address-know'] == "The other parent told me they have moved to a different address" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-prev-address-know-1">
                     The other parent told me they have moved to a different address
                   </label>
@@ -82,7 +82,7 @@
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-prev-address-know-2" name="op-prev-address-know"
                     type="checkbox" value="I used to live at this address with the other parent"
-                    data-aria-controls="conditional-contact-2">
+                    data-aria-controls="conditional-contact-2" {% if data['op-prev-address-know'] == "I used to live at this address with the other parent" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-prev-address-know-2">
                     I used to live at this address with the other parent
                   </label>
@@ -118,7 +118,7 @@
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-prev-address-know-3" name="op-prev-address-know"
-                    type="checkbox" value="Another reason" data-aria-controls="conditional-contact-3">
+                    type="checkbox" value="Another reason" data-aria-controls="conditional-contact-3" {% if data['op-prev-address-know'] == "Another reason" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-prev-address-know-3">
                     Another reason
                   </label>

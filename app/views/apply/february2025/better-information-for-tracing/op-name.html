@@ -55,7 +55,7 @@
                             First name
                         </label>
                         <input class="govuk-input govuk-!-width-two-thirds" id="op-first-name"
-                            name="op-first-name" type="text" autocomplete="name" spellcheck="false">
+                            name="op-first-name" type="text" autocomplete="name" spellcheck="false" value="{{data['op-first-name']}}">
                     </div>
 
                     <div class="govuk-form-group">
@@ -63,7 +63,7 @@
                             Middle names (if they have any)
                         </label>
                         <input class="govuk-input govuk-!-width-two-thirds" id="op-middle-name"
-                            name="op-middle-name" type="text" autocomplete="name" spellcheck="false">
+                            name="op-middle-name" type="text" autocomplete="name" spellcheck="false" value="{{data['op-middle-name']}}">
                     </div>
 
                     <div class="govuk-form-group">
@@ -71,7 +71,7 @@
                             Last name
                         </label>
                         <input class="govuk-input govuk-!-width-two-thirds" id="op-last-name"
-                            name="op-last-name" type="text" autocomplete="name" spellcheck="false">
+                            name="op-last-name" type="text" autocomplete="name" spellcheck="false" value="{{data['op-last-name']}}">
                     </div>
 
                     <div class="govuk-form-group">
@@ -87,7 +87,7 @@
                             <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="op-other-name-1" name="op-other-name" type="radio"
-                                        value="Yes" data-aria-controls="conditional-op-name-1">
+                                        value="Yes" data-aria-controls="conditional-op-name-1" {% if data['op-other-name'] == "Yes" %} checked {% endif %}>
                                     <label class="govuk-label govuk-radios__label" for="op-other-name">
                                         Yes
                                     </label>
@@ -99,26 +99,26 @@
                                            First name
                                         </label>
                                         <input class="govuk-input govuk-!-width-two-thirds" id="previous-first-name"
-                                            name="previous-first-name" type="text" spellcheck="false">
+                                            name="previous-first-name" type="text" spellcheck="false" value="{{data['previous-first-name']}}">
                                     </div>
                                     <div class="govuk-form-group">
                                         <label class="govuk-label" for="previous-middle-name">
                                             Middle names (optional)
                                         </label>
                                         <input class="govuk-input govuk-!-width-two-thirds" id="previous-middle-name"
-                                            name="previous-middle-name" type="text" spellcheck="false">
+                                            name="previous-middle-name" type="text" spellcheck="false" value="{{data['previous-middle-name']}}">
                                     </div>
                                     <div class="govuk-form-group">
                                         <label class="govuk-label" for="previous-last-name">
                                            Last name
                                         </label>
                                         <input class="govuk-input govuk-!-width-two-thirds" id="previous-last-name"
-                                            name="previous-last-name" type="text" spellcheck="false" >
+                                            name="previous-last-name" type="text" spellcheck="false" value="{{data['previous-last-name']}}">
                                     </div>
                                 </div>
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="op-other-name-2" name="op-other-name" type="radio"
-                                        value="No">
+                                        value="No" {% if data['op-other-name'] == "No" %} checked {% endif %}>
                                     <label class="govuk-label govuk-radios__label" for="op-other-name-2">
                                         No
                                     </label>

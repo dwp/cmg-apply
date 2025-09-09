@@ -34,7 +34,7 @@
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="op-dob-1" name="op-dob" type="radio"
-                    value="I know their full date of birth " data-aria-controls="op-dob-1-conditional">
+                    value="I know their full date of birth " data-aria-controls="op-dob-1-conditional" {% if data['op-dob'] == "I know their full date of birth" %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label" for="op-dob-1">
                     I know their full date of birth 
                   </label>
@@ -53,7 +53,7 @@
                           Day
                         </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                          id="op-dob-day" name="op-dob-day" type="text" inputmode="numeric">
+                          id="op-dob-day" name="op-dob-day" type="text" inputmode="numeric" value="{{data['op-dob-day']}}">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -62,7 +62,7 @@
                           Month
                         </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                          id="op-dob-month" name="op-dob-month" type="text" inputmode="numeric">
+                          id="op-dob-month" name="op-dob-month" type="text" inputmode="numeric" value="{{data['op-dob-month']}}">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -71,7 +71,7 @@
                           Year
                         </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                          id="op-dob-year" name="op-dob-year" type="text" inputmode="numeric">
+                          id="op-dob-year" name="op-dob-year" type="text" inputmode="numeric" value="{{data['op-dob-year']}}">
                       </div>
                     </div>
                   </div>
@@ -81,7 +81,7 @@
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="op-dob-2" name="op-dob" type="radio"
-                    value="I know part of their date of birth" data-aria-controls="op-dob-2-conditional">
+                    value="I know part of their date of birth" data-aria-controls="op-dob-2-conditional" {% if data['op-dob'] == "I know part of their date of birth" %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label" for="op-dob-2">
                     I know part of their date of birth
                   </label>
@@ -101,8 +101,8 @@
                         <label class="govuk-label govuk-date-input__label" for="op-dob-part-day">
                           Day
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                          id="op-dob-part-day" name="op-dob-part-day" type="text" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" 
+                         id="op-dob-part-day" name="op-dob-part-day" type="text" inputmode="numeric" value="{{data['op-dob-part-day']}}">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -111,7 +111,7 @@
                           Month
                         </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                          id="op-dob-part-month" name="op-dob-part-month" type="text" inputmode="numeric">
+                          id="op-dob-part-month" name="op-dob-part-month" type="text" inputmode="numeric" value="{{data['op-dob-part-month']}}">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -120,7 +120,7 @@
                           Year
                         </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                          id="op-dob-part-year" name="op-dob-part-year" type="text" inputmode="numeric">
+                          id="op-dob-part-year" name="op-dob-part-year" type="text" inputmode="numeric" value="{{data['op-dob-part-year']}}">
                       </div>
                     </div>
                   </div>
@@ -130,9 +130,9 @@
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="op-dob-3" name="op-dob" type="radio"
-                    value="I know their age " data-aria-controls="op-dob-3-conditional">
+                    value="I know their age " data-aria-controls="op-dob-3-conditional" {% if data['op-dob'] == "I know their age" %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label" for="op-dob-3">
-                    I know their age 
+                    I know their age
                   </label>
                 </div>
 
@@ -142,28 +142,13 @@
                     <label class="govuk-label" for="contact-by-text">
                       Age
                     </label>
-                    <input class="govuk-input govuk-input--width-2" id="op-age" name="op-age"
-                      type="tel" autocomplete="tel">
+                    <input class="govuk-input govuk-input--width-2" id="op-age" name="op-age" value="{{data['op-age']}}"
+                      type="tel">
                   </div>
                 </div>
               </div>
             </fieldset>
           </div>
-
-          <!-- Radio four -->
-
-          <!-- <div class="govuk-radios__divider">or</div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="op-dob-4" name="op-dob" type="radio"
-              value="I do not know their date of birth">
-            <label class="govuk-label govuk-radios__label" for="op-dob-4">
-              I do not know the other parent's date of birth or age
-            </label>
-
-          </div> -->
-
-          <!-- <div class="govuk-!-padding-bottom-5"></div> -->
 
           <button type="submit" class="govuk-button">
             Continue

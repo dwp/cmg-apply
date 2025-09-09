@@ -23,7 +23,7 @@
               <div class="govuk-radios govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="op-prev-address-1" name="op-prev-address" type="radio"
-                    value="I know the other parent's full previous address and postcode~op-previous-postcode">
+                    value="I know the other parent's full previous address and postcode~op-previous-postcode" {% if data['op-prev-address'] == "I know the other parent's full previous address and postcode" %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label" for="op-prev-address-1">
                     I know the other parent's full previous address and postcode 
                   </label>
@@ -31,7 +31,7 @@
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="op-prev-address-2" name="op-prev-address" type="radio"
-                    value="I know part of the other parent's previous address~op-previous-address-2">
+                    value="I know part of the other parent's previous address~op-previous-address-2"{% if data['op-prev-address'] == "I know part of the other parent's previous address" %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label" for="op-prev-address-2">
                     I know part of the other parent's previous address
                   </label>
@@ -42,7 +42,7 @@
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="op-prev-address-3" name="op-prev-address" type="radio"
-                      value="I know the town or city of the other parents previous address" data-aria-controls="op-prev-address-3-conditional">
+                      value="I know the town or city of the other parents previous address" data-aria-controls="op-prev-address-3-conditional" {% if data['op-prev-address'] == "I know the town or city of the other parents previous address" %} checked {% endif %}>
                     <label class="govuk-label govuk-radios__label" for="op-prev-address">
                       I know the town or city the other parent previously lived in or near 
                     </label>
@@ -56,7 +56,7 @@
                         </label>
 
                         <input class="govuk-input govuk-input govuk-input--width-10" id="op-prev-address-town"
-                          name="op-prev-address-town" type="text" spellcheck="false">
+                          name="op-prev-address-town" type="text" spellcheck="false" value="{{data['op-prev-address-town']}}">
 
                       </div>
                     </div>
@@ -64,7 +64,7 @@
 
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="op-prev-address-4" name="op-prev-address" type="radio"
-                      value="I know the area of the other parents previous address" data-aria-controls="op-prev-address-4-conditional">
+                      value="I know the area of the other parents previous address" data-aria-controls="op-prev-address-4-conditional" {% if data['op-prev-address'] == "I know the area of the other parents previous address" %} checked {% endif %}>
                     <label class="govuk-label govuk-radios__label" for="op-prev-address-4">
                       I know the area of the UK the other parent previously lived in
                     </label>
@@ -76,7 +76,7 @@
                         Area
                       </label>
                       <input class="govuk-input govuk-input--width-10" id="op-prev-address-area" name="op-prev-address-area"
-                        type="text">
+                        type="text" value="{{data['op-prev-address-area']}}">
                     </div>
                   </div>
                 </div>
@@ -85,7 +85,7 @@
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="op-prev-address-5" name="op-prev-address" type="radio"
-                    value="I don't know about the other parents previous address">
+                    value="I don't know about the other parents previous address" {% if data['op-prev-address'] == "I don't know about the other parents previous address" %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label" for="op-prev-address-5">
                     I do not know anything about the other parent's previous address 
                   </label>

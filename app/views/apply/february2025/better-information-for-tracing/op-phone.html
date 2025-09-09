@@ -23,7 +23,7 @@
                             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="op-phone-1" name="op-phone" type="checkbox"
-                                        value="Main" data-aria-controls="conditional-op-phone-1">
+                                        value="Main" data-aria-controls="conditional-op-phone-1" {% if data['op-phone'] == "Main" %} checked {% endif %}>
                                     <label class="govuk-label govuk-checkboxes__label" for="op-phone">
                                         I know their main contact number
                                     </label>
@@ -35,12 +35,12 @@
                                             Phone number
                                         </label>
                                         <input class="govuk-input govuk-!-width-one-third" id="op-phone-number-1"
-                                            name="op-phone-number-1" type="tel" spellcheck="false" autocomplete="tel">
+                                            name="op-phone-number-1" type="tel" spellcheck="false" autocomplete="tel" value="{{data['op-phone-number-1']}}">
                                     </div>
                                 </div>
                                 <div class="govuk-checkboxes__item">
                                     <input class="govuk-checkboxes__input" id="op-phone-2" name="op-phone" type="checkbox"
-                                        value="Alternative" data-aria-controls="conditional-op-phone-number-2">
+                                        value="Alternative" data-aria-controls="conditional-op-phone-number-2" {% if data['op-phone'] == "Alternative" %} checked {% endif %}>
                                     <label class="govuk-label govuk-checkboxes__label" for="op-phone-2">
                                         I know their alternative number
                                     </label>
@@ -52,27 +52,18 @@
                                             Phone number
                                         </label>
                                         <input class="govuk-input govuk-!-width-one-third" id="op-phone-number-2"
-                                            name="op-phone-number-2" type="tel" autocomplete="tel">
+                                            name="op-phone-number-2" type="tel" autocomplete="tel" value="{{data['op-phone-number-2']}}">
 
                                         <label class="govuk-label govuk-!-padding-top-4" for="phone-type">
                                             Type of phone number (optional)
                                         </label>
                                         <div id="contact-hint" class="govuk-hint">This must be a number that the other
                                             parent uses. For example, their work number.</div>
-                                        <input class="govuk-input" id="phone-type" name="phone-type" type="text">
+                                        <input class="govuk-input" id="phone-type" name="phone-type" type="text" value="{{data['phone-type']}}">
 
                                     </div>
                                 </div>
-<!-- 
-                                <div class="govuk-checkboxes__divider">or</div>
 
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="op-phone-3" name="op-phone" type="checkbox"
-                                        value="None" data-behaviour="exclusive">
-                                    <label class="govuk-label govuk-checkboxes__label" for="op-phone-3">
-                                        I do not know their phone number
-                                    </label>
-                                </div> -->
                             </div>
                         </fieldset>
                     </div>

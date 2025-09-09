@@ -24,7 +24,7 @@
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-other-info-1" name="op-other-info" type="checkbox" value="Information about their job or benefits"
-                    data-aria-controls="conditional-contact">
+                    data-aria-controls="conditional-contact" {% if data['op-other-info'] == "Information about their job or benefits" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-other-info-1">
                     Information about their job or benefits
                   </label>
@@ -40,7 +40,7 @@
                       receive
                     </div>
                     <textarea class="govuk-textarea" id="jobs-benefits" name="jobs-benefits" rows="7"
-                      aria-describedby="more-detail-hint"></textarea>
+                      aria-describedby="more-detail-hint">{{data['jobs-benefits']}}</textarea>
                     <div id="contact-hint" class="govuk-hint">
                       You have 700 characters remaining
                     </div>
@@ -49,7 +49,7 @@
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-other-info-2" name="op-other-info" type="checkbox" value="Where they get their post sent"
-                    data-aria-controls="conditional-contact-2">
+                    data-aria-controls="conditional-contact-2" {% if data['op-other-info'] == "Where they get their post sent" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-other-info-2">
                     Where they get their post sent
                   </label>
@@ -65,7 +65,7 @@
                       address
                     </div>
                     <textarea class="govuk-textarea" id="post" name="post" rows="7"
-                      aria-describedby="more-detail-hint"></textarea>
+                      aria-describedby="more-detail-hint">{{data['post']}}</textarea>
                     <div id="contact-hint" class="govuk-hint">
                       You have 700 characters remaining
                     </div>
@@ -74,7 +74,7 @@
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-other-info-3" name="op-other-info" type="checkbox"
-                    value="Any other contact information" data-aria-controls="conditional-contact-3">
+                    value="Any other contact information" data-aria-controls="conditional-contact-3" {% if data['op-other-info'] == "Any other contact information" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-other-info-3">
                     Any other contact information
                   </label>
@@ -89,22 +89,12 @@
                       For example, their employment status or other contact details
                     </div>
                     <textarea class="govuk-textarea" id="anything-else" name="anything-else" rows="7"
-                      aria-describedby="more-detail-hint"></textarea>
+                      aria-describedby="more-detail-hint">{{data['anything-else']}}</textarea>
                     <div id="contact-hint" class="govuk-hint">
                       You have 700 characters remaining
                     </div>
                   </div>
                 </div>
-
-                <!-- <div class="govuk-checkboxes__divider">or</div> -->
-
-                <!-- <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox"
-                    value="text message" data-behaviour="exclusive">
-                  <label class="govuk-label govuk-checkboxes__label" for="contact-3">
-                    I don't know anything else that can help
-                  </label>
-                </div> -->
               </div>
             </fieldset>
           </div>

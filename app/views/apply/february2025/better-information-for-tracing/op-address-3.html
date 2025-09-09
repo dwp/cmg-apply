@@ -48,7 +48,7 @@
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-address-how-know-1" name="op-address-how-know"
                     type="checkbox" value="I have droppped my child off at this address"
-                    data-aria-controls="conditional-op-address-know-1">
+                    data-aria-controls="conditional-op-address-know-1" {% if data['op-address-how-know'] == "I have droppped my child off at this address" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-1">
                     I have dropped my child off at this address
                   </label>
@@ -83,7 +83,7 @@
                   <input class="govuk-checkboxes__input" id="op-address-how-know-2" name="op-address-how-know"
                     type="checkbox"
                     value="I have court papers, letters or documents that confirm the other parent’s address"
-                    data-aria-controls="conditional-op-address-know-2">
+                    data-aria-controls="conditional-op-address-know-2" {% if data['op-address-how-know'] == "I have court papers, letters or documents that confirm the other parent’s address" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-2">
                     I have court papers, letters or documents that confirm the other parent’s address
                   </label>
@@ -126,7 +126,7 @@
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-address-how-know-3" name="op-address-how-know"
                     type="checkbox"
-                    value="I used to live at this address with the other parent within the last 90 days">
+                    value="I used to live at this address with the other parent within the last 90 days" {% if data['op-address-how-know'] == "I used to live at this address with the other parent within the last 90 days" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-3">
                     I used to live at this address with the other parent within the last 90 days
                   </label>
@@ -134,7 +134,7 @@
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-address-how-know-4" name="op-address-how-know"
-                    type="checkbox" value="The other parent told me their address">
+                    type="checkbox" value="The other parent told me their address" {% if data['op-address-how-know'] == "The other parent told me their address" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-4">
                     The other parent told me their address
                   </label>
@@ -142,7 +142,7 @@
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="op-address-how-know-5" name="op-address-how-know"
-                    type="checkbox" value="Another reason" data-aria-controls="conditional-op-address-know-5">
+                    type="checkbox" value="Another reason" data-aria-controls="conditional-op-address-know-5" {% if data['op-address-how-know'] == "Another reason" %} checked {% endif %}>
                   <label class="govuk-label govuk-checkboxes__label" for="op-address-how-know-5">
                     Another reason
                   </label>
@@ -154,7 +154,7 @@
                       <p>Explain how you know this is the other parent's address </p>
                       <textarea class="govuk-textarea govuk-js-character-count" id="op-address-know-other-hint"
                         name="op-address-know-other" rows="5"
-                        aria-describedby="with-hint-info with-hint-hint"></textarea>
+                        aria-describedby="with-hint-info with-hint-hint">{{data['op-address-know-other']}}</textarea>
                     </div>
                     <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                       You can enter up to 700 characters
