@@ -105,6 +105,13 @@
                             West Yorkshire <br />
                             LS1 1SL <br /> {% endif %}
 
+                            {% if data['op-address'] == "I know part of the address" %} 1 The Towers <br />
+                            Leeds <br />
+                            West Yorkshire {% endif %}
+
+                            {% if data['op-address'] == "I know the town or city" %} {{data['op-address-town']}} {% endif %}
+
+                            {% if data['op-address'] == "I know the area of UK" %} {{data['op-adderess-area']}} {% endif %}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -122,9 +129,13 @@
                         <dd class="govuk-summary-list__value">
 
                             {{data['op-address-how-know']}} <br />
-                            {{data['dropped-month']}} {{data['dropped-year']}}
-                            {{data['court-day']}} {{data['court-month']}} {{data['court-year']}}
-                            {{data['op-address-know-other']}}
+
+                            {% if data['op-address-how-know'] == "I have droppped my child off at this address" %} {{data['dropped-month']}} - {{data['dropped-year']}} {% endif %}
+                            
+                            {% if data['op-address-how-know'] == "I have court papers, letters or documents that confirm the other parent’s address" %}  {{data['court-day']}} - {{data['court-month']}} -  {{data['court-year']}} {% endif %}
+                           
+                            {% if data['op-address-how-know'] == "Another reason" %} {{data['op-address-know-other']}} {% endif %}
+                            
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -197,7 +208,7 @@
                                 {% endif %}
                             <br>    
                             {% if data['op-phone-number-2'] %}
-                                Alternative: {{data['op-phone-number-2']}} -
+                                Alternative: {{data['op-phone-number-2']}} <br>
                             {{data['phone-type']}}     
                             {% endif %}
                            
