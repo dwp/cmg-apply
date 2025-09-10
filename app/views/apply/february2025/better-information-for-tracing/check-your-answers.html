@@ -122,6 +122,7 @@
                         </dd>
                     </div>
 
+                    {% if data['op-address-how-know'] %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             How you know their current address
@@ -145,6 +146,7 @@
                             </a>
                         </dd>
                     </div>
+                    {% endif %}
                     <!-- current address end -->
 
                     <!-- previous address start -->
@@ -161,6 +163,15 @@
                             Newcastle <br>
                             Tyne and Wear<br>
                             NE1 1EN {% endif %}
+
+                            {% if data['op-prev-address'] == "I know part of the other parent's previous address" %} 22 Far View<br>
+                            Gosforth<br>
+                            Newcastle {% endif %}
+
+                            {% if data['op-prev-addresss'] == "I know the town or city of the other parents previous address" %} {{data['op-prev-address-town']}} {% endif %}
+
+                            {% if data['op-prev-addresss'] == "I know the area of the other parents previous address" %} {{data['op-prev-address-area']}} {% endif %}
+
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="op-previous-address.html">
@@ -170,8 +181,7 @@
                         </dd>
                     </div>
 
-                    {% if data['op-prev-address'] and data['op-prev-address'] !== "I don't know about the other parents
-                    previous address" %}
+                   {% if data['op-prev-address-know'] %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             How you know their previous address
@@ -209,7 +219,7 @@
                             <br>    
                             {% if data['op-phone-number-2'] %}
                                 Alternative: {{data['op-phone-number-2']}} <br>
-                            {{data['phone-type']}}     
+                                Type of phone number: {{data['phone-type']}}     
                             {% endif %}
                            
 
