@@ -1,4 +1,5 @@
 {% extends "layout.html" %} {% block pageTitle %} Tell us about the other parent {% endblock %} {% block content %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 <!--Feedback banner start-->
 {% include "feedback-banner.html" %}
 <!--Feedback banner stop-->
@@ -27,71 +28,49 @@
                   </strong>
                 </div>
 
-                <div class="govuk-form-group">
-                  <div id="countries-hint" class="govuk-hint">
-                    Select all that apply. You can give partial information and change your answers later.
-                  </div>
-                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="op-details-1" name="op-details" type="checkbox"
-                        value="Name" {% if data['op-details'] == "Name" %} checked {% endif %}>
-                      <label class="govuk-label govuk-checkboxes__label" for="op-details-1">
-                         Name
-                      </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="op-details-2" name="op-details" type="checkbox"
-                        value="Date of birth" {% if data['op-details'] == "Date of birth" %} checked {% endif %}>
-                      <label class="govuk-label govuk-checkboxes__label" for="op-details-2">
-                        Information about date of birth or age
-                      </label>
-                    </div>
-                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="op-details-5" name="op-details" type="checkbox"
-                        value="Address" {% if data['op-details'] == "Address" %} checked {% endif %}>
-                      <label class="govuk-label govuk-checkboxes__label" for="op-details-5">
-                        Information about address or location
-                      </label>
-                    </div>                  
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="op-details-4" name="op-details" type="checkbox"
-                        value="Phone number" National Insurance number>
-                      <label class="govuk-label govuk-checkboxes__label" for="op-details-4">
-                        Telephone number
-                      </label>
-                    </div>
-                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="op-details-3" name="op-details" type="checkbox"
-                        value="National Insurance number" {% if data['op-details'] == "National Insurance number" %} checked {% endif %}>
-                      <label class="govuk-label govuk-checkboxes__label" for="op-details-3">
-                        National Insurance number
-                      </label>
-                    </div>                 
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="op-details-7" name="op-details" type="checkbox"
-                        value="Other information" {% if data['op-details'] == "Other information" %} checked {% endif %}>
-                      <label class="govuk-label govuk-checkboxes__label" for="op-details-7">
-                        Any other details about them
-                      </label>
-                    </div>
+              {{ govukCheckboxes({
+                  name: "op-details",
+                  values: data['op-details'],
+                  hint: {
+                    text: "Select all that apply. You can give partial information and change your answers later."
+                  },
+                    items: [
+                    {
+                      value: "Name",
+                      text: "Name"
+                    },
+                    {
+                      value: "Date of birth",
+                      text: "Information about date of birth or age"
+                    },
+                    {
+                      value: "Address",
+                      text: "Information about address or location"
+                    },
+                    {
+                      value: "Phone number",
+                      text: "Telephone number"
+                    },
+                    {
+                      value: "National Insurance number",
+                      text: "National Insurance number"
+                    },
+                    {
+                      value: "Other information",
+                      text: "Any other details about them"
+                    },
+                    {divider: "or"},
+                    {
+                      value: "I do not know anything",
+                      behaviour: "exclusive",
+                      text: "I do not know anything about the other parent"
+                    }   
+                  ]
+                }) }}
 
-                    <div class="govuk-checkboxes__divider">or</div>
-
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="op-details-8" name="op-details" type="checkbox"
-                        value="I do not know anything" data-behaviour="exclusive" {% if data['op-details'] == "I do not know anything" %} checked {% endif %}>
-                      <label class="govuk-label govuk-checkboxes__label" for="op-details-8">
-                        I do not know anything about the other parent
-                      </label>
-                    </div>
-                  </div>
-
-                </div>
-                
               </fieldset>
             </div>
-            <!-- <p class="govuk-body govuk-!-padding-bottom-5">We will also ask if there is anything else that we should know about the other parent.</p> -->
-            
+
             <button type="submit" class="govuk-button">
               Continue
             </button>

@@ -1,4 +1,6 @@
 {% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 <!--Feedback banner start-->
 {% include "feedback-banner.html" %}
 <!--Feedback banner stop-->
@@ -10,7 +12,7 @@
             <div class="govuk-grid-column-two-thirds">
                 <form method="post" novalidate>
 
-                    <div class="govuk-form-group">
+                    {# <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                                 <h1 class="govuk-fieldset__heading">
@@ -66,8 +68,85 @@
 
                             </div>
                         </fieldset>
-                    </div>
+                    </div> #}
 
+                    
+
+                    {% set mainphoneHtml %}
+                    {{ govukInput({
+                        id: "op-phone-number-1",
+                        name: "op-phone-number-1",
+                        value: data['op-phone-number-1'],
+                        type: "tel",
+                        autocomplete: "tel",
+                        spellcheck: false,
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                        text: "Phone number"
+                        }
+                    }) }}
+                    {% endset -%}
+
+                    {% set alternativephoneHtml %}
+                    {{ govukInput({
+                        id: "op-phone-number-2",
+                        name: "op-phone-number-2",
+                        value: data['op-phone-number-2'],
+                        type: "tel",
+                        autocomplete: "tel",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                            text: "Phone number"
+                        }
+                    }) }}
+                    {{ govukInput({
+                        id: "phone-type",
+                        name: "phone-type",
+                        value: data['phone-type'],
+                        type: "text",
+                        autocomplete: "text",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                            text: "Type of phone number (optional)"
+                        },
+                        hint: {
+                            text: "This must be a number that the other parent uses. For example, their work number."
+                            }
+                        
+                    }) }}
+                    {% endset -%}
+
+                    {{ govukCheckboxes({
+                        name: "op-phone",
+                        values: data['op-phone'],
+                        fieldset: {
+                        legend: {
+                            text: "What is the other parent's telephone number?",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--xl"
+                        }
+                        },
+                        hint: {
+                            text: "Select all that apply."
+                        },
+                        items: [
+                        {
+                            value: "op-phone-1",
+                            text: "I know their main contact number",
+                            conditional: {
+                            html: mainphoneHtml
+                            }
+                        },
+                        {
+                            value: "op-phone-2",
+                            text: "I know their alternative number",
+                            conditional: {
+                            html: alternativephoneHtml
+                            }
+                        }
+                        ]
+                    }) }}
+        
 
 
                     <!-- </fieldset> -->

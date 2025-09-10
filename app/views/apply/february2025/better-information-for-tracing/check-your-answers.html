@@ -189,9 +189,18 @@
                             Contact number
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            Main: {{data['op-phone-number-1']}} <br>
+                           {#  Main: {{data['op-phone-number-1']}} <br>
                             {% if data['op-phone'] == "Alternative" %} Alternative: {{data['op-phone-number-2']}} -
-                            {{data['phone-type']}} {% endif %}
+                            {{data['phone-type']}} {% endif %} #}
+                            {% if data['op-phone-number-1'] %}
+                                Main: {{data['op-phone-number-1']}}
+                                {% endif %}
+                            <br>    
+                            {% if data['op-phone-number-2'] %}
+                                Alternative: {{data['op-phone-number-2']}} -
+                            {{data['phone-type']}}     
+                            {% endif %}
+                           
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
