@@ -20,7 +20,12 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {{data['op-details']}}
+                            {# {{data['op-details']}} #}
+                            <ul>
+                                {% for questions in data['op-details'] %}
+                                <li>{{ questions }}</li>
+                                {% endfor %}
+                            </ul>
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
