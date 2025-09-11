@@ -186,6 +186,14 @@ router.post('/apply/february2025/better-information-for-tracing/op-previous-repl
 
 
 });
+
+router.get('/apply/february2025/better-information-for-tracing/welcome', function(req, res) {
+ 
+  delete req.session.data
+ 
+  res.render('/apply/february2025/better-information-for-tracing/welcome');
+ 
+})
  
 }
 // module export ends
