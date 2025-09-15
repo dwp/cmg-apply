@@ -266,8 +266,14 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {{data['op-other-info']}} <br>
-                            {{data['jobs-benefits']}} {{data['post']}} {{data['anything-else']}}
+                            {# {{data['op-other-info']}}  #}
+                            <ul>
+                                {% for otherInfo in data['op-other-info'] %}
+                                <li>{{otherInfo}}</li>
+                                {% endfor %}
+                            </ul>
+                            <br>
+                            {{data['jobs-benefits']}} <br> {{data['post']}} <br> {{data['anything-else']}}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
