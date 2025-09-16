@@ -9,7 +9,7 @@
     "@dwp/dwp-frontend": "3.3.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
-    "@ministryofjustice/frontend": "^2.1.3",
+    "@ministryofjustice/frontend": "5.1.5",
     "govuk-frontend": "5.11.2",
     "govuk-prototype-kit": "13.18.0",
     "jquery": "3.7.1",
