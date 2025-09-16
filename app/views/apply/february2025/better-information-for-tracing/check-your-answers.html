@@ -20,12 +20,7 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {# {{data['op-details']}} #}
-                            <ul>
-                                {% for questions in data['op-details'] %}
-                                <li>{{ questions }}</li>
-                                {% endfor %}
-                            </ul>
+                            {{data['op-details']}}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -266,14 +261,8 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {# {{data['op-other-info']}}  #}
-                            <ul>
-                                {% for otherInfo in data['op-other-info'] %}
-                                <li>{{otherInfo}}</li>
-                                {% endfor %}
-                            </ul>
-                            <br>
-                            {{data['jobs-benefits']}} <br> {{data['post']}} <br> {{data['anything-else']}}
+                            {{data['op-other-info']}} <br>
+                            {{data['jobs-benefits']}} {{data['post']}} {{data['anything-else']}}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
