@@ -1,0 +1,121 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+{% include "feedback-banner.html" %}
+
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <!--start of new code-->
+                <form method="post" novalidate>
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-heading-xl">Confirm how often {{data['child-1-first-name'] }} stays over night
+                            with the other parent
+                            <br><br />
+                        </h1>
+                        <!-- Option 1  -->
+                        <h2 class="govuk-heading-m">
+                            {% if data['shared-care-weekly'] === 'Weekly' %}
+                            Weekly arrangement
+                            {% elseif data['shared-care-fortnightly'] === 'Fortnightly' %}
+                            Fortnightly arrangement
+                            {% elseif data['shared-care-monthly'] === 'Monthly' %}
+                            Monthly arrangement
+                            {% elseif data['shared-care-none'] === 'No set arrangement' %}
+                            No set arrangement
+                            {% elseif data['shared-care-never'] === 'Never' %}
+                            Never
+                            {% endif %}
+                        </h2>
+                        <!-- weekly -->
+                        {% if data['shared-care-weekly'] === 'Weekly' %}
+                        <p>{{data['shared-care-days-amount'] }} nights a week</p>
+                        <!-- fortnightly -->
+                        {% elseif data['shared-care-fortnightly'] === 'Fortnightly' %}
+                        <p>{{data['shared-care-days-amount']}} nights in a fortnight<br />
+
+                            <!-- monthly -->
+                            {% elseif data['shared-care-monthlyt'] === 'Monthly' %}
+                        <p>{{data['shared-care-days-amount']}} nights a month </p>
+                        <!-- no arrangement -->
+                        {% elseif data['shared-care-none'] === 'No set arrangement' %}
+                        {% endif %}
+                    </div>
+                    <!-- Second section - additional nights -->
+                    <h2 class="govuk-heading-m">
+                        {% if data['special'] === 'yes' %}
+                        Additional nights
+                        {% elseif data['special'] === 'no' %}
+                        No additional nights
+
+                        {% endif %}
+                    </h2>
+
+                    {% if data['special'] === 'yes' %}
+                    <p>{{data['special-nights'] }} additional nights a year<br />
+                        {{data['with-hint'] }}</p>
+                    <!--  -->
+                    {% endif %}
+
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-heading-l"> Is this correct?</h1>
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                            <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="add-another-child-1-yes"
+                                        name="add-another-child-1" type="radio" value="yes~2-same-overnight">
+                                    <label class="govuk-label govuk-radios__label" for="add-another-child-1-yes">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="add-another-child-1-no"
+                                        name="add-another-child-1" type="radio" value="no~1-overnight-frequency-more">
+                                    <label class="govuk-label govuk-radios__label" for="add-another-child-1-no">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+                
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+<!-- inpage styles start-->
+
+<style>
+    .app-task-list__item:first-child {
+        border-top: 0px solid #bfc1c3 !important;
+    }
+
+
+    .tasklist_float_60 {
+        float: left;
+        width: 60%;
+    }
+
+    .tasklist_float_20 {
+        float: left;
+        width: 20%;
+        text-align: right;
+    }
+
+    .app-task-list__items {
+        padding-left: 0px;
+    }
+</style>
+
+<!-- inpage styles end -->
+
+{% endblock %}

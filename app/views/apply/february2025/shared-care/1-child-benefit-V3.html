@@ -1,0 +1,66 @@
+{% extends "layout.html" %} {% block pageTitle %} Does someone receive Child Benefit payments for this child? {%
+endblock %} {% block
+content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="cifba-benefit-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Do you get Child Benefit payments for {{data['child-1-first-name'] }}?
+                </h1>
+              </legend>
+
+              <div class="govuk-!-padding-bottom-5"></div>
+
+              <div class="govuk-radios">
+                <div class="govuk-radios__item" id="cifba-benefit">
+                  <input class="govuk-radios__input" id="cifba-benefit-1" name="cifba-benefit" type="radio">
+                  <label class="govuk-label govuk-radios__label" for="cifba-benefit-1">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="cifba-benefit-2" name="cifba-benefit" type="radio"
+                    data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="cifba-benefit-2">
+                    No
+                  </label>
+                </div>
+
+                <div class="govuk-radios__divider">or</div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="cifba-benefit-3" name="cifba-benefit" type="radio"
+                    value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="cifba-benefit-3">
+                    I don't know
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <a href="1-overnight-frequency.html" role="button" draggable="false" class="govuk-button">
+            Continue
+          </a>
+        </form>
+
+      </div>
+      {% include "exit-button.html" %}
+    </div>
+  </main>
+</div>
+
+
+
+{% endblock %}

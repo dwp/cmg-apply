@@ -1,0 +1,81 @@
+{% extends "layout.html" %} {% block pageTitle %} What is this child's date of birth? {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <form method="post" novalidate>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="child1DateBirthInformation" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                                <h1 class="govuk-fieldset__heading">
+                                    What is {{data['child-1-first-name'] }}&rsquo;s date of birth?
+                                </h1>
+                            </legend>
+                            <span id="child1DateBirthInformation" class="govuk-hint">
+                                For example, 15 7 2007
+                            </span>
+                            <div class="govuk-inset-text">
+                                Your children must be under 16 or under 20 if they are in full-time education or
+                                training,
+                                up to and including A level or equivalent. See HMRC for the <a
+                                    href="https://www.tax.service.gov.uk/information/help?helpcategory=shortform&helpid=CBOFTECH299e "
+                                    class="govuk-link">list of education and approved training (opens in new window or
+                                    tab)</a>.
+                            </div>
+                            <div class="govuk-date-input" id="child-1-date-of-birth">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="child-1-date-of-birth-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="child-1-date-of-birth-day" name="child-1-date-of-birth-day"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="child-1-date-of-birth-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="child-1-date-of-birth-month" name="child-1-date-of-birth-month"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="child-1-date-of-birth-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                            id="child-1-date-of-birth-year" name="child-1-date-of-birth-year"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "layout.html" %} {% block pageTitle %} Do you need to add another child to this arrangement? {% endblock %}
+{% block content %}
+
+{% include "feedback-banner.html" %}
+
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <form method="post" novalidate>
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-caption-xl">You have told us about:
+                            <span class="govuk-heading-xl">{{data['child-1-first-name'] }} {{data['child-1-last-name']
+                                }}</span>
+                        </h1>
+                    </div>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h1 class="govuk-fieldset__heading">
+                                    Do you need to add another child?
+                                </h1>
+                            </legend>
+                            <div id="changedName-hint" class="govuk-hint">
+                                Only include children you need this child maintenance arrangement for.
+                            </div>
+
+                            <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="yes" name="addchild" type="radio"
+                                        value="yes~2-name">
+                                    <label class="govuk-label govuk-radios__label" for="yes">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="no" name="addchild" type="radio"
+                                        value="no~1-overnight">
+                                    <label class="govuk-label govuk-radios__label" for="no">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+
+<!-- Inpage styles start -->
+
+<style>
+    .app-task-list__item:first-child {
+        border-top: 0px solid #bfc1c3 !important;
+    }
+
+
+    .tasklist_float_60 {
+        float: left;
+        width: 60%;
+    }
+
+    .tasklist_float_20 {
+        float: left;
+        width: 20%;
+        text-align: right;
+    }
+
+    .app-task-list__items {
+        padding-left: 0px;
+    }
+
+    .govuk-caption-xl {
+        text-transform: capitalize;
+    }
+</style>
+
+<!-- inpage styles end -->
+
+{% endblock %}

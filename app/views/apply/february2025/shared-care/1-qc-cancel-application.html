@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block pageTitle %} Are you sure that you want to cancel your application for Child
+Maintenance? {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <form method="post" novalidate>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="cifba-benefit-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                                    Are you sure that you want to cancel your application for child maintenance?
+                                </h1>
+                            </legend>
+                            <p>If any of the children you need to arrange maintenance for are under 20 years old and in
+                                approved education or training, the Child Maintenance Service can create an application
+                                for those children. 
+                            </p>
+                            <br>
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item" id="cifba-benefit">
+                                    <input class="govuk-radios__input" id="cifba-benefit-1" name="cifba-benefit"
+                                        type="radio" value="yes~1-qc-confirm-cancel">
+                                    <label class="govuk-label govuk-radios__label" for="cifba-benefit-1">
+                                        Yes, I want to cancel my application - my children are all 20 or older
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="cifba-benefit-2" name="cifba-benefit"
+                                        type="radio" value="no~1-name">
+                                    <label class="govuk-label govuk-radios__label" for="cifba-benefit-2">
+                                        No, I can continue my application - some of my children are under 20
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <br>
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}

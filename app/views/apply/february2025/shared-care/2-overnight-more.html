@@ -1,0 +1,81 @@
+{% extends "layout.html" %} {% block pageTitle %} Do you need to add another child to this arrangement? {% endblock %}
+{% block content %}
+{% include "feedback-banner.html" %}
+
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <form method="post" novalidate>
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-heading-xl">Does {{data['child-2-first-name'] }} ever stay overnight with the
+                            other parent?
+                        </h1>
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                                <div class="govuk-radios govuk-radios--inline">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="yes" name="addchild" type="radio"
+                                            value="yes~2-overnight-frequency-more">
+                                        <label class="govuk-label govuk-radios__label" for="yes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="no" name="addchild" type="radio"
+                                            value="no~2-check-answers-overnights-more">
+                                        <label class="govuk-label govuk-radios__label" for="no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+<!-- inpage styles start -->
+
+<style>
+    .app-task-list__item:first-child {
+        border-top: 0px solid #bfc1c3 !important;
+    }
+
+
+    .tasklist_float_60 {
+        float: left;
+        width: 60%;
+    }
+
+    .tasklist_float_20 {
+        float: left;
+        width: 20%;
+        text-align: right;
+    }
+
+    .app-task-list__items {
+        padding-left: 0px;
+    }
+
+    .govuk-caption-xl {
+        text-transform: capitalize;
+    }
+</style>
+
+<!-- inpage styles end -->
+
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends "layout.html" %} {% block pageTitle %} Check this child's details {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <form method="post" novalidate>
+          <h1 class="govuk-heading-xl">Check your child's [children's] details</h1>
+
+          <br>
+
+          <h2 class="govuk-heading-m">Check {{data['child-1-first-name'] }} {{data['child-1-last-name'] }}'s details
+          </h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is {{data['child-1-first-name'] }}'s full name?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['child-1-first-name'] }} {{data['child-1-middle-name'] }} {{data['child-1-last-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-name.html">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is {{data['child-1-first-name'] }}'s date of birth?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5 January 2007
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-dob.html">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you named on {{data['child-1-first-name'] }}'s birth certificate?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-birth-certificate.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Does someone receive Child Benefit payments for
+                {{data['child-1-first-name'] }}?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-child-benefit-V3.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Check {{data['child-2-first-name'] }} {{data['child-2-last-name'] }}'s details
+          </h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is {{data['child-2-first-name'] }}'s full name?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['child-2-first-name'] }} {{data['child-2-middle-name'] }} {{data['child-2-last-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="2-name.html">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is {{data['child-2-first-name'] }}'s date of birth?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5 January 2007
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="2-dob.html">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you named on {{data['child-2-first-name'] }}'s birth certificate?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="2-birth-certificate.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Does someone receive Child Benefit payments for
+                {{data['child-2-first-name'] }}?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="2-child-benefit-V3.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+      </div>
+      {% include "exit-button.html" %}
+    </div>
+  </main>
+</div>
+
+
+
+
+{% endblock %}

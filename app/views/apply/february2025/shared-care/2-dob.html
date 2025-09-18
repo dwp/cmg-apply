@@ -1,0 +1,97 @@
+{% extends "layout.html" %} {% block pageTitle %} What is this child's date of birth? {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <form method="post" novalidate>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="child1DateBirthInformation" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                                <h1 class="govuk-fieldset__heading">
+                                    What is {{data['child-2-first-name'] }}&rsquo;s date of birth?
+                                </h1>
+                            </legend>
+                            <span id="child1DateBirthInformation" class="govuk-hint">
+                                For example, 15 7 2007
+                            </span>
+                            <div class="govuk-inset-text">
+                                Children must be under 16, or considered a qualifying young person, to include in a
+                                Child Maintenance Service arrangement.
+                            </div>
+                            <div class="govuk-date-input" id="child-1-date-of-birth">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="child-1-date-of-birth-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="child-1-date-of-birth-day" name="child-1-date-of-birth-day"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="child-1-date-of-birth-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="child-1-date-of-birth-month" name="child-1-date-of-birth-month"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="child-1-date-of-birth-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                            id="child-1-date-of-birth-year" name="child-1-date-of-birth-year"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <br><br>
+
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Who is considered a qualifying young person?
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                A person is considered to be a qualifying young person if they are aged 16-19 and child
+                                benefit is payable or they are in full-time non-advanced education or approved training.
+                                <br><br>
+                                See HMRC for the <a
+                                    href="https://www.tax.service.gov.uk/information/help?helpcategory=shortform&helpid=CBOFTECH299e"
+                                    class="govuk-link">list of full-time non-advanced education and approved
+                                    training</a>.
+                            </div>
+                        </details>
+
+                    </div>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}

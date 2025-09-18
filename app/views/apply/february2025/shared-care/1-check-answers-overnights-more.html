@@ -1,0 +1,126 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                <form action="/apply/october2024/6-service-types-RP/direct-pay" method="get" novalidate>
+                    <h1 class="govuk-heading-xl">Check how often {{data['child-1-first-name'] }}
+                        {{data['child-1-last-name'] }} stays overnight with the other parent
+                    </h1>
+
+                    <dl class="govuk-summary-list ">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Does {{data['child-1-first-name'] }} stay overnight with the other parent?
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Yes</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="../about_qualifying_child/new_shared_care2.html">
+                                    Change
+                                    <span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                How often does {{data['child-1-first-name'] }} stay overnight with the other parent?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">
+                                    <!-- No set arrangement -->
+                                    <!-- {{data['weekly-arrangement'] }} nights a week</p> -->
+                                    {{data['fortnightly-arrangement'] }} nights in the first week<br />
+                                    {{data['fortnightly-arrangement-2'] }} nights in the second week
+
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="../about_qualifying_child/new_shared_care2.html">
+                                    Change
+                                    <span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <!-- <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                What's happening now?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="../about_qualifying_child/special_occasions.html">
+                                    Change
+                                    <span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div> -->
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Does {{data['child-1-first-name'] }}3 spend any additional nights with the other parent?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Yes</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="../about_qualifying_child/new_shared_care3.html">
+                                    Change
+                                    <span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                How many additional nights does {{data['child-1-first-name'] }} spend with the other
+                                parent?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body"> {{data['special-nights'] }} nights a year </p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="../about_qualifying_child/special_occasions.html">
+                                    Change
+                                    <span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Is there anything else you want to tell us about the additional nights?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body"> {{data['with-hint'] }} 2 night a year </p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="../about_qualifying_child/special_occasions.html">
+                                    Change
+                                    <span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}
