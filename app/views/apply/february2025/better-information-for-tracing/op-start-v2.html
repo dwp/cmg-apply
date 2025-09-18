@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Tell us about your children {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <form method="get" action="op-question-list.html" novalidate>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading">
+                    Tell us about the other parent
+                  </h1>
+                  </legend>
+
+                  {# <div class="govuk-warning-text govuk-!-padding-top-5">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    Giving us as much information as possible can help us process your application faster.
+                  </strong>
+                </div> #}
+
+                  <p class="govuk-body">Giving us as much information as possible will help us confirm the identity and location of the other 
+                    parent. We need to tell them that they have been named in a child maintenance application.</p>
+
+                  <p class="govuk-body">Tell us partial information if you know it. For example, just a house number and street or town if 
+                    you do not know the full address.</p>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+            </form>
+
+          </div>
+          {% include "exit-button.html" %}
+        </div>
+      </main>
+    </div>
+
+  {% endblock %}
