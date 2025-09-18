@@ -46,7 +46,7 @@
                 Is the other parent named on {{data['child-1-first-name'] }}'s birth certificate?
               </dt>
               <dd class="govuk-summary-list__value">
-                Yes
+                {{data['birth-certificate'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="1-birth-certificate.html">
@@ -60,7 +60,7 @@
                 Child benefit
               </dt>
               <dd class="govuk-summary-list__value">
-                Yes
+                {{data['cifba-benefit'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="1-child-benefit-V3.html">
@@ -74,10 +74,14 @@
                 Overnight stays
               </dt>
               <dd class="govuk-summary-list__value">
-                3 Weekly
+               {{data['sharedCare'] }} <br>
+               {% if data['sharedCare'] == "Weekly" %} {{data['shared-care-days-amount-1']}} nights {% endif %}
+               {% if data['sharedCare'] == "Fortnightly" %} {{data['shared-care-days-amount-2']}} nights {% endif %}
+               {% if data['sharedCare'] == "Monthly" %} {{data['shared-care-days-amount-3']}} nights {% endif %}
+                
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="1-child-benefit-V3.html">
+                <a class="govuk-link" href="1-overnight-frequency.html">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -88,10 +92,12 @@
                 Additional nights
               </dt>
               <dd class="govuk-summary-list__value">
-                No
+                {{data['special-nights'] }} <br>
+                {% if data['special-nights'] == "Yes" %} {{data['specialNights']}} nights {% endif %} <br>
+                 {{data['specialNightsExtra']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="1-child-benefit-V3.html">
+                <a class="govuk-link" href="1-overnight-frequency.html">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>

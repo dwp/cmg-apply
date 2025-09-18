@@ -10,7 +10,7 @@ content %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" novalidate>
+        <form method="get" action="1-overnight-frequency.html" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="cifba-benefit-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -23,7 +23,7 @@ content %}
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item" id="cifba-benefit">
-                  <input class="govuk-radios__input" id="cifba-benefit-1" name="cifba-benefit" type="radio">
+                  <input class="govuk-radios__input" id="cifba-benefit-1" name="cifba-benefit" type="radio" value="Yes">
                   <label class="govuk-label govuk-radios__label" for="cifba-benefit-1">
                     Yes
                   </label>
@@ -31,7 +31,7 @@ content %}
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="cifba-benefit-2" name="cifba-benefit" type="radio"
-                    data-aria-controls="conditional-contact">
+                    value="No">
                   <label class="govuk-label govuk-radios__label" for="cifba-benefit-2">
                     No
                   </label>
@@ -41,7 +41,7 @@ content %}
 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="cifba-benefit-3" name="cifba-benefit" type="radio"
-                    value="email" data-aria-controls="conditional-contact">
+                    value="I don't know">
                   <label class="govuk-label govuk-radios__label" for="cifba-benefit-3">
                     I don't know
                   </label>
@@ -54,7 +54,7 @@ content %}
             Continue
           </a>
         </form>
-
+ 
       </div>
       {% include "exit-button.html" %}
     </div>
