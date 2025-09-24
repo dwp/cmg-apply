@@ -22,9 +22,9 @@
 
                             {# {{data['op-details']}} #}
                             <ul>
-                                {% for questions in data['op-details'] %}
+                                {# {% for questions in data['op-details'] %}
                                 <li>{{ questions }}</li>
-                                {% endfor %}
+                                {% endfor %} #}
                             </ul>
 
                         </dd>
@@ -44,8 +44,8 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {{data['op-first-name']}}
-                            {{data['op-middle-name']}} {{data['op-last-name']}}
+                            {# {{data['op-first-name']}}
+                            {{data['op-middle-name']}} {{data['op-last-name']}} #}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -61,8 +61,8 @@
                             Has the other parent been known by a different name?
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{data['op-other-name']}} <br> {{data['previous-first-name']}}
-                            {{data['previous-middle-name']}} {{data['previous-last-name']}}
+                            {# {{data['op-other-name']}} <br> {{data['previous-first-name']}}
+                            {{data['previous-middle-name']}} {{data['previous-last-name']}} #}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="op-name.html">
@@ -81,10 +81,10 @@
                             Age or date of birth
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{data['op-dob']}} <br>
+                            {# {{data['op-dob']}} <br>
                             {{data['op-dob-day']}} {{data['op-dob-month']}} {{data['op-dob-year']}}
                             {{data['op-dob-part-day']}} {{data['op-dob-part-month']}} {{data['op-dob-part-year']}}
-                            {{data['op-age']}}
+                            {{data['op-age']}} #}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="op-dob.html">
@@ -103,20 +103,20 @@
                             Current address
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{data['op-address']}} <br>
+                            {# {{data['op-address']}} <br>
                             {% if data['op-address'] == "I know the full address" %} 1 The Towers <br />
                             Hill Top Road <br />
                             Leeds <br />
                             West Yorkshire <br />
-                            LS1 1SL <br /> {% endif %}
+                            LS1 1SL <br /> {% endif %} #}
 
-                            {% if data['op-address'] == "I know part of the address" %} 1 The Towers <br />
+                            {# {% if data['op-address'] == "I know part of the address" %} 1 The Towers <br />
                             Leeds <br />
-                            West Yorkshire {% endif %}
+                            West Yorkshire {% endif %} #}
 
-                            {% if data['op-address'] == "I know the town or city" %} {{data['op-address-town']}} {% endif %}
+                            {# {% if data['op-address'] == "I know the town or city" %} {{data['op-address-town']}} {% endif %} #}
 
-                            {% if data['op-address'] == "I know the area of UK" %} {{data['op-adderess-area']}} {% endif %}
+                            {# {% if data['op-address'] == "I know the area of UK" %} {{data['op-adderess-area']}} {% endif %} #}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -134,13 +134,13 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {{data['op-address-how-know']}} <br />
+                            {# {{data['op-address-how-know']}} <br />
 
                             {% if data['op-address-how-know'] == "I have droppped my child off at this address" %} {{data['dropped-month']}} - {{data['dropped-year']}} {% endif %}
                             
                             {% if data['op-address-how-know'] == "I have court papers, letters or documents that confirm the other parent’s address" %}  {{data['court-day']}} - {{data['court-month']}} -  {{data['court-year']}} {% endif %}
                            
-                            {% if data['op-address-how-know'] == "Another reason" %} {{data['op-address-know-other']}} {% endif %}
+                            {% if data['op-address-how-know'] == "Another reason" %} {{data['op-address-know-other']}} {% endif %} #}
                             
 
                         </dd>
@@ -162,7 +162,7 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {{data['op-prev-address']}} <br>
+                            {# {{data['op-prev-address']}} <br>
                             {% if data['op-prev-address'] == "I know the other parent's full previous address and postcode" %} 22 Far View<br>
                             Gosforth<br>
                             Newcastle <br>
@@ -175,7 +175,7 @@
 
                             {% if data['op-prev-addresss'] == "I know the town or city of the other parents previous address" %} {{data['op-prev-address-town']}} {% endif %}
 
-                            {% if data['op-prev-addresss'] == "I know the area of the other parents previous address" %} {{data['op-prev-address-area']}} {% endif %}
+                            {% if data['op-prev-addresss'] == "I know the area of the other parents previous address" %} {{data['op-prev-address-area']}} {% endif %} #}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -193,7 +193,7 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
 
-                            {{data['op-prev-address-know']}}
+                            {# {{data['op-prev-address-know']}} #}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -215,17 +215,15 @@
                             Phone number
                         </dt>
                         <dd class="govuk-summary-list__value">
-                           {#  Main: {{data['op-phone-number-1']}} <br>
-                            {% if data['op-phone'] == "Alternative" %} Alternative: {{data['op-phone-number-2']}} -
-                            {{data['phone-type']}} {% endif %} #}
-                            {% if data['op-phone-number-1'] %}
+                          
+                            {# {% if data['op-phone-number-1'] %}
                                 Main: {{data['op-phone-number-1']}}
                                 {% endif %}
                             <br>    
                             {% if data['op-phone-number-2'] %}
                                 Alternative: {{data['op-phone-number-2']}} <br>
                                 Type of phone number: {{data['phone-type']}}     
-                            {% endif %}
+                            {% endif %} #}
                            
 
                         </dd>
@@ -246,7 +244,7 @@
                             National Insurance number
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{data['op-nino']}}
+                            {# {{data['op-nino']}} #}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="op-nino.html">
@@ -268,12 +266,12 @@
 
                             {# {{data['op-other-info']}}  #}
                             <ul>
-                                {% for otherInfo in data['op-other-info'] %}
+                                {# {% for otherInfo in data['op-other-info'] %}
                                 <li>{{otherInfo}}</li>
-                                {% endfor %}
+                                {% endfor %} #}
                             </ul>
                             <br>
-                            {{data['jobs-benefits']}} <br> {{data['post']}} <br> {{data['anything-else']}}
+                            {# {{data['jobs-benefits']}} <br> {{data['post']}} <br> {{data['anything-else']}} #}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -291,12 +289,12 @@
 
                             {# {{data['op-other-info']}}  #}
                             <ul>
-                                {% for otherInfo in data['op-other-info'] %}
+                                {# {% for otherInfo in data['op-other-info'] %}
                                 <li>{{otherInfo}}</li>
-                                {% endfor %}
+                                {% endfor %} #}
                             </ul>
                             <br>
-                            {{data['jobs-benefits']}} <br> {{data['post']}} <br> {{data['anything-else']}}
+                            {# {{data['jobs-benefits']}} <br> {{data['post']}} <br> {{data['anything-else']}} #}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -314,12 +312,12 @@
 
                             {# {{data['op-other-info']}}  #}
                             <ul>
-                                {% for otherInfo in data['op-other-info'] %}
+                                {# {% for otherInfo in data['op-other-info'] %}
                                 <li>{{otherInfo}}</li>
-                                {% endfor %}
+                                {% endfor %} #}
                             </ul>
                             <br>
-                            {{data['jobs-benefits']}} <br> {{data['post']}} <br> {{data['anything-else']}}
+                            {# {{data['jobs-benefits']}} <br> {{data['post']}} <br> {{data['anything-else']}} #}
 
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -345,10 +343,10 @@
                     </p>
                 </form>
 
-                <button type="reset" class="govuk-button govuk-button--secondary"
+                {# <button type="reset" class="govuk-button govuk-button--secondary"
                     onclick="deleteMatchingCookiesAndRedirect('govuk-prototype-kit-', '/apply/february2025/better-information-for-tracing/welcome.html')">
                     Start again
-                </button>
+                </button> #}
                 <!-- <a class="govuk-link" href="../sections">Return to Index</a> -->
             </div>
             {% include "exit-button.html" %}
