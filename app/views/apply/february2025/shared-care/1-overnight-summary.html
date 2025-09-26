@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Overnight stays summary
+{% endblock %}
+{% block content %}
+
+    {% include "feedback-banner.html" %}
+
+    <div class="govuk-width-container">
+        {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    <form method="get" action='1-additional-information.html' novalidate>
+                        <h1 class="govuk-heading-xl">Review [Child name] overnight stays</h1>
+                        <div class="govuk-form-group">
+                            <dl class="govuk-summary-list">
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Type of arrangement</dt>
+                                    <dd class="govuk-summary-list__value">Shared Care</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> type of arrangement</span></a>
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Regular stays</dt>
+                                    <dd class="govuk-summary-list__value">Fortnightly <br> 4 nights</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                                        
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key"> Irregular stays</dt>
+                                    <dd class="govuk-summary-list__value">Yealry<br>6 nights</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority stays </dt>
+                                    <dd class="govuk-summary-list__value">Monthly <br> 2 nights</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Total overnight stays with the other parent</dt>
+                                    <dd class="govuk-summary-list__value">Yearly <br> 154</dd>
+                                    
+                                </div>
+                            </dl>
+                        </div>
+
+                        <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                    </form>
+
+                </div>
+                {% include "exit-button.html" %}
+            </div>
+        </main>
+    </div>
+
+    <!-- inpage styles start -->
+
+{% endblock %}

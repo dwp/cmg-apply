@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% block pageTitle %} Local authority stays {% endblock %}
+{% block
+content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="get" action="1-overnight-summary.html" novalidate>
+
+            {# <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">Does [childs name] spena ny nights in local authority care?</h1>
+                </legend>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="localAuthority" name="localAuthority" type="radio" 
+                    value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="localAuthority"> Yes</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="localAuthority-2" name="localAuthority" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="localAuthority-2"> No </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div> #}
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading"> Does [childs name] spend any nights in local authority care?</h1>
+                </legend>
+                <div id="contact-hint" class="govuk-hint">This is where your child or children are subject to a care order and they stay overnight elsewhere, for example with a foster parent or in a care home</div>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="localAuthority" name="localAuthority" type="radio" value="Yes" data-aria-controls="conditional-localAuthority">
+                    <label class="govuk-label govuk-radios__label" for="contact">Yes</label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-localAuthority">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="localAuthorityNights">How many nights per month?</label>
+                      <input class="govuk-input govuk-!-width-one-third" id="localAuthorityNights" name="localAuthorityNights" type="text" spellcheck="false" autocomplete="none">
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="localAuthority-2" name="localAuthority" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="localAuthority-2">No </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

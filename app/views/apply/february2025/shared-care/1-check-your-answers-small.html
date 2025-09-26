@@ -60,7 +60,7 @@
                 Child benefit
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['cifba-benefit'] }}
+                {{data['childBenefit'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="1-child-benefit-V3.html">
@@ -71,7 +71,49 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Overnight stays
+                Written agreement
+              </dt>
+              <dd class="govuk-summary-list__value">
+                
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Type of written agreement
+              </dt>
+              <dd class="govuk-summary-list__value">
+                
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Overnight care arrangement
+              </dt>
+              <dd class="govuk-summary-list__value">
+                
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Overnight stays each year
               </dt>
               <dd class="govuk-summary-list__value">
                {{data['sharedCare'] }} <br>
@@ -89,12 +131,12 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Additional nights
+                Additional information
               </dt>
               <dd class="govuk-summary-list__value">
-                {{data['special-nights'] }} <br>
+                {# {{data['special-nights'] }} <br>
                 {% if data['special-nights'] == "Yes" %} {{data['specialNights']}} nights {% endif %} <br>
-                 {{data['specialNightsExtra']}}
+                 {{data['specialNightsExtra']}} #}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="1-overnight-frequency.html">
