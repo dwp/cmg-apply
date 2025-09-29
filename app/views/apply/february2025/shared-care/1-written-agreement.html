@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %} Written agreement {% endblock %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% block
 content %}
   <!--Feedback banner start-->
@@ -11,23 +12,42 @@ content %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form method="post" action='' novalidate>
+          <form method="post" action="1-overnight-with-other-parent-regular-v2.html" novalidate>
 
             <div class="govuk-form-group">
-              <h1 class="govuk-heading-xl">[H1 to be confirmed]</h1>
-              <p class="govuk-body">You must provide the written agreement for overnight stays. You can upload it in your online account.</p>
-              <p class="govuk-body">For written agreements, we can only accept:</p>
+              <h1 class="govuk-heading-xl">Which type of written agreement do you have?</h1>
+              <p class="govuk-body">We can only accept a current court order, formal agreement or other official document.</p>
+              {# <p class="govuk-body">For written agreements, we can only accept:</p>
               <ul class="govuk-list govuk-list--bullet">
                 <li>a current court order</li>
                 <li>a formal agreement, for example drawn up by a solicitor</li>
                 <li>other offical document, for example Children and Family Court Advisory and Support Service (CAFCAS) or Social Services reports</li>
-              </ul>
+              </ul> #}
+
+              {{ govukInsetText({
+                                text: "You must upload the written agreement for overnight stays in your online account."
+              }) }}
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="writtenAgreementType" name="writtenAgreementType" type="radio" 
+                    value="Court order">
+                  <label class="govuk-label govuk-radios__label" for="writtenAgreementType"> a current Court Order</label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="writtenAgreementType-2" name="writtenAgreementType" type="radio" value="Formal aggreement">
+                  <label class="govuk-label govuk-radios__label" for="writtenAgreementType-2">a formal agreement, for example drawn up by a solicitor</label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="writtenAgreementType-3" name="writtenAgreementType" type="radio" value="No~1-care-arrangement-type.html">
+                  <label class="govuk-label govuk-radios__label" for="writtenAgreementType-3">another official document, or example Children and Family Court Advisory and Support Service (CAFCAS) or Social Services reports</label>
+                </div>
+              </div>
 
             </div>
-
-            <a href="1-written-agreement-type.html" role="button" draggable="false" class="govuk-button">
-            Continue
-          </a>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
           </form>
 
         </div>
