@@ -13,26 +13,27 @@
           <form method="get" action='1-overnight-local-authority.html' >
             <div class="govuk-form-group">
               <h1 class="govuk-heading-xl">
-              Tell us how many additional nights [Childs name] stays with the other parent that are not regular arrangements?
+              Each year, how often does [child's name] stay with the other parent on extra nights?
             </h1>
 
               <div class="govuk-form-group">
-                <label class="govuk-label" for="event-name">How many nights?</label>
-                <input class="govuk-input govuk-input--width-2" id="event-name" name="eventName" type="text">
+                <label class="govuk-label" for="extraNights-amount">How many nights?</label>
+                <div id="event-name-hint" class="govuk-hint">For example, extra nights during school holidays or birthdays. Do not include nights you have already told us about.</div>
+                <input class="govuk-input govuk-input--width-2" id="extraNights-amount" name="extraNights-amount" type="number">
               </div>
             </div>
 
-            <div class="govuk-form-group">
+            {# <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend">How often?</legend>
 
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive">Year</label>
+                    <input class="govuk-radios__input" id="extraNights" name="extraNights" type="radio" value="Year">
+                    <label class="govuk-label govuk-radios__label" for="extraNights">Year</label>
                   </div>
 
-                  {# <div class="govuk-radios__item">
+                  <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
                     <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">Fortnightly</label>
                   </div>
@@ -40,15 +41,15 @@
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
                     <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">Monthly</label>
-                  </div> #}
+                  </div>
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
-                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">None </label>
+                    <input class="govuk-radios__input" id="extraNights-2" name="extraNights" type="radio" value="None">
+                    <label class="govuk-label govuk-radios__label" for="extraNights-2">None </label>
                   </div>
                 </div>
               </fieldset>
-            </div>
+            </div> #}
 
             <button type="submit" class="govuk-button">
             Continue

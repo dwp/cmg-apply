@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% block pageTitle %} Written agreement {% endblock %}
+{% block pageTitle %} Which type of overnight arrangement? {% endblock %}
 {% block
 content %}
   <!--Feedback banner start-->
@@ -18,20 +18,19 @@ content %}
               <fieldset class="govuk-fieldset">
 
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                  <h1 class="govuk-fieldset__heading">What type of overnight arrangement do you have?</h1>
+                  <h1 class="govuk-fieldset__heading">Which type of overnight arrangement do you have?</h1>
                 </legend>
                 
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="arrangementType" name="arrangementType" type="radio" value="Shared Care~1-overnight-with-other-parent-regular-v2.html" aria-describedby="signIn-item-hint">
                     <label class="govuk-label govuk-radios__label" for="arrangementType">Shared Care</label>
-                    <div id="arrangementType-item-hint" class="govuk-hint govuk-radios__hint">A child sometimes stays overnight with the other parent</div>
+                    <div id="arrangementType-item-hint" class="govuk-hint govuk-radios__hint">A child sometimes stays overnight with the other parent.</div>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="arrangementType-2" name="arrangementType" type="radio" value="Equal shared care~1-overnight-with-other-parent-regular-v2.html" aria-describedby="arrangementType-2-item-hint">
                     <label class="govuk-label govuk-radios__label" for="arrangementType-2">Equal shared care</label>
-                    <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-          You and the other parent share the care of your child equally. For example, your child stays with the othe parent 7 nights out of 14 nights. This means that the other parent has the child overnight for 26 weeks of the year</div>
+                    <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">A child spends the same number of nights with each parent.</div>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="arrangementType-3" name="arrangementType" type="radio" value="govuk-one-login" aria-describedby="arrangementType-3-item-hint">

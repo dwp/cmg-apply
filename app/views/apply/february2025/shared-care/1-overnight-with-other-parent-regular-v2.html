@@ -13,12 +13,14 @@
           <form method="get" action='1-overnight-with-other-parent-irregular-v2.html'>
             <div class="govuk-form-group">
               <h1 class="govuk-heading-xl">
-              How often does {{data['child-1-first-name'] }} regularly stay overnight with the other parent?
+              How often does {{data['child-1-first-name'] }} [child's name] regularly stay overnight with the other parent?
             </h1>
 
-              <p>
-              If you have not yet worked out how often {{data['child-1-first-name'] }} will stay overnight with
+              <p class="govuk-body">
+              If you have not yet worked out how often {{data['child-1-first-name'] }}[child's name] will stay overnight with
               the other parent, tell us what's happening now.
+              <br>
+              If overnight stays alter each week, tell us a total number of nights in the period.
             </p>
 
               <br>
@@ -52,10 +54,10 @@
                     <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">Yearly</label>
                   </div>
 
-                  <div class="govuk-radios__item">
+                  {# <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
                     <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">None </label>
-                  </div>
+                  </div> #}
                 </div>
               </fieldset>
             </div>
