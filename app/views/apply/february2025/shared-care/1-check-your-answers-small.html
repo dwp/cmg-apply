@@ -129,21 +129,19 @@
               </dd>
             </div>
 
-            <div class="govuk-summary-list__row">
+            {# <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Additional information
               </dt>
               <dd class="govuk-summary-list__value">
-                {# {{data['special-nights'] }} <br>
-                {% if data['special-nights'] == "Yes" %} {{data['specialNights']}} nights {% endif %} <br>
-                 {{data['specialNightsExtra']}} #}
+                
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="1-overnight-frequency.html">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
-            </div>
+            </div> #}
           </dl>
 
           <div class="govuk-form-group">
@@ -176,9 +174,12 @@
             </fieldset>
           </div>
 
-          <button type="submit" class="govuk-button">
+          {# <button type="submit" class="govuk-button">
             Continue
-          </button>
+          </button> #}
+
+          <a href="1-additional-information.html" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Continue</a>
+
 
         </form>
 

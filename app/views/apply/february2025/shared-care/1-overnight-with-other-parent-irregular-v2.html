@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block pageTitle %} How often does this child stay overnightIrregular with the other parent? {% endblock %}
+{% block pageTitle %} How often does the child stay extra nights with the other parent? {% endblock %}
 {% block content %}
   <!--Feedback banner start-->
   {% include "feedback-banner.html" %}
@@ -13,13 +13,25 @@
           <form method="get" action='1-overnight-local-authority.html' >
             <div class="govuk-form-group">
               <h1 class="govuk-heading-xl">
-              Each year, how often does [child's name] stay with the other parent on extra nights?
-            </h1>
+
+                {% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %} Each year, how often does [child's name] stay with the other parent overnight? 
+                {% else %}
+                Each year, how often does [child's name] stay with the other parent on extra nights?
+                {% endif %}
+
+              </h1>
 
               <div class="govuk-form-group">
-                <label class="govuk-label" for="extraNights-amount">How many nights?</label>
-                <div id="event-name-hint" class="govuk-hint">For example, extra nights during school holidays or birthdays. Do not include nights you have already told us about.</div>
-                <input class="govuk-input govuk-input--width-2" id="extraNights-amount" name="extraNights-amount" type="number">
+                <label class="govuk-label" for="extranights-amount">How many nights?</label>
+                <div id="event-name-hint" class="govuk-hint govuk-!-padding-bottom-4">
+
+                {% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %} For example, [content to add for overnight when needed]
+                {% else %}
+                For example, extra nights during school holidays or birthdays. Do not include nights you have already told us about.
+                {% endif %}
+
+                </div>
+                <input class="govuk-input govuk-input--width-2 " id="extranights-amount" name="extranights-amount" type="number">
               </div>
             </div>
 
