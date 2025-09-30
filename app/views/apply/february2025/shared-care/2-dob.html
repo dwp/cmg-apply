@@ -8,7 +8,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-                <form method="post" novalidate>
+                <form method="get" action="2-birth-certificate.html" novalidate>
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset" aria-describedby="child1DateBirthInformation" role="group">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -20,8 +20,12 @@
                                 For example, 15 7 2007
                             </span>
                             <div class="govuk-inset-text">
-                                Children must be under 16, or considered a qualifying young person, to include in a
-                                Child Maintenance Service arrangement.
+                                Your children must be under 16 or under 20 if they are in full-time education or
+                                training,
+                                up to and including A level or equivalent. See HMRC for the <a
+                                    href="https://www.tax.service.gov.uk/information/help?helpcategory=shortform&helpid=CBOFTECH299e "
+                                    class="govuk-link">list of education and approved training (opens in new window or
+                                    tab)</a>.
                             </div>
                             <div class="govuk-date-input" id="child-1-date-of-birth">
                                 <div class="govuk-date-input__item">
@@ -60,9 +64,7 @@
                             </div>
                         </fieldset>
 
-                        <br><br>
-
-                        <details class="govuk-details" data-module="govuk-details">
+                        {# <details class="govuk-details" data-module="govuk-details">
                             <summary class="govuk-details__summary">
                                 <span class="govuk-details__summary-text">
                                     Who is considered a qualifying young person?
@@ -77,7 +79,7 @@
                                     class="govuk-link">list of full-time non-advanced education and approved
                                     training</a>.
                             </div>
-                        </details>
+                        </details> #}
 
                     </div>
 
