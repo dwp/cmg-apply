@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form method="post" novalidate>
+                    <!--start-->
+
+                    <div class="govuk-width-container">
+                        <h1 class="govuk-heading-xl">Find an address</h1>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="postcode">
+                                Postcode
+                            </label>
+                            <div id="postcode-hint" class="govuk-hint">
+                                For example, AA3 1AB.
+                            </div><input class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode"
+                                type="text" aria-describedby="postcode-hint">
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="searchString">
+                                Building number or name
+                            </label>
+                            <div id="searchString-hint" class="govuk-hint">
+                                For example, 15 or Prospect Cottage.
+                            </div><input class="govuk-input govuk-!-width-two-thirds" id="searchString"
+                                name="searchString" type="text" aria-describedby="searchString-hint">
+                        </div>
+
+
+                        <a href="/apply/february2025/7-other-parent-RP/pp-previous-replay.html" role="button"
+                            draggable="false" class="govuk-button">
+                            Find address
+                        </a>
+
+                        <p class="govuk-body govuk-!-margin-bottom-0"><a
+                                href="/apply/february2025/7-other-parent-RP/pp-previous-address-2"
+                                class="govuk-link">Enter address manually</a></p>
+                    </div>
+
+
+                </form> 
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+
+{% endblock %}

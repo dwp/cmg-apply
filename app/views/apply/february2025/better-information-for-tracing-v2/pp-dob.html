@@ -1,0 +1,178 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" novalidate>
+
+
+          <!-- Radio's start -->
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  What is the other parent's date of birth?
+                </h1>
+              </legend>
+
+
+              <div class="govuk-warning-text govuk-!-padding-top-5">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  Giving us as much information as possible can help us process your application faster.
+                </strong>
+              </div>
+              <!-- Radio one -->
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="other-parent-dob-1" name="other-parent-dob" type="radio"
+                    value="yes~pp-nino" data-aria-controls="other-parent-dob-1-conditional">
+                  <label class="govuk-label govuk-radios__label" for="other-parent-dob-1">
+                    I know their full date of birth 
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="other-parent-dob-1-conditional">
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div id="dob-hint" class="govuk-hint">
+                      For example, 31 3 1980
+                    </div>
+                    <div class="govuk-date-input__item">
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="other-parent-dob-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                          id="other-parent-dob-day" name="other-parent-dob-day" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="other-parent-dob-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                          id="other-parent-dob-month" name="other-parent-dob-month" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="other-parent-dob-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                          id="other-parent-dob-year" name="other-parent-dob-year" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Radio two -->
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="other-parent-dob-2" name="other-parent-dob" type="radio"
+                    value="yes~pp-nino" data-aria-controls="other-parent-dob-2-conditional">
+                  <label class="govuk-label govuk-radios__label" for="other-parent-dob-2">
+                    I know part of their date of birth
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="other-parent-dob-2-conditional">
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div id="dob-hint" class="govuk-hint">
+                      Tell us as much about the other parent's date of birth as possible. For example, just the day and
+                      month.
+                    </div>
+
+                    <div class="govuk-date-input__item">
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="other-parent-dob-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                          id="other-parent-dob-day" name="other-parent-dob-day" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                          id="other-parent-dob-month" name="other-parent-dob-month" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="other-parent-dob-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                          id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Radio three -->
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="other-parent-dob-3" name="other-parent-dob" type="radio"
+                    value="yes~pp-nino" data-aria-controls="other-parent-dob-3-conditional">
+                  <label class="govuk-label govuk-radios__label" for="other-parent-dob-3">
+                    I know their age 
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="other-parent-dob-3-conditional">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-text">
+                      Age
+                    </label>
+                    <input class="govuk-input govuk-input--width-2" id="other-parent-age" name="other-parent-age"
+                      type="tel" autocomplete="tel">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Radio four -->
+
+          <div class="govuk-radios__divider">or</div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="other-parent-dob-4" name="other-parent-dob" type="radio"
+              value="yes~pp-nino">
+            <label class="govuk-label govuk-radios__label" for="other-parent-dob-4">
+              I do not know the other parent's date of birth or age
+            </label>
+
+          </div>
+
+          <div class="govuk-!-padding-bottom-5"></div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+      {% include "exit-button.html" %}
+
+    </div>
+  </main>
+</div>
+{% endblock %}

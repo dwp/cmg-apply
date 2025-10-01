@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+    <!--Feedback banner start-->
+    {% include "feedback-banner.html" %}
+    <!--Feedback banner stop-->
+    <div class="govuk-width-container">
+        {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                    <h1 class="govuk-heading-xl">Check your answers about the other parent</h1>
+
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Name
+                        </dt>
+                            <dd class="govuk-summary-list__value">
+
+                                {{data['other-parent-first-name']}}
+                                {{data['other-parent-middle-name']}}
+                                {{data['other-parent-last-name']}}
+
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                           Has the other parent been known by a different name?
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Age or date of birth
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            National Insurance number
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Phone number
+                        </dt>
+                            <dd class="govuk-summary-list__value">
+
+                                {{data['phone-number-pp']}}
+
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        {# <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Alternative number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+
+                            {{data['phone-number-pp']}}
+
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                            </a>
+                        </dd>
+                    </div>
+ #}
+                        <!-- q1  -->
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Current address
+                        </dt>
+                            <dd class="govuk-summary-list__value">
+
+                                {# {% if data['op-address'] === 'yes' %}
+
+                            {{data['other-parent-address-line-1']}} <br />
+                            {{data['other-parent-address-line-2']}} <br />
+                            {{data['other-parent-address-town']}} <br />
+                            {{data['other-parent-address-county']}} <br />
+                            {{data['other-parent-address-postcode']}} <br />
+
+                            {% elseif data['op-address'] === 'no' %}
+                            No
+
+                            {% endif %} #}
+
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="pp-address-1">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            How you know their current address
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="pp-address-3">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Previous address
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="pp-address-3">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            How you know their previous address
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="pp-address-3">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Jobs or benefits
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="pp-address-3">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Postal address
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="pp-address-3">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            Other contact information
+                        </dt>
+                            <dd class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="pp-address-3">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                    </dl>
+
+                    <br/>
+
+                    <form method="post" novalidate>
+
+                        <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                    </p>
+                </form>
+                <!-- <a class="govuk-link" href="../sections">Return to Index</a> -->
+            </div>
+            {% include "exit-button.html" %}
+
+        </div>
+    </main>
+</div>
+<script>
+    function showDivPreviousAddress() {
+        if (otherParentKnowAddressInformation = "other-parent-know-address-2") {
+            document
+                .getElementById('previous-address')
+                .style
+                .display = 'visible';
+        } else {
+            document
+                .getElementById('previous-address')
+                .style
+                .display = 'hidden';
+
+        }
+
+    }
+</script>
+{% endblock %}

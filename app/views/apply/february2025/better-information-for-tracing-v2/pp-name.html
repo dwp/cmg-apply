@@ -1,0 +1,148 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">What is the other parent&rsquo;s name?</h1>
+
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    Giving us as much information as possible can help us process your application faster.
+                  </strong>
+                </div>
+
+                <div id="otherParentname-hint" class="govuk-body">
+                    Tell us as much of the other parent's full legal name as possible.
+                </div>
+
+                <!-- <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                        <span class="govuk-visually-hidden">Warning</span>
+                        Giving us as much information as possible can help us process your application faster.
+                    </strong>
+                </div> -->
+
+                <form method="post" novalidate>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="sort">
+                            Title
+                        </label>
+                        <select class="govuk-select" id="sort" name="sort">
+                            <option value="published">Ms</option>
+                            <option value="updated">Mrs</option>
+                            <option value="views">Miss</option>
+                            <option value="comments">Mr</option>
+                            <option value="comments">Captain</option>
+                            <option value="comments">Colonel</option>
+                            <option value="comments">Dame</option>
+                            <option value="comments">Dr</option>
+                            <option value="comments">Lady</option>
+                            <option value="comments">Lord</option>
+                            <option value="comments">Major</option>
+                            <option value="comments">Professor</option>
+                            <option value="comments">Reverend</option>
+                            <option value="comments">Sir</option>
+
+
+
+
+                        </select>
+                    </div>
+                    <input type="hidden" id="deduction" name="deduction" type="number" value="{{data['deduction']}}">
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-width-two-thirds" for="other-parent-first-name">
+                            First name
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="other-parent-first-name"
+                            name="other-parent-first-name" type="text" autocomplete="name" spellcheck="false">
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-width-two-thirds" for="other-parent-middle-name">
+                            Middle names (if they have any)
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="other-parent-middle-name"
+                            name="other-parent-middle-name" type="text" autocomplete="name" spellcheck="false">
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-!-width-two-thirds" for="other-parent-last-name">
+                            Last name
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="other-parent-last-name"
+                            name="other-parent-last-name" type="text" autocomplete="name" spellcheck="false">
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h1 class="govuk-fieldset__heading">
+                                    Has the other parent ever been known by a different name?
+                                </h1>
+                            </legend>
+                            <div id="contact-hint" class="govuk-hint">
+                               For example, a maiden name, middle name or previous legal name.
+                            </div>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="pp-name-1" name="pp-name" type="radio"
+                                        value="email" data-aria-controls="conditional-pp-name-1">
+                                    <label class="govuk-label govuk-radios__label" for="pp-name">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                                    id="conditional-pp-name-1">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="previous-first-anme">
+                                           First name
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-two-thirds" id="previous-first-anme"
+                                            name="previous-first-anme" type="text" spellcheck="false">
+                                    </div>
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="previous-middle-name">
+                                            Middle names (optional)
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-two-thirds" id="previous-middle-name"
+                                            name="previous-middle-name" type="text" spellcheck="false">
+                                    </div>
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="previous-last-name">
+                                           Last name
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-two-thirds" id="previous-last-name"
+                                            name="previous-last-name" type="text" spellcheck="false" >
+                                    </div>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="pp-name-2" name="pp-name" type="radio"
+                                        value="phone">
+                                    <label class="govuk-label govuk-radios__label" for="pp-name-2">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+            {% include "exit-button.html" %}
+
+        </div>
+    </main>
+</div>
+{% endblock %}

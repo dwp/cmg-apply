@@ -1,0 +1,117 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form method="post" novalidate>
+                    <!--start-->
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                            <h1 class="govuk-fieldset__heading">
+                                Give as much of the other parent’s current address as you can
+                            </h1>
+                        </legend>
+                        <span id="other-parent-date-of-birth-hint" class="govuk-hint">
+                            For example, you might know just the street or town.
+                        </span>
+
+                        <div class="govuk-!-padding-bottom-5"></div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="other-parent-address-line-1">
+                                 Address line 1
+                                <span class="govuk-visually-hidden">Address line 1</span>
+                            </label>
+                            <input class="govuk-input" id="other-parent-address-line-1" name="other-parent-address-line-1" type="text">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="other-parent-address-line-2">
+                                 Address line 2
+                                <span class="govuk-visually-hidden">Address line 2</span>
+                            </label>
+                            <input class="govuk-input" id="other-parent-address-line-2" name="other-parent-address-line-2" type="text">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="other-parent-address-town">
+                                Town or city
+                            </label>
+                            <input class="govuk-input govuk-!-width-two-thirds" id="other-parent-address-town" name="other-parent-address-town" type="text">
+                        </div>
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="other-parent-address-county">
+                                County
+                            </label>
+                            <input class="govuk-input govuk-!-width-two-thirds" id="other-parent-address-county" name="other-parent-address-county" type="text">
+                        </div>
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="other-parent-address-postcode">
+                                Postcode
+                            </label>
+                            <input class="govuk-input govuk-input--width-10" id="other-parent-address-postcode" name="other-parent-address-postcode"
+                                type="text">
+                        </div>
+
+                    </fieldset>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                                <p>
+                                   Country
+                                </p>
+                                
+                            
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                        England
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Scotland
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Wales
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Northern Ireland
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!--Stop-->
+
+
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+                                                                                         {% include "exit-button.html" %}
+
+        </div>
+    </main>
+</div>
+
+
+
+{% endblock %}

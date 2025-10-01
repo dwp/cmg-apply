@@ -1,0 +1,77 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form method="get" action="rp-nino.html" novalidate>
+
+                    <!--Checkboxes-->
+                    <div class="govuk-form-group" aria-describedby="changed-name-hint">
+                        <fieldset class="govuk-fieldset" aria-describedby="applicantDateOfBirthInformation"
+                            role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                                    What is your date of birth?
+                                </h1>
+                            </legend>
+                            <span id="applicantDateOfBirthInformation" class="govuk-hint">
+                                For example, 15 8 1985
+                            </span>
+                            <div class="govuk-inset-text">We ask this so we can check whether you need
+                                to pay the application fee.
+                            </div>
+
+                            <div class="govuk-date-input" id="applicant-date-of-birth">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="applicant-date-of-birth-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="applicant-date-of-birth-day" name="applicant-date-of-birth-day"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="applicant-date-of-birth-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                            id="applicant-date-of-birth-month" name="applicant-date-of-birth-month"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label"
+                                            for="applicant-date-of-birth-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                            id="applicant-date-of-birth-year" name="applicant-date-of-birth-year"
+                                            type="number" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="get" action="rp-dob.html" novalidate>
+          <h1 class="govuk-heading-xl">What is your name?</h1>
+
+          <!--title-->
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="sort"> Title</label>
+            <select class="govuk-select" id="sort" name="sort">
+              <option value="published">Ms</option>
+              <option value="updated">Mrs</option>
+              <option value="views">Miss</option>
+              <option value="comments">Mr</option>
+              <option value="comments">Captain</option>
+              <option value="comments">Colonel</option>
+              <option value="comments">Dame</option>
+              <option value="comments">Dr</option>
+              <option value="comments">Lady</option>
+              <option value="comments">Lord</option>
+              <option value="comments">Major</option>
+              <option value="comments">Professor</option>
+              <option value="comments">Reverend</option>
+              <option value="comments">Sir</option>
+            </select>
+          </div>
+          <input type="hidden" id="deduction" name="deduction" type="number" value="{{data['deduction']}}">
+          <!--first name-->
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-width-two-thirds" for="rp-first-name">
+              First name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="rp-first-name" name="rp-first-name" type="text"
+              autocomplete="name" spellcheck="false">
+          </div>
+          <!--middle names-->
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-width-two-thirds" for="rp-middle-name">
+              Middle names (optional)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="rp-middle-name" name="rp-middle-name" type="text"
+              autocomplete="name" spellcheck="false">
+          </div>
+          <!--Last name-->
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-width-two-thirds" for="rp-last-name">
+              Last name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="rp-last-name" name="rp-last-name" type="text"
+              autocomplete="name" spellcheck="false">
+          </div>
+
+          <p>
+          <h2 class="govuk-heading-m">
+            Does the other parent know you by a different name?
+          </h2>
+          </p>
+          <div class="govuk-inset-text">
+            Your current name will be shared with the other parent. If you do not want us to share this name, you will
+            need to stop your online application and apply by phone.
+          </div>
+
+          <span id="rpDateOfBirthInformation" class="govuk-hint">
+            For example, a previous married ('maiden') name or a middle name.
+          </span>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="different-name" name="different-name" type="radio"
+                    value="Yes" data-aria-controls="conditional-different-name">
+                  <label class="govuk-label govuk-radios__label" for="different-name">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-different-name">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-width-two-thirds" for="rp-different-first-name">
+                      Name the other parent knows you by
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="rp-different-first-name"
+                      name="rp-different-first-name" type="text" autocomplete="name" spellcheck="false">
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="different-name-2" name="different-name" type="radio"
+                    value="No">
+                  <label class="govuk-label govuk-radios__label" for="different-name-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+      {% include "exit-button.html" %}
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

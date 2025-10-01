@@ -1,0 +1,112 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form method="get" action="pp-previous-replay.html" novalidate>
+                    <!--start-->
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                            <h1 class="govuk-fieldset__heading">
+                                Give as much of the other parent’s previous address as you can
+                            </h1>
+                        </legend>
+                        <span id="other-parent-date-of-birth-hint" class="govuk-hint">
+                            For example, you might know just the street or town.
+                        </span>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="prev-address-line-1">
+                                 Address line 1
+                                <span class="govuk-visually-hidden">Address line 1</span>
+                            </label>
+                            <input class="govuk-input" id="prev-address-line-1" name="prev-address-line-1" type="text">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="prev-address-line-2">
+                                 Address line 2
+                                <span class="govuk-visually-hidden">Address line 2</span>
+                            </label>
+                            <input class="govuk-input" id="prev-address-line-2" name="prev-address-line-2" type="text">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="prev-address-town">
+                                Town or city
+                            </label>
+                            <input class="govuk-input govuk-!-width-two-thirds" id="prev-address-town" name="prev-address-town" type="text">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="prev-address-county">
+                                County
+                            </label>
+                            <input class="govuk-input govuk-!-width-two-thirds" id="prev-address-county" name="prev-address-county" type="text">
+                        </div>
+
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="prev-address-postcode">
+                                Postcode
+                            </label>
+                            <input class="govuk-input govuk-input--width-10" id="prev-address-postcode" name="prev-address-postcode"
+                                type="text">
+                        </div>
+
+                    </fieldset>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h1 class="govuk-fieldset__heading">
+                                    Country
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                        England
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Scotland
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Wales
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Northern Ireland
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!--Stop-->
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+            {% include "exit-button.html" %}
+
+        </div>
+    </main>
+</div>
+
+
+
+{% endblock %}

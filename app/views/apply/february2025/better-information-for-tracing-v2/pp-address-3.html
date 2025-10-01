@@ -1,0 +1,179 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" novalidate>
+          <!--start-->
+          <div class="govuk-form-group">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+              <h1 class="govuk-fieldset__heading">
+                You have told us the other parent’s current address is:
+              </h1>
+            </legend>
+
+            <span class="govuk-caption-l">
+              {{data['other-parent-address-line-1'] }}<br />
+              {{data['other-parent-address-line-2'] }}<br />
+              {{data['other-parent-address-town'] }}<br />
+              {{data['other-parent-address-county'] }}<br />
+              {{data['other-parent-address-postcode'] }}<br />
+            </span>
+            <br />
+            </h1>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  How do you know this is the other parent’s address?
+                </h1>
+              </legend>
+
+              <div id="other-parent-address-know-hint" class="govuk-body govuk-!-padding-top-3">
+                This information will help make sure we send letters to the other parent's correct address.
+              </div>
+
+              <div id="contact-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email"
+                    data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact">
+                    I have dropped my child off at this address
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                  id="conditional-contact">
+                  <p>When was the last time you dropped your child off at this address?</p>
+                  <span class="govuk-hint">For example, 7 2025 or just the year.
+                  </span>
+
+                  <div class="govuk-form-group">
+                    <div class="govuk-date-input__item">
+                      <label class="govuk-label govuk-date-input__label" for="dropped-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dropped-month"
+                        name="dropped-month" type="number" spellcheck="false">
+                    </div>
+                    <div class="govuk-date-input__item">
+
+                      <label class="govuk-label govuk-date-input__label" for="dropped-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dropped-year"
+                        name="dropped-year" type="number" spellcheck="false">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone"
+                    data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                    I have court papers, letters or documents that confirm the other parent’s address
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                  id="conditional-contact-2">
+                  <p>When are the court papers, letters or documents dated?</p>
+                  <span class="govuk-hint">For example, 31 7 2025.
+                  </span>
+
+                  <div class="govuk-form-group">
+                    <div class="govuk-date-input__item">
+
+                      <label class="govuk-label govuk-date-input__label" for="court-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="court-day"
+                        name="court-date" type="number" spellcheck="false">
+                    </div>
+                    <div class="govuk-date-input__item">
+
+                      <label class="govuk-label govuk-date-input__label" for="court-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="court-month"
+                        name="court-date" type="number" spellcheck="false">
+                    </div>
+                    <div class="govuk-date-input__item">
+
+                      <label class="govuk-label govuk-date-input__label" for="court-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="court-year"
+                        name="court-date" type="number" spellcheck="false">
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox"
+                    value="text message">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+                    I used to live at this address with the other parent in the last 90 days
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-4" name="contact" type="checkbox"
+                    value="text message">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-4">
+                    The other parent told me their address
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact-5" name="contact" type="checkbox"
+                    value="text message" data-aria-controls="conditional-contact-5">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact-5">
+                    Another reason
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                  id="conditional-contact-5">
+                  <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="700">
+                    <div class="govuk-form-group">
+                      <p>Explain how you know this is the other parent's address </p>
+                      <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5"
+                        aria-describedby="with-hint-info with-hint-hint"></textarea>
+                    </div>
+                    <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                      You can enter up to 700 characters
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+          <!--Stop-->
+
+          <a href="pp-previous-address" role="button" draggable="false" class="govuk-button">
+            Continue
+
+          </a>
+        </form>
+      </div>
+      {% include "exit-button.html" %}
+
+    </div>
+  </main>
+</div>
+
+
+
+{% endblock %}
