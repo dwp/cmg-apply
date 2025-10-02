@@ -8,126 +8,58 @@
     <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <form method="post" novalidate>
-
-                    <!-- <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                                <h1 class="govuk-fieldset__heading">
-                                    Do you know the other parent’s phone number?
-                            </legend>
-                    </div> -->
-                    <!-- <div class="govuk-form-group">
-
-                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="how-contacted-conditional" name="phone"
-                                    type="radio" value="Yes~pp-address-1"
-                                    data-aria-controls="conditional-how-contacted-conditional">
-                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                                id="conditional-how-contacted-conditional">
-                                <div class="govuk-form-group">
-                                    <div class="govuk-date-input__item">
-                                        <label class="govuk-label govuk-date-input__label" for="phone-number-pp">
-                                            Phone number
-                                        </label>
-
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-12"
-                                            id="phone-number-pp" name="phone-number-pp" type="number"
-                                            spellcheck="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="phone"
-                                    type="radio" value="Yes an alternative number~pp-address-1"
-                                    data-aria-controls="conditional-how-contacted-conditional-2">
-                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                                    Yes, an alternative number
-                                </label>
-                            </div>
-                             <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                                id="conditional-how-contacted-conditional-2">
-                                <div class="govuk-form-group">
-                                    <div class="govuk-date-input__item">
-                                        <label class="govuk-label govuk-date-input__label" for="phone-number-pp">
-                                            Phone number
-                                        </label>
-
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-12"
-                                            id="phone-number-pp" name="phone-number-pp" type="number"
-                                            spellcheck="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="how-contacted-conditional-3" name="phone"
-                                    type="radio" value="no~pp-address-1">
-                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
-                                    No
-                                </label>
-                            </div>
-
-                        </div>
-                    </div> -->
-
+                <form method="get" action="pp-address-1.html" novalidate>
 
                     <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        <fieldset class="govuk-fieldset" aria-describedby="pp-phone-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                                 <h1 class="govuk-fieldset__heading">
                                     What is the other parent's telephone number?
                                 </h1>
                             </legend>
-                            <div id="contact-hint" class="govuk-hint">
+                            <div id="pp-phone-hint" class="govuk-hint">
                                 Select all that apply.
                             </div>
                             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox"
-                                        value="Yes~pp-address-1" data-aria-controls="conditional-contact">
-                                    <label class="govuk-label govuk-checkboxes__label" for="contact">
-                                        I know their main contact number
+                                    <input class="govuk-checkboxes__input" id="pp-phone" name="pp-phone" type="checkbox"
+                                        value="Main" data-aria-controls="conditional-pp-phone">
+                                    <label class="govuk-label govuk-checkboxes__label" for="pp-phone">
+                                        I know their main number
                                     </label>
                                 </div>
                                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
-                                    id="conditional-contact">
+                                    id="conditional-pp-phone">
                                     <div class="govuk-form-group">
-                                        <label class="govuk-label" for="contact-by-email">
+                                        <label class="govuk-label" for="pp-phone-main">
                                             Phone number
                                         </label>
-                                        <input class="govuk-input govuk-!-width-one-third" id="contact-by-email"
-                                            name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                                        <input class="govuk-input govuk-!-width-one-third" id="pp-phone-main"
+                                            name="pp-phone-main" type="tel" spellcheck="false" autocomplete="email">
                                     </div>
                                 </div>
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox"
-                                        value="Alternative" data-aria-controls="conditional-contact-2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                                    <input class="govuk-checkboxes__input" id="pp-phone-2" name="pp-phone" type="checkbox"
+                                        value="Alternative" data-aria-controls="conditional-pp-phone-2">
+                                    <label class="govuk-label govuk-checkboxes__label" for="pp-phone-2">
                                         I know their alternative number
                                     </label>
                                 </div>
                                 <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
-                                    id="conditional-contact-2">
+                                    id="conditional-pp-phone-2">
                                     <div class="govuk-form-group">
-                                        <label class="govuk-label" for="contact-by-phone">
+                                        <label class="govuk-label" for="pp-phone-alternative">
                                             Phone number
                                         </label>
-                                        <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone"
-                                            name="contactByPhone" type="tel" autocomplete="tel">
+                                        <input class="govuk-input govuk-!-width-one-third" id="pp-phone-alternative"
+                                            name="pp-phone-alternative" type="tel" autocomplete="tel">
 
                                         <label class="govuk-label govuk-!-padding-top-4" for="event-name">
                                             Type of phone number (optional)
                                         </label>
-                                        <div id="contact-hint" class="govuk-hint">This must be a number that the other
+                                        <div id="pp-phone-hint" class="govuk-hint">This must be a number that the other
                                             parent uses. For example, their work number.</div>
-                                        <input class="govuk-input" id="event-name" name="eventName" type="text">
+                                        <input class="govuk-input" id="pp-phone-alternative-type" name="pp-phone-alternative-type" type="text">
 
                                     </div>
                                 </div>
@@ -135,9 +67,9 @@
                                 <div class="govuk-checkboxes__divider">or</div>
 
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox"
+                                    <input class="govuk-checkboxes__input" id="pp-phone-3" name="pp-phone" type="checkbox"
                                         value="None" data-behaviour="exclusive">
-                                    <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+                                    <label class="govuk-label govuk-checkboxes__label" for="pp-phone-3">
                                         I do not know their phone number
                                     </label>
                                 </div>

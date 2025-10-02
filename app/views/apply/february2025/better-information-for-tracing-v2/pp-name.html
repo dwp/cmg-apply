@@ -22,15 +22,7 @@
                     Tell us as much of the other parent's full legal name as possible.
                 </div>
 
-                <!-- <div class="govuk-warning-text">
-                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                    <strong class="govuk-warning-text__text">
-                        <span class="govuk-visually-hidden">Warning</span>
-                        Giving us as much information as possible can help us process your application faster.
-                    </strong>
-                </div> -->
-
-                <form method="post" novalidate>
+                <form method="get" action="pp-dob.html" novalidate>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="sort">
                             Title
@@ -94,20 +86,20 @@
                             </div>
                             <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="pp-name-1" name="pp-name" type="radio"
-                                        value="email" data-aria-controls="conditional-pp-name-1">
-                                    <label class="govuk-label govuk-radios__label" for="pp-name">
+                                    <input class="govuk-radios__input" id="pp-other-name-1" name="pp-other-name" type="radio"
+                                        value="Yes" data-aria-controls="conditional-pp-other-name-1">
+                                    <label class="govuk-label govuk-radios__label" for="pp-other-name-1">
                                         Yes
                                     </label>
                                 </div>
                                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                                    id="conditional-pp-name-1">
+                                    id="conditional-pp-other-name-1">
                                     <div class="govuk-form-group">
-                                        <label class="govuk-label" for="previous-first-anme">
+                                        <label class="govuk-label" for="previous-first-name">
                                            First name
                                         </label>
-                                        <input class="govuk-input govuk-!-width-two-thirds" id="previous-first-anme"
-                                            name="previous-first-anme" type="text" spellcheck="false">
+                                        <input class="govuk-input govuk-!-width-two-thirds" id="previous-first-name"
+                                            name="previous-first-name" type="text" spellcheck="false">
                                     </div>
                                     <div class="govuk-form-group">
                                         <label class="govuk-label" for="previous-middle-name">
@@ -125,9 +117,9 @@
                                     </div>
                                 </div>
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="pp-name-2" name="pp-name" type="radio"
-                                        value="phone">
-                                    <label class="govuk-label govuk-radios__label" for="pp-name-2">
+                                    <input class="govuk-radios__input" id="pp-other-name-2" name="pp-other-name" type="radio"
+                                        value="No">
+                                    <label class="govuk-label govuk-radios__label" for="pp-other-name-2">
                                         No
                                     </label>
                                 </div>
