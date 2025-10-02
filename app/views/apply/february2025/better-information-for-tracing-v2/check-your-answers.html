@@ -116,16 +116,20 @@
                         </dt>
                             <dd class="govuk-summary-list__value">
 
-                                {{data['pp-phone']}}
-                                <br>
+                                {# {{data['pp-phone']}} #}
+                               
                                 {% if data['pp-phone'] == "Main" %}
-                                    {{data['pp-phone-main']}}
+                                Main:   {{data['pp-phone-main']}}
                                 {% endif %}
 
                                 {% if data['pp-phone'] == "Alternative" %}
-                                    {{data['pp-phone-alternative']}}
+                                 Alternative:   {{data['pp-phone-alternative']}}
                                     <br>
-                                    {{data['pp-phone-alternative-type']}}
+                                 Type:   {{data['pp-phone-alternative-type']}}
+                                {% endif %}
+
+                                {% if data['pp-phone'] == "None" %}
+                                 None
                                 {% endif %}
 
                             </dd>
@@ -185,8 +189,8 @@
                         </dt>
                                 <dd class="govuk-summary-list__value">
 
-                                    {{data['pp-address-how-know']}}
-                                    <br/>
+                                    {# {{data['pp-address-how-know']}}
+                                    <br/> #}
 
                                     {% if data['pp-address-how-know'] == "I have droppped my child off at this address" %}
                                         {{data['dropped-month']}} - {{data['dropped-year']}}
@@ -202,7 +206,7 @@
 
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="op-address-3.html">
+                                    <a class="govuk-link" href="pp-address-3.html">
                                 Change
                                 <span class="govuk-visually-hidden"> name</span>
                                     </a>
@@ -234,7 +238,7 @@
 
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
-                                    <a class="govuk-link" href="op-address-3.html">
+                                    <a class="govuk-link" href="pp-address-3.html">
                                 Change
                                 <span class="govuk-visually-hidden"> name</span>
                                     </a>
@@ -290,6 +294,20 @@
                         </dt>
                             <dd class="govuk-summary-list__value">
 
+                                {{data['prev-address-how-know']}}
+                                    <br/>
+
+                                    {% if data['prev-address-how-know'] == "The other parent told me they have moved to a different address" %}
+                                        {{data['lived-there-month']}} - {{data['lived-there-year']}}
+                                    {% endif %}
+
+                                    {% if data['prev-address-how-know'] == "I used to live at this address with the other parent" %}
+                                        {{data['moved-out-month']}} -  {{data['moved-out-year']}}
+                                    {% endif %}
+
+                                    {% if data['prev-address-how-know'] == "Another reason" %}
+                                        {{data['another-reason']}}
+                                    {% endif %}
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-address-3">
@@ -307,6 +325,21 @@
                         </dt>
                             <dd class="govuk-summary-list__value">
 
+                                {{data['prev-address-how-know']}}
+                                    <br/>
+
+                                    {% if data['prev-address-how-know'] == "The other parent told me they have moved to a different address" %}
+                                        {{data['lived-there-month']}} - {{data['lived-there-year']}}
+                                    {% endif %}
+
+                                    {% if data['prev-address-how-know'] == "I used to live at this address with the other parent" %}
+                                        {{data['moved-out-month']}} -  {{data['moved-out-year']}}
+                                    {% endif %}
+
+                                    {% if data['prev-address-how-know'] == "Another reason" %}
+                                        {{data['another-reason']}}
+                                    {% endif %}
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-address-3">
@@ -317,8 +350,6 @@
                         </div>
                         {% endif %}
 
-                        
-
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Jobs or benefits
@@ -326,7 +357,7 @@
                             <dd class="govuk-summary-list__value">
 
                                 {% if data['pp-anythingElse'] == "jobsBenefits" %}
-                                    {{data['jobs-benefits']}}
+                                    {{data['moreDetail-1']}}
                                 {% else %}
                                 None
                                 {% endif %}
