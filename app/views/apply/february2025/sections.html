@@ -1,59 +1,70 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner-padding-top.html" %}
+{% extends "layout.html" %}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner-padding-top.html" %}
 
-<!--Feedback banner stop-->
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper " id="main-content" role="main">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Apply for help arranging child maintenance Prototype</h1>
+          <h1 class="govuk-heading-xl">Apply for help arranging child maintenance Prototype</h1>
 
-        
+          <p>
+            <strong>What it is:</strong>
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Full apply for help arranging child maintenance journey </li>
+            <li>Includes both the RP and PP journeys</li>
+          </ul>
 
-        <p><strong>What it is:</strong></p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Full apply for help arranging child maintenance journey </li>
-          <li>Includes both the RP and PP journeys</li>
-        </ul>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          <p>
+            <strong>Latest user research:</strong>
+          </p>
+          <p class="govuk-heading-s">Shared Care - October 2025</p>
+          <p class="govuk-body">User Research screens- Starting at Qualifying Children questions</P>
 
-        <p><strong>Latest user research:</strong></p>
-        <p class="govuk-heading-s">Shared Care - October 2025</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/apply/february2025/shared-care/1-name.html">Example journey</a> - Starting at Qualifying Children questions</li>
-        </ul>
-
-        <p class="govuk-heading-s">Better information for tracing - October 2025</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/apply/february2025/better-information-for-tracing-v2/welcome-v2a.html">Example journey: A</a> - Start, Your details, Other Parent message screen - questions</li>
-
-           <li><a href="/apply/february2025/better-information-for-tracing-v2/welcome-v2b.html">Example journey: B</a> - Start, Your details, Other Parent message screen - questions</li> 
+          <p><a href="/apply/february2025/shared-care/1-name.html" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Shared care </a>
+          </P>
           
-        </ul>
+          <p class="govuk-heading-s">Better information for tracing - October 2025</p>
+          <p class="govuk-body">User Research screens - Example journey: A - Start, Your details, Other Parent message screen - questions</P>
+          <p><a href="/apply/february2025/better-information-for-tracing-v2/welcome-v2a.html" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Better information-A </a>
+          </P>
 
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <p class="govuk-heading-s">Better information for tracing - September 2025</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/apply/february2025/better-information-for-tracing/op-question-list">Example journey</a> - New other parent questions select page</li>
-
-           <li><a href="/apply/february2025/better-information-for-tracing/welcome">Test 1</a> - Start, Your deatils, Other parent details</li> 
+          <p class="govuk-body">User Research screens - Example journey: B - Start, Your details, Other Parent message screen - questions</P>
+          <p><a href="/apply/february2025/better-information-for-tracing-v2/welcome-v2b.html" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Better information-B </a>
+          </P>
           
-        </ul>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          <p class="govuk-heading-s">Better information for tracing - September 2025</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/apply/february2025/better-information-for-tracing/op-question-list">Example journey</a> - New other parent questions select page</li>
+          </ul>
+          <p class="govuk-body">User Research screens - Example journey: Start, Your deatils, Other parent details</p>
+          <p><a href="/apply/february2025/better-information-for-tracing/welcome" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Better information </a>
+          </P>
 
-         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-        <p class="govuk-heading-s">Better information for tracing - August 2025</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="/apply/february2025/1-start-eligibility/welcome">Test 1</a> - Updated Apply start page</li>
-          <li><a href="/apply/february2025/7-other-parent-RP/other-parent-start">Test 2</a> - New other parent start
+          <p class="govuk-heading-s">Better information for tracing - August 2025</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/apply/february2025/1-start-eligibility/welcome">Test 1</a> - Updated Apply start page</li>
+            <li>
+              <a href="/apply/february2025/7-other-parent-RP/other-parent-start">Test 2</a> - New other parent start
             page</li>
-          <li><a href="/apply/february2025/7-other-parent-RP/other-parent-question-list">Test 3</a> - New other parent
+            <li>
+              <a href="/apply/february2025/7-other-parent-RP/other-parent-question-list">Test 3</a> - New other parent
             question selector</li>
-          <li><a href="/apply/february2025/7-other-parent-RP/pp-address-start">Test 4</a> - New address start page</li>
-          <!-- <li><a href="/apply/february2025/7-other-parent-RP/pp-name">Test 4</a> - Updated other parents name</li>
+            <li>
+              <a href="/apply/february2025/7-other-parent-RP/pp-address-start">Test 4</a> - New address start page</li>
+            <!-- <li><a href="/apply/february2025/7-other-parent-RP/pp-name">Test 4</a> - Updated other parents name</li>
           <li><a href="/apply/february2025/7-other-parent-RP/pp-dob">Test 5</a> - Updated other parents date of birth or age</li>
           <li><a href="/apply/february2025/7-other-parent-RP/pp-nino">Test 6</a> - Updated other parents National Insurance number</li>
           <li><a href="/apply/february2025/7-other-parent-RP/pp-phone">Test 7</a> - Updated other parents phone number</li>
@@ -61,72 +72,69 @@
           <li><a href="/apply/february2025/7-other-parent-RP/pp-previous-address">Test 9</a> - Updated other parents previous address</li>
           <li><a href="/apply/february2025/7-other-parent-RP/pp-address-3">Test 10</a> - Updated how do you know this address for the other parent</li>
           <li><a href="/apply/february2025/7-other-parent-RP/pp-anything-else">Test 11</a> - Updated anything else known about the other parent</li> -->
-        </ul>
+          </ul>
 
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          <!-- Receiving parent jounrey -->
 
-        <!-- Receiving parent jounrey -->
-
-        <h2 class="govuk-heading-m">Full Apply journey</h2>
+          <h2 class="govuk-heading-m">Full Apply journey</h2>
 
           <a href="1-start-eligibility/welcome.html" role="button" draggable="false"
           class="govuk-button govuk-button--start" data-module="govuk-button">
           Start now
           <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
             viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-          </svg>
-        </a>
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+            </svg>
+          </a>
 
-        <p><strong>Sections - Receiving parent specific:</strong></p>
+          <p>
+            <strong>Sections - Receiving parent specific:</strong>
+          </p>
 
-        <p>
+          <p>
           Please Note: Section 4 does not exist for RP users
         </p>
 
-
-        <ul class="govuk-list">
-          <li>
-            <a class="govuk-link" href="/apply/february2025/1-start-eligibility/live-in-uk">Section 1: Eligibility</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="/apply/february2025/mcmc-sign-up/using-a-child-maintenance-account-rp">Section
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="/apply/february2025/1-start-eligibility/live-in-uk">Section 1: Eligibility</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="/apply/february2025/mcmc-sign-up/using-a-child-maintenance-account-rp">Section
               2: MCMC sign-up</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="/apply/february2025/3-applicant-info-RP/rp-name.html">Section 3: Applicant
+            </li>
+            <li>
+              <a class="govuk-link" href="/apply/february2025/3-applicant-info-RP/rp-name.html">Section 3: Applicant
               detail collection</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="/apply/february2025/3-applicant-info-RP/equality/extra-question">Section 4
+            </li>
+            <li>
+              <a class="govuk-link" href="/apply/february2025/3-applicant-info-RP/equality/extra-question">Section 4
               (optional): Equality questions</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="/apply/february2025/5-children-info-RP/1-name">Section 5: Qualifying
+            </li>
+            <li>
+              <a class="govuk-link" href="/apply/february2025/5-children-info-RP/1-name">Section 5: Qualifying
               children</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="/apply/february2025/6-service-types-RP/direct-pay">Section 6: Service Types</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="/apply/february2025/7-other-parent-RP/pp-name">Section 7: Other parent</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="8-existing-cases-RP/previous-application.html">Section 8: Previous
+            </li>
+            <li>
+              <a class="govuk-link" href="/apply/february2025/6-service-types-RP/direct-pay">Section 6: Service Types</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="/apply/february2025/7-other-parent-RP/pp-name">Section 7: Other parent</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="8-existing-cases-RP/previous-application.html">Section 8: Previous
               Application</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="9-confirmation-RP/declaration-fee.html">Section 9: Declaration</a>
-          </li>
-        </ul>
+            </li>
+            <li>
+              <a class="govuk-link" href="9-confirmation-RP/declaration-fee.html">Section 9: Declaration</a>
+            </li>
+          </ul>
 
+        </div>
       </div>
-    </div>
-  </main>
-</div>
-
-
-
+    </main>
+  </div>
 
 {% endblock %}
