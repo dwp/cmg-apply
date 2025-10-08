@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 {% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
 {% block content %}
   <!--Feedback banner start-->
@@ -11,35 +11,48 @@
         <div class="govuk-grid-column-two-thirds">
 
           <form action='' method='post'>
+
             <div class="govuk-form-group">
-              <h1 class="govuk-heading-xl">
-              Tell us any additional information about [Childs name] staying overnight with the other parent?
-            </h1>
-
-              <div class="govuk-form-group">
-                {# <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label-xl" for="more-detail">Tell us any additional information about [Childs name] staying overnight with the other parent?</label>
-                </h1> #}
-                <div id="more-detail-hint" class="govuk-hint">For example tell us about [content to add around explaining the arrangement?] </div>
-                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-                <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
-                        You can enter up to 700 characters [ can we increase this amount?]
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">Do you want to tell us more about [childname]'s overnight stays?</h1>
+                </legend>
+                <div id="contact-hint" class="govuk-hint">For example, tell us about circumstances that affect your arranagments. Do not enter any numbers of nights or nights you have already told us about.
                 </div>
-              </div>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">Yes</label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      {# <div id="more-detail-hint" class="govuk-hint">For example tell us about [content to add around explaining the arrangement?] </div> #}
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                      <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                        You can enter up to 700 characters [ can we increase this amount?]
+                    </div>
+                  </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="contact-2"> No</label>
+                  </div>
+                </div>
+              
+            </fieldset>
+          </div>
 
-            </div>
-
-            {# <button type="submit" class="govuk-button">
+          {# <button type="submit" class="govuk-button">
             Continue
           </button> #}
           <a href="../sections" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Continue</a>
 
-          </form>
+        </form>
 
-        </div>
-        {% include "exit-button.html" %}
       </div>
-    </main>
-  </div>
+      {% include "exit-button.html" %}
+    </div>
+  </main>
+</div>
 
 {% endblock %}

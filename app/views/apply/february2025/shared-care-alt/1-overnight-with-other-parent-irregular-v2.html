@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block pageTitle %} How often does the child stay extra nights with the other parent? {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="get" action='1-overnight-local-authority.html' >
+            <div class="govuk-form-group">
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+
+                {% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %} Each year, how often does [child's name] stay with the other parent overnight? 
+                {% else %}
+                Each year, how often does [child's name] stay with the other parent on extra nights?
+                {% endif %}
+
+              </h1>
+              <p class="govuk-body govuk-!-padding-top-0">{% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %}
+                {% else %}
+                Tell us about extra nights like school holidays or birthdays. Do not include nights you have already told us about.
+                {% endif %}
+              </p>
+  
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="extranights-amount">How many nights?</label>
+                {# <div id="event-name-hint" class="govuk-hint 0">
+
+                {% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %} For example, [content to add for overnight when needed]
+                {% else %}
+                For example, extra nights during school holidays or birthdays. Do not include nights you have already told us about.
+                {% endif %}
+
+                </div> #}
+                <input class="govuk-input govuk-input--width-2 " id="extranights-amount" name="extranights-amount" type="number">
+              </div>
+            </div>
+
+            {# <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend">How often?</legend>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="extraNights" name="extraNights" type="radio" value="Year">
+                    <label class="govuk-label govuk-radios__label" for="extraNights">Year</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">Fortnightly</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">Monthly</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="extraNights-2" name="extraNights" type="radio" value="None">
+                    <label class="govuk-label govuk-radios__label" for="extraNights-2">None </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div> #}
+
+            <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

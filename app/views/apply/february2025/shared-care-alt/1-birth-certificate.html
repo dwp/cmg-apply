@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block pageTitle %} Are you named on this child's birth certificate? {% endblock %} {%
+block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <form method="get" action="1-child-benefit-v3.html" novalidate>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="child1DateBirthInformation" role="group">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                                <h1 class="govuk-fieldset__heading">
+                                    Is the other parent named on {{data['child-1-first-name'] }}'s birth certificate?
+                                </h1>
+                            </legend>
+
+                            <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="birth-certificate" name="birth-certificate"
+                                        type="radio" value="Yes">
+                                    <label class="govuk-label govuk-radios__label" for="birth-certificate">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="birth-certificate-2" name="birth-certificate"
+                                        type="radio" value="No">
+                                    <label class="govuk-label govuk-radios__label" for="birth-certificate-2">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                </form>
+            </div>
+            {% include "exit-button.html" %}
+        </div>
+    </main>
+</div>
+
+
+{% endblock %}
