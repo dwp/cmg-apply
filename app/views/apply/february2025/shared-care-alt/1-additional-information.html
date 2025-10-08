@@ -15,7 +15,10 @@
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                  <h1 class="govuk-fieldset__heading">Do you want to tell us more about [childname]'s overnight stays?</h1>
+                  <h1 class="govuk-fieldset__heading">Do you want to tell us more about {% if data['child-1-first-name']%} {{data['child-1-first-name']}}&acute;s
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}overnight stays?</h1>
                 </legend>
                 <div id="contact-hint" class="govuk-hint">For example, tell us about circumstances that affect your arranagments. Do not enter any numbers of nights or nights you have already told us about.
                 </div>

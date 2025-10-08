@@ -13,7 +13,11 @@
                         <fieldset class="govuk-fieldset" aria-describedby="child1DateBirthInformation" role="group">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
                                 <h1 class="govuk-fieldset__heading">
-                                    What is {{data['child-1-first-name'] }}&rsquo;s date of birth?
+                                    What is 
+                                    {% if data['child-1-first-name']%} {{data['child-1-first-name']}}&acute;s
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %} date of birth?
                                 </h1>
                             </legend>
                             <span id="child1DateBirthInformation" class="govuk-hint">

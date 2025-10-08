@@ -16,7 +16,10 @@ content %}
               <fieldset class="govuk-fieldset" aria-describedby="cifba-benefit-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   <h1 class="govuk-fieldset__heading">
-                  Do you get Child Benefit payments for {{data['child-1-first-name'] }}?
+                  Do you get Child Benefit payments for{% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}?
                 </h1>
                 </legend>
 

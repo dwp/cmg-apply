@@ -14,9 +14,15 @@
             <div class="govuk-form-group">
               <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
 
-                {% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %} Each year, how often does [child's name] stay with the other parent overnight? 
+                {% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %} Each year, how often does {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}stay with the other parent overnight? 
                 {% else %}
-                Each year, how often does [child's name] stay with the other parent on extra nights?
+                Each year, how often does {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}stay with the other parent on extra nights?
                 {% endif %}
 
               </h1>

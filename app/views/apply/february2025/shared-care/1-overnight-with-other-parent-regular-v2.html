@@ -13,11 +13,17 @@
           <form method="get" action='1-overnight-with-other-parent-irregular-v2.html'>
             <div class="govuk-form-group">
               <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-              How often does {{data['child-1-first-name'] }} [child's name] regularly stay overnight with the other parent?
+              How often does {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}regularly stay overnight with the other parent?
             </h1>
 
             <p class="govuk-body">
-              If you have not yet worked out how often {{data['child-1-first-name'] }}[child's name] will stay overnight with
+              If you have not yet worked out how often {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}will stay overnight with
               the other parent, tell us what's happening now.
               <br>
               If overnight stays alter each week, tell us the total of nights you have scheduled.

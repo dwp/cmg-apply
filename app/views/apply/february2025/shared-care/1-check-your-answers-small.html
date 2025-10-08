@@ -9,7 +9,10 @@
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
         <form method="post" novalidate>
-          <h1 class="govuk-heading-xl">Check {{data['child-1-first-name'] }} {{data['child-1-last-name'] }}[child'sname] details
+          <h1 class="govuk-heading-xl">Check {% if data['child-1-first-name']%} {{data['child-1-first-name']}} {{data['child-1-last-name'] }}&acute;s
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}details
           </h1>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">

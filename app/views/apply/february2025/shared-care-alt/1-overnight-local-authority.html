@@ -39,7 +39,10 @@ content %}
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                  <h1 class="govuk-fieldset__heading"> Does [childs name] spend any nights in local authority care?</h1>
+                  <h1 class="govuk-fieldset__heading"> Does {% if data['child-1-first-name']%} {{data['child-1-first-name']}}&acute;s
+                  {% else %}
+                  [Child's name]
+                  {% endif %}spend any nights in local authority care?</h1>
                 </legend>
                 <div id="contact-hint" class="govuk-hint">This is where your child or children are subject to a care order and they stay overnight elsewhere, for example with a foster parent or in a care home</div>
                 <div class="govuk-radios" data-module="govuk-radios">

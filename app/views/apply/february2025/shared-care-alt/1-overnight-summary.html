@@ -12,7 +12,10 @@
                 <div class="govuk-grid-column-two-thirds">
 
                     <form method="get" action='1-check-your-answers-small.html' novalidate>
-                        <h1 class="govuk-heading-xl">Review [Child name] overnight stays</h1>
+                        <h1 class="govuk-heading-xl">Review {% if data['child-1-first-name']%} {{data['child-1-first-name']}}&acute;s
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}overnight stays</h1>
                         <div class="govuk-form-group">
                             <dl class="govuk-summary-list">
                                 <div class="govuk-summary-list__row">
