@@ -1,1 +1,11 @@
-{"serviceName":"Apply for help arranging child maintenance"}
+{
+  "serviceName": "Apply for help arranging child maintenance",
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}
+
+
+
