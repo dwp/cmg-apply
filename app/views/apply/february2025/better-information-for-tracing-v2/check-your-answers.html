@@ -181,7 +181,7 @@
                                 </a>
                             </dd>
                         </div>
-
+  
                         {% if data['op-address'] == "I know the full address" %}
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
@@ -191,9 +191,10 @@
 
                                     {# {{data['pp-address-how-know']}}
                                     <br/> #}
+    
 
-                                    {% if data['pp-address-how-know'] == "I have droppped my child off at this address" %}
-                                        {{data['dropped-month']}} - {{data['dropped-year']}}
+                                    {% if data['pp-address-how-know'].includes("I have dropped my child off at this address") %}
+                                       {{data['pp-address-how-know']}} <br> {{data['dropped-month']}} - {{data['dropped-year']}}
                                     {% endif %}
 
                                     {% if data['pp-address-how-know'] == "I have official docmuments" %}

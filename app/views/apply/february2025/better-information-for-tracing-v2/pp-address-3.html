@@ -7,7 +7,7 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form method="post" novalidate>
+        <form method="get" action="pp-previous-address.html" novalidate>
           <!--start-->
           <div class="govuk-form-group">
 
@@ -172,10 +172,14 @@
           </div>
           <!--Stop-->
 
-          <a href="pp-previous-address" role="button" draggable="false" class="govuk-button">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+          {# <a href="pp-previous-address" role="button" draggable="false" class="govuk-button">
             Continue
 
-          </a>
+          </a> #}
         </form>
       </div>
       {% include "exit-button.html" %}
