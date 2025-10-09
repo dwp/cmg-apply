@@ -20,7 +20,7 @@
                                     [Child's name]
                                     {% endif %}overnight stays?</h1>
                 </legend>
-                <div id="contact-hint" class="govuk-hint">For example, tell us about circumstances that might effect your arrangement. 
+                <div id="contact-hint" class="govuk-hint">Tell us about unusual circumstances that might affect your arrangement. Do not include any nights that you have already told us about.
                 </div>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
@@ -29,7 +29,7 @@
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
                     <div class="govuk-form-group">
-                      <div id="more-detail-hint" class="govuk-hint">Do not enter any numbers of nights or overnight stays you have already told us about.</div>
+                      {# <div id="more-detail-hint" class="govuk-hint">Do not enter any numbers of nights or overnight stays you have already told us about.</div> #}
                       <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
                       <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                         You can enter up to 700 characters
