@@ -9,7 +9,7 @@ endblock %} {% block content %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="get" action='1-overnight-with-other-parent-irregular.html'>
+        <form method="get" action='1-overnight-local-authority.html'>
           <div class="govuk-form-group">
             <h1 class="govuk-heading-xl">
               How often does {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
@@ -40,7 +40,7 @@ endblock %} {% block content %}
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-overnight-1">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="shared-care-days-amount">
-                      How many overnight stays in a week?
+                      How many nights in a week?
                     </label>
                     <div class="govuk-input__wrapper">
                       <div class="govuk-input--width-10" aria-hidden="false"></div>
@@ -60,7 +60,7 @@ endblock %} {% block content %}
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-overnight-2">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="contact-by-phone">
-                      How many overnight stays in a fortnight?
+                      How many nights in a fortnight?
                     </label>
                     <div class="govuk-input__wrapper">
                       <div class="govuk-input--width-10" aria-hidden="false"></div>
@@ -71,16 +71,16 @@ endblock %} {% block content %}
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="overnight-3" name="overnight" type="radio" value="Monthly"
+                  <input class="govuk-radios__input" id="overnight-3" name="overnight" type="radio" value="4 weekly"
                     data-aria-controls="conditional-overnight-3">
                   <label class="govuk-label govuk-radios__label" for="overnight-3">
-                    Monthly
+                    Every 4 weeks
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-overnight-3">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="contact-by-text">
-                      How many overnight stays in a month?
+                      How many nights in 4 weeks?
                     </label>
                     <div class="govuk-input__wrapper">
                       <div class="govuk-input--width-10" aria-hidden="false"></div>
@@ -91,13 +91,33 @@ endblock %} {% block content %}
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="overnight-4" name="overnight" type="radio"
-                    value="No set arrangement" data-aria-controls="conditional-overnight-4">
+                  <input class="govuk-radios__input" id="overnight-4" name="overnight" type="radio" value="Monthly"
+                    data-aria-controls="conditional-overnight-4">
+                  <label class="govuk-label govuk-radios__label" for="overnight-4">
+                    Monthly
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-overnight-4">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-text">
+                      How many nights in a month?
+                    </label>
+                    <div class="govuk-input__wrapper">
+                      <div class="govuk-input--width-10" aria-hidden="false"></div>
+                      <input class="govuk-input govuk-input--width-5" id="shared-care-days-amount-4"
+                        name="shared-care-days-amount-4" type="text" spellcheck="false">
+                    </div>
+                  </div>
+                </div>
+
+                {# <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="overnight-5" name="overnight" type="radio"
+                    value="No set arrangement" data-aria-controls="conditional-overnight-5">
                   <label class="govuk-label govuk-radios__label" for="overnight-4">
                     No set arrangement
                   </label>
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-overnight-4">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-overnight-5">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="shared-care-never">
                       Tell us what's happening now (Optional)
@@ -110,12 +130,12 @@ endblock %} {% block content %}
                         rows="5"></textarea>
                     </div>
                   </div>
-                </div>
+                </div> #}
 
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="overnight-5" name="overnight" type="radio" value="Never">
-                    <label class="govuk-label govuk-radios__label" for="overnight-5">
+                    <label class="govuk-label govuk-radios__label" for="overnight-6">
                       Never
                     </label>
                   </div>
@@ -128,7 +148,10 @@ endblock %} {% block content %}
             <fieldset class="govuk-fieldset" aria-describedby="overnight" role="group">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
                 <h1 class="govuk-fieldset__heading" id="overnight">
-                  Does {{data['child-1-first-name'] }} spend any additional nights with the other parent that you
+                  Does {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+              {% else %}
+              [Child's name]
+              {% endif %} spend any extra nights with the other parent that you
                   have not already told us about?
                 </h1>
                 <span class="govuk-hint">For example, special occasions like school holidays or birthdays.</span>
@@ -146,14 +169,14 @@ endblock %} {% block content %}
                   <div class="govuk-form-group">
                     <div class="govuk-date-input__item">
                       <label class="govuk-label govuk-date-input__label" for="specialNights">
-                        Number of additional nights a year
+                        How many extra nights a year?
                       </label>
                       <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="specialNights"
                         name="specialNights" type="number" spellcheck="false">
                     </div>
                   </div>
 
-                  <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="700">
+                  {# <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="700">
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="add-help-yes">
                         Is there anything else you want to tell us about the additional nights? (Optional)
@@ -164,7 +187,7 @@ endblock %} {% block content %}
                     <div id="specialNightsExtra-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
                       You can enter up to 700 characters
                     </div>
-                  </div>
+                  </div> #}
                 </div>
 
                 <div class="govuk-radios__item">
