@@ -10,7 +10,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form method="post" novalidate>
+          <form method="get" action="pp-anything-else.html" novalidate>
             <!--start-->
             <div class="govuk-form-group">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -148,9 +148,12 @@
               </fieldset>
             </div>
 
-            <a href="pp-anything-else" role="button" draggable="false" class="govuk-button">
+            {# <a href="pp-anything-else" role="button" draggable="false" class="govuk-button">
             Continue
-          </a>
+          </a> #}
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
           </form>
         </div>
 

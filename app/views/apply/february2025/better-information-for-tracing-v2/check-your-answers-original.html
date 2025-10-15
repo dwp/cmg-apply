@@ -6,25 +6,25 @@
     <!--Feedback banner stop-->
     <div class="govuk-width-container">
         {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
- 
+
         <main class="govuk-main-wrapper " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds-from-desktop">
- 
+
                     <h1 class="govuk-heading-xl">Check your answers about the other parent</h1>
- 
+
                     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Name
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
+
                                 {{data['other-parent-first-name']}}
                                 {{data['other-parent-middle-name']}}
                                 {{data['other-parent-last-name']}}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-name.html">
@@ -33,13 +33,13 @@
                                 </a>
                             </dd>
                         </div>
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                            Has the other parent been known by a different name?
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
+
                                 {{data['pp-other-name']}}
                                 <br>
                                 {% if data['pp-other-name'] == "Yes" %}
@@ -47,7 +47,7 @@
                                     {{data['previous-middle-name']}}
                                     {{data['previous-last-name']}}
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-name.html">
@@ -56,30 +56,30 @@
                                 </a>
                             </dd>
                         </div>
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Age or date of birth
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
+
                                 {{data['op-dob']}}
                                 <br>
                                 {% if data['op-dob'] == "Full date of birth" %}
-                                    {{data['op-dob-day']}} -
+                                    {{data['op-dob-day']}} - 
                             {{data['op-dob-month']}} - {{data['op-dob-year']}}
                                 {% endif %}
- 
+
                                 {% if data['op-dob'] == "Part date of birth" %}
                                     {{data['op-dob-part-day']}}
                                     {{data['op-dob-part-month']}}
                                     {{data['op-dob-part-year']}}
                                 {% endif %}
- 
+
                                 {% if data['op-dob'] == "Age" %}
                                     {{data['op-age']}}
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-dob.html">
@@ -88,19 +88,19 @@
                                 </a>
                             </dd>
                         </div>
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             National Insurance number
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
+
                                 {{data['pp-nino']}}
                                 <br>
                                 {% if data['pp-nino'] == "I know their National Insurance number" %}
                                     {{data['nino']}}
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-nino.html">
@@ -109,30 +109,29 @@
                                 </a>
                             </dd>
                         </div>
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Phone number
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
+
                                 {# {{data['pp-phone']}} #}
                                
-                                {% if data['pp-phone'] and data['pp-phone'].includes("Main") %}
+                                {% if data['pp-phone'] == "Main" %}
                                 Main:   {{data['pp-phone-main']}}
-                                    <br/>
                                 {% endif %}
- 
-                                {% if data['pp-phone'] and data['pp-phone'].includes("Alternative") %}
+
+                                {% if data['pp-phone'] == "Alternative" %}
                                  Alternative:   {{data['pp-phone-alternative']}}
                                     <br>
                                  Type:   {{data['pp-phone-alternative-type']}}
                                 {% endif %}
- 
-                                {% if data['pp-phone'] and data['pp-phone'].includes("None") %}
+
+                                {% if data['pp-phone'] == "None" %}
                                  None
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-phone.html">
@@ -141,13 +140,13 @@
                                 </a>
                             </dd>
                         </div>
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Current address
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
+
                                 {{data['op-address']}}
                                 <br>
                                 {% if data['op-address'] == "I know the full address" %}
@@ -157,7 +156,7 @@
                                 West Yorkshire <br>
                                 LS11 1SL
                                 {% endif %}
- 
+
                                 {% if data['op-address'] == "I know part of the address" %}
                                     {{data['other-parent-address-line-1'] }}<br/>
                                     {{data['other-parent-address-line-2'] }}<br/>
@@ -165,15 +164,15 @@
                                     {{data['other-parent-address-county'] }}<br/>
                                     {{data['other-parent-address-postcode'] }}<br/>
                                 {% endif %}
- 
+
                                 {% if data['op-address'] == "I know the town or city" %}
                                     {{data['op-address-town'] }}
                                 {% endif %}
- 
+
                                 {% if data['op-address'] == "I know the area of UK" %}
                                     {{data['op-address-area'] }}
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-address-1">
@@ -189,27 +188,23 @@
                             How you know their current address
                         </dt>
                                 <dd class="govuk-summary-list__value">
- 
-                                    <!-- {# {{data['pp-address-how-know']}} -->
-                                    <!-- <br/> #} -->
+
+                                    {# {{data['pp-address-how-know']}}
+                                    <br/> #}
     
- 
-                                    {% if  data['op-address-how-know'] and data['op-address-how-know'].includes("I have dropped my child off at this address") %}
-                                        I have dropped my child off at this address </br>
-                                       {{data['dropped-month']}} - {{data['dropped-year']}}
+
+                                    {% if data['pp-address-how-know'].includes("I have dropped my child off at this address") %}
+                                       {{data['pp-address-how-know']}} <br> {{data['dropped-month']}} - {{data['dropped-year']}}
                                     {% endif %}
- 
-                                    {% if data['pp-address-how-know'] and data['op-address-how-know'].includes(" have official docmuments") %}
-                                        I have court papers, letters or documents that confirm the other parent’s address
+
+                                    {% if data['pp-address-how-know'] == "I have official docmuments" %}
                                         {{data['court-day']}} - {{data['court-month']}} -  {{data['court-year']}}
-                                        <br/>
                                     {% endif %}
- 
-                                    {% if data['pp-address-how-know'] and data['op-address-how-know'].includes("Another reason") %}
-                                        Another reason <br/>
+
+                                    {% if data['pp-address-how-know'] == "Another reason" %}
                                         {{data['pp-address-how-know']}}
                                     {% endif %}
- 
+
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                     <a class="govuk-link" href="pp-address-3.html">
@@ -219,29 +214,29 @@
                                 </dd>
                             </div>
                         {% endif %}
- 
+
                         {% if data['op-address'] == "I know part of the address" %}
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                             How you know their current address
                         </dt>
                                 <dd class="govuk-summary-list__value">
- 
+
                                     {{data['op-address-how-know']}}
                                     <br/>
- 
-                                    {% if data['op-address-how-know'].includes("I have droppped my child off at this address") %}
+
+                                    {% if data['op-address-how-know'] == "I have droppped my child off at this address" %}
                                         {{data['dropped-month']}} - {{data['dropped-year']}}
                                     {% endif %}
- 
-                                    {% if data['op-address-how-know'].includes("I have court papers, letters or documents that confirm the other parent’s address") %}
+
+                                    {% if data['op-address-how-know'] == "I have court papers, letters or documents that confirm the other parent’s address" %}
                                         {{data['court-day']}} - {{data['court-month']}} -  {{data['court-year']}}
                                     {% endif %}
- 
-                                    {% if data['op-address-how-know'].includes("Another reason") %}
+
+                                    {% if data['op-address-how-know'] == "Another reason" %}
                                         {{data['op-address-know-other']}}
                                     {% endif %}
- 
+
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                     <a class="govuk-link" href="pp-address-3.html">
@@ -251,13 +246,13 @@
                                 </dd>
                             </div>
                         {% endif %}
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Previous address
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
+
                                 {{data['op-prev-address']}}
                                 <br>
                                 {% if data['op-prev-address'] == "I know the full address" %}
@@ -267,7 +262,7 @@
                                 Tyne and Wear <br>
                                 NE99 9EN
                                 {% endif %}
- 
+
                                 {% if data['op-prev-address'] == "I know part of the address" %}
                                     {{data['prev-address-line-1'] }}<br/>
                                     {{data['prev-address-line-2'] }}<br/>
@@ -275,82 +270,45 @@
                                     {{data['prev-address-county'] }}<br/>
                                     {{data['prev-address-postcode'] }}<br/>
                                 {% endif %}
- 
+
                                 {% if data['op-prev-address'] == "I know the town or city" %}
                                     {{data['op-prev-address-town'] }}
                                 {% endif %}
- 
+
                                 {% if data['op-prev-address'] == "I know the area of UK" %}
                                     {{data['op-prev-address-area'] }}
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="pp-previous-address">
+                                <a class="govuk-link" href="pp-address-3">
                                 Change
                                 <span class="govuk-visually-hidden"> name</span>
                                 </a>
                             </dd>
                         </div>
- 
+
                         {% if data['op-prev-address'] == "I know the full address" %}    
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             How you know their previous address
                         </dt>
                             <dd class="govuk-summary-list__value">
-                                <!-- {{ d}} -->
-                                <!-- {{data['pp-address-how-know']}} -->
-                                    <!-- <br/> -->
- 
-                                    {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("The other parent told me they have moved to a different address") %}
-                                        The other parent told me they have moved to a different address <br/>
-                                        {{data['lived-there-month']}} - {{data['lived-there-year']}}<br/><br/>
-                                    {% endif %}
- 
-                                    {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("I used to live at this address with the other parent") %}
-                                        I used to live at this address with the other parent<br/>
-                                        {{data['moved-out-month']}} -  {{data['moved-out-year']}}<br/><br/>
-                                    {% endif %}
- 
-                                    {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("Another reason") %}
-                                        Another reason<br/>
-                                        {{data['another-reason']}}
-                                    {% endif %}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="pp-previous-replay">
-                                Change
-                                <span class="govuk-visually-hidden"> name</span>
-                                </a>
-                            </dd>
-                        </div>
-                        {% endif %}
- 
-                        {% if data['op-prev-address'] == "I know part of the address" %}    
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                            How you know their previous address
-                        </dt>
-                            <dd class="govuk-summary-list__value">
- 
+
+                                {{data['prev-address-how-know']}}
                                     <br/>
- 
-                                    {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("The other parent told me they have moved to a different address") %}
-                                        The other parent told me they have moved to a different address<br/>
-                                        {{data['lived-there-month']}} - {{data['lived-there-year']}}<br/>
+
+                                    {% if data['prev-address-how-know'] == "The other parent told me they have moved to a different address" %}
+                                        {{data['lived-there-month']}} - {{data['lived-there-year']}}
                                     {% endif %}
- 
-                                    {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("I used to live at this address with the other parent") %}
-                                        I used to live at this address with the other parent<br/>
-                                        {{data['moved-out-month']}} -  {{data['moved-out-year']}}<br/>
+
+                                    {% if data['prev-address-how-know'] == "I used to live at this address with the other parent" %}
+                                        {{data['moved-out-month']}} -  {{data['moved-out-year']}}
                                     {% endif %}
- 
-                                    {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("Another reason") %}
-                                        Another reason<br/>
+
+                                    {% if data['prev-address-how-know'] == "Another reason" %}
                                         {{data['another-reason']}}
                                     {% endif %}
- 
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-address-3">
@@ -360,19 +318,51 @@
                             </dd>
                         </div>
                         {% endif %}
- 
+
+                        {% if data['op-prev-address'] == "I know part of the address" %}    
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                            How you know their previous address
+                        </dt>
+                            <dd class="govuk-summary-list__value">
+
+                                {{data['prev-address-how-know']}}
+                                    <br/>
+
+                                    {% if data['prev-address-how-know'] == "The other parent told me they have moved to a different address" %}
+                                        {{data['lived-there-month']}} - {{data['lived-there-year']}}
+                                    {% endif %}
+
+                                    {% if data['prev-address-how-know'] == "I used to live at this address with the other parent" %}
+                                        {{data['moved-out-month']}} -  {{data['moved-out-year']}}
+                                    {% endif %}
+
+                                    {% if data['prev-address-how-know'] == "Another reason" %}
+                                        {{data['another-reason']}}
+                                    {% endif %}
+
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="pp-address-3">
+                                Change
+                                <span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Jobs or benefits
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
-                                {% if data['pp-anythingElse'] and data['pp-anythingElse'].includes("jobsBenefits") %}
+
+                                {% if data['pp-anythingElse'] == "jobsBenefits" %}
                                     {{data['moreDetail-1']}}
                                 {% else %}
                                 None
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-anything-else">
@@ -381,19 +371,19 @@
                                 </a>
                             </dd>
                         </div>
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Postal address
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
-                                {% if data['pp-anythingElse'] and data['pp-anythingElse'].includes("post") %}
+
+                                {% if data['pp-anythingElse'] == "post" %}
                                     {{data['moreDetail-2']}}
                                 {% else %}
                                 None
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-anything-else">
@@ -402,19 +392,19 @@
                                 </a>
                             </dd>
                         </div>
- 
+
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                             Other contact information
                         </dt>
                             <dd class="govuk-summary-list__value">
- 
-                                {% if data['pp-anythingElse'] and data['pp-anythingElse'].includes("anythinElse") %}
+
+                                {% if data['pp-anythingElse'] == "anythinElse" %}
                                     {{data['moreDetail-3']}}
                                 {% else %}
                                 None
                                 {% endif %}
- 
+
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="pp-anything-else">
@@ -423,23 +413,23 @@
                                 </a>
                             </dd>
                         </div>
- 
+
                     </dl>
- 
+
                     <br/>
- 
+
                     <form method="post" novalidate>
- 
+
                         <button type="submit" class="govuk-button">
                         Continue
                     </button>
- 
+
                     </p>
                 </form>
                 <a class="govuk-link" href="../sections">Return to Index</a>
             </div>
             {% include "exit-button.html" %}
- 
+
         </div>
     </main>
 </div>
@@ -455,10 +445,9 @@
                 .getElementById('previous-address')
                 .style
                 .display = 'hidden';
- 
+
         }
- 
+
     }
 </script>
 {% endblock %}
- 

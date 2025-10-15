@@ -1,31 +1,33 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
-<!--Feedback banner stop-->
-<div class="govuk-width-container">
-  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
-  <main class="govuk-main-wrapper " id="main-content" role="main">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form method="get" action="pp-previous-address.html" novalidate>
-          <!--start-->
-          <div class="govuk-form-group">
+{% extends "layout.html" %}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form method="get" action="pp-previous-address.html" novalidate>
+            <!--start-->
+            <div class="govuk-form-group">
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
-              <h1 class="govuk-fieldset__heading">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                <h1 class="govuk-fieldset__heading">
                 You have told us the other parent’s current address is:
               </h1>
-            </legend>
+              </legend>
 
-            <span class="govuk-caption-l">
+              <span class="govuk-caption-l">
 
-              {% if data['op-address'] == "I know part of the address" %}
-              {{data['other-parent-address-line-1'] }}<br />
-              {{data['other-parent-address-line-2'] }}<br />
-              {{data['other-parent-address-town'] }}<br />
-              {{data['other-parent-address-county'] }}<br />
-              {{data['other-parent-address-postcode'] }}<br />
-              {% elif data['op-address'] == "I know the full address" %}
+                {% if data['op-address'] == "I know part of the address" %}
+                  {{data['other-parent-address-line-1'] }}<br/>
+                  {{data['other-parent-address-line-2'] }}<br/>
+                  {{data['other-parent-address-town'] }}<br/>
+                  {{data['other-parent-address-county'] }}<br/>
+                  {{data['other-parent-address-postcode'] }}<br/>
+                {% elif data['op-address'] == "I know the full address" %}
               21 The Towers <br>
               Hill Top Road <br>
               Leeds <br>
@@ -33,8 +35,8 @@
               LS11 1SL
               {% endif %}
 
-            </span>
-            <br />
+              </span>
+              <br/>
             </h1>
           </div>
 
@@ -108,7 +110,7 @@
                         Day
                       </label>
                       <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="court-day"
-                        name="court-date" type="number" spellcheck="false">
+                        name="court-day" type="number" spellcheck="false">
                     </div>
                     <div class="govuk-date-input__item">
 
@@ -116,7 +118,7 @@
                         Month
                       </label>
                       <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="court-month"
-                        name="court-date" type="number" spellcheck="false">
+                        name="court-month" type="number" spellcheck="false">
                     </div>
                     <div class="govuk-date-input__item">
 
@@ -124,7 +126,7 @@
                         Year
                       </label>
                       <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="court-year"
-                        name="court-date" type="number" spellcheck="false">
+                        name="court-year" type="number" spellcheck="false">
 
                     </div>
                   </div>
@@ -132,7 +134,7 @@
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="pp-address-how-know-3" name="pp-address-how-know" type="checkbox"
-                    value="I used to live at this address with the other parent">
+                    value="i used to live at this address with the other parent">
                   <label class="govuk-label govuk-checkboxes__label" for="pp-address-how-know-3">
                     I used to live at this address with the other parent in the last 90 days
                   </label>
@@ -140,7 +142,7 @@
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="pp-address-how-know-4" name="pp-address-how-know" type="checkbox"
-                    value="The other parent told me their address">
+                    value="the other parent told me their address">
                   <label class="govuk-label govuk-checkboxes__label" for="pp-address-how-know-4">
                     The other parent told me their address
                   </label>
@@ -148,7 +150,7 @@
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="pp-address-how-know-5" name="pp-address-how-know" type="checkbox"
-                    value="Another reason" data-aria-controls="conditional-contact-5">
+                    value="another reason" data-aria-controls="conditional-contact-5">
                   <label class="govuk-label govuk-checkboxes__label" for="pp-address-how-know-5">
                     Another reason
                   </label>
@@ -176,10 +178,6 @@
   Continue
 </button>
 
-          {# <a href="pp-previous-address" role="button" draggable="false" class="govuk-button">
-            Continue
-
-          </a> #}
         </form>
       </div>
       {% include "exit-button.html" %}
@@ -187,7 +185,5 @@
     </div>
   </main>
 </div>
-
-
 
 {% endblock %}
