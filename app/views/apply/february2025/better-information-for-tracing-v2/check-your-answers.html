@@ -194,18 +194,18 @@
                                     <!-- <br/> #} -->
     
  
-                                    {% if  data['op-address-how-know'] and data['op-address-how-know'].includes("I have dropped my child off at this address") %}
+                                    {% if  data['pp-address-how-know'] and data['pp-address-how-know'].includes("I have dropped my child off at this address") %}
                                         I have dropped my child off at this address </br>
                                        {{data['dropped-month']}} - {{data['dropped-year']}}
                                     {% endif %}
  
-                                    {% if data['pp-address-how-know'] and data['op-address-how-know'].includes(" have official docmuments") %}
+                                    {% if data['pp-address-how-know'] and data['pp-address-how-know'].includes(" have official docmuments") %}
                                         I have court papers, letters or documents that confirm the other parent’s address
                                         {{data['court-day']}} - {{data['court-month']}} -  {{data['court-year']}}
                                         <br/>
                                     {% endif %}
  
-                                    {% if data['pp-address-how-know'] and data['op-address-how-know'].includes("Another reason") %}
+                                    {% if data['pp-address-how-know'] and data['pp-address-how-know'].includes("Another reason") %}
                                         Another reason <br/>
                                         {{data['pp-address-how-know']}}
                                     {% endif %}
@@ -227,19 +227,19 @@
                         </dt>
                                 <dd class="govuk-summary-list__value">
  
-                                    {{data['op-address-how-know']}}
+                                    {{data['pp-address-how-know']}}
                                     <br/>
  
-                                    {% if data['op-address-how-know'].includes("I have droppped my child off at this address") %}
+                                    {% if data['pp-address-how-know'].includes("I have droppped my child off at this address") %}
                                         {{data['dropped-month']}} - {{data['dropped-year']}}
                                     {% endif %}
  
-                                    {% if data['op-address-how-know'].includes("I have court papers, letters or documents that confirm the other parent’s address") %}
+                                    {% if data['pp-address-how-know'].includes("I have court papers, letters or documents that confirm the other parent’s address") %}
                                         {{data['court-day']}} - {{data['court-month']}} -  {{data['court-year']}}
                                     {% endif %}
  
-                                    {% if data['op-address-how-know'].includes("Another reason") %}
-                                        {{data['op-address-know-other']}}
+                                    {% if data['pp-address-how-know'].includes("Another reason") %}
+                                        {{data['pp-address-how-know']}}
                                     {% endif %}
  
                                 </dd>
@@ -304,17 +304,17 @@
                                     <!-- <br/> -->
  
                                     {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("The other parent told me they have moved to a different address") %}
-                                        The other parent told me they have moved to a different address <br/>
+                                        The other parent told me they have moved to a different address: <br/>
                                         {{data['lived-there-month']}} - {{data['lived-there-year']}}<br/><br/>
                                     {% endif %}
  
                                     {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("I used to live at this address with the other parent") %}
-                                        I used to live at this address with the other parent<br/>
+                                        I used to live at this address with the other parent:<br/>
                                         {{data['moved-out-month']}} -  {{data['moved-out-year']}}<br/><br/>
                                     {% endif %}
  
                                     {% if data['prev-address-how-know'] and data['prev-address-how-know'].includes("Another reason") %}
-                                        Another reason<br/>
+                                        Another reason:<br/>
                                         {{data['another-reason']}}
                                     {% endif %}
                             </dd>
