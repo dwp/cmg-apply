@@ -17,13 +17,7 @@ content %}
             <div class="govuk-form-group">
               <h1 class="govuk-heading-xl">Which type of written agreement do you have?</h1>
               <p class="govuk-body">We can only accept a current court order, formal agreement or other official document.</p>
-              {# <p class="govuk-body">For written agreements, we can only accept:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>a current court order</li>
-                <li>a formal agreement, for example drawn up by a solicitor</li>
-                <li>other offical document, for example Children and Family Court Advisory and Support Service (CAFCAS) or Social Services reports</li>
-              </ul> #}
-
+              
               {{ govukInsetText({
                                 text: "You must upload the written agreement for overnight stays in your online account."
               }) }}
@@ -36,12 +30,12 @@ content %}
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="writtenAgreementType-2" name="writtenAgreementType" type="radio" value="Formal aggreement">
+                  <input class="govuk-radios__input" id="writtenAgreementType-2" name="writtenAgreementType" type="radio" value="Formal agreement">
                   <label class="govuk-label govuk-radios__label" for="writtenAgreementType-2">a formal agreement, for example drawn up by a solicitor</label>
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="writtenAgreementType-3" name="writtenAgreementType" type="radio" value="No~1-care-arrangement-type.html">
+                  <input class="govuk-radios__input" id="writtenAgreementType-3" name="writtenAgreementType" type="radio" value="Another official document~1-care-arrangement-type.html">
                   <label class="govuk-label govuk-radios__label" for="writtenAgreementType-3">another official document, or example Children and Family Court Advisory and Support Service (CAFCAS) or Social Services reports</label>
                 </div>
               </div>
