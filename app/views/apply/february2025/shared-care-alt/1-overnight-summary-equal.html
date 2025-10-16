@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Overnight stays summary
+{% endblock %}
+{% block content %}
+
+    {% include "feedback-banner.html" %}
+
+    <div class="govuk-width-container">
+        {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    <form method="get" action='1-overnight-equal-care-caseworker-will-call.html.html' novalidate>
+                        <h1 class="govuk-heading-xl">Review {% if data['child-1-first-name']%} {{data['child-1-first-name']}}&acute;s
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}overnight stays</h1>
+                        <div class="govuk-form-group">
+                            <dl class="govuk-summary-list">
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Type of arrangement</dt>
+                                    <dd class="govuk-summary-list__value">{{data['arrangementType']}}</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-care-arrangement-type.html">Change<span class="govuk-visually-hidden"> type of arrangement</span></a>
+                                    </dd>
+                                </div>
+
+                                {% if data['arrangementType'] == "Sometimes stays overnight with the other parent" %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Regular stays</dt>
+                                    <dd class="govuk-summary-list__value">Weekly <br> 3 nights</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-with-other-parent-regular.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                                        
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Extra stays</dt>
+                                    <dd class="govuk-summary-list__value">Yealry<br>26 nights</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-with-other-parent-regular.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                 {% if data['localAuthority'] == "Yes" %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority stays </dt>
+                                    <dd class="govuk-summary-list__value">Monthly <br> {{data['localAuthorityNights']}}</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                {% else %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority stays </dt>
+                                    <dd class="govuk-summary-list__value">None</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                 {% endif %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Total overnight stays with the other parent</dt>
+                                    <dd class="govuk-summary-list__value">Yearly <br> 182</dd>
+                                    
+                                </div>
+                                {% endif %}
+
+                                {% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Stays as needed</dt>
+                                    <dd class="govuk-summary-list__value">Yealry<br>96 nights</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-with-other-parent-irregular.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                 {% if data['localAuthority'] == "Yes" %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority stays </dt>
+                                    <dd class="govuk-summary-list__value">Monthly <br> {{data['localAuthorityNights']}}</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                {% else %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority stays </dt>
+                                    <dd class="govuk-summary-list__value">None</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                 {% endif %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Total overnight stays with the other parent</dt>
+                                    <dd class="govuk-summary-list__value">Yearly <br> 96</dd>
+                                 </div>
+                                {% endif %}
+
+                                {% if data['arrangementType'] == "The child never stays overnight with the other parent" %}
+                                 {% if data['localAuthority'] == "Yes" %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority stays </dt>
+                                    <dd class="govuk-summary-list__value">Monthly <br> {{data['localAuthorityNights']}}</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                {% else %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority stays </dt>
+                                    <dd class="govuk-summary-list__value">None</dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                 {% endif %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Total overnight stays with the other parent</dt>
+                                    <dd class="govuk-summary-list__value">Yearly <br> None</dd>
+                                 </div>
+                                {% endif %}
+                               
+
+                            </dl>
+                        </div>
+
+                        <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+
+                    </form>
+
+                </div>
+                {% include "exit-button.html" %}
+            </div>
+        </main>
+    </div>
+
+    <!-- inpage styles start -->
+
+{% endblock %}
