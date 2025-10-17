@@ -9,10 +9,10 @@
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
         <form method="post" novalidate>
-          <h1 class="govuk-heading-xl">Check {% if data['child-1-first-name']%}{{data['child-1-first-name'] }}&acute;s
-                                    {% else %}
-                                    [Child's name]
-                                    {% endif %}details
+          <h1 class="govuk-heading-xl">Check {% if data['child-1-first-name']%} {{data['child-1-first-name'] }}&acute;s
+          {% else %}
+          [Child's name]
+          {% endif %}details
           </h1>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -95,7 +95,7 @@
                 {{data['writtenAgreementType'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="1-written-agreement-type.html">
+                <a class="govuk-link" href="1-written-agreement.html">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -136,7 +136,7 @@
                 Overnight stays each year
               </dt>
               <dd class="govuk-summary-list__value">
-               134
+               182
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="1-overnight-summary.html">
@@ -145,6 +145,7 @@
               </dd>
             </div>
             {% endif %}
+
             {# <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Additional information
@@ -173,14 +174,14 @@
 
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="addchild" name="addchild" type="radio" value="yes~2-name">
+                  <input class="govuk-radios__input" id="addchild" name="addchild" type="radio" value="">
                   <label class="govuk-label govuk-radios__label" for="addchild">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="addchild-2" name="addchild" type="radio"
-                    value="no~/apply/february2025/6-service-types-RP/direct-pay.html">
+                    value="">
                   <label class="govuk-label govuk-radios__label" for="addchild-2">
                     No
                   </label>

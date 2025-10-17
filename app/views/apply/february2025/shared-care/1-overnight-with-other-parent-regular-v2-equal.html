@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block pageTitle %} How often does this child stay overnight with the other parent? {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="get" action='1-overnight-with-other-parent-irregular-v2-equal.html'>
+            <div class="govuk-form-group">
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+              How often does {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}regularly stay overnight with the other parent?
+            </h1>
+
+            <p class="govuk-body">
+              If you have not yet worked out how often {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}will stay overnight with
+              the other parent, tell us what's happening now.
+              <br>
+              If overnight stays alter each week, tell us the total of nights you have scheduled.
+            </p>
+
+              <br>
+              <div class="govuk-form-group ">
+                <label class="govuk-label govuk-!-margin-top-0" for="event-name">How many nights?</label>
+                <input class="govuk-input govuk-input--width-2" id="event-name" name="eventName" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend">How often?</legend>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="Weekly">
+                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive">Weekly</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="Fortnightly">
+                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">Fortnightly</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="Monthly">
+                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">Monthly</label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="Yearly">
+                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">Yearly</label>
+                  </div>
+
+                  {# <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">None </label>
+                  </div> #}
+                </div>
+              </fieldset>
+            </div>
+
+            </div>
+
+            <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}
