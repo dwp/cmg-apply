@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% set serviceName %} Apply for help arranging child maintenance {% endset%} {% block
+pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+
+{% include "feedback-banner.html" %}
+
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+
+  <!--Phase banner stop-->
+
+  <!-- H1 start -->
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="create-an-account" method="post" novalidate>
+            <div class="govuk-form-group">
+
+              <h1 class="govuk-heading-xl">Using a child maintenance account </h1>
+
+              <!-- H1 stop -->
+
+              <!-- Supporting content start -->
+
+              <p>The online child maintenance account is a secure way to get updates about this application.
+                Nobody else can access your account.
+              </p>
+
+              <p>You can:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>see when payments are due</li>
+                <li>tell us if any payments have been missed</li>
+                <li>update your contact details</li>
+                <li>tell us about changes to your circumstances</li>
+              </ul>
+
+              <h2 class="govuk-heading-m">If you have another child maintenance case</h2>
+
+              <p>You may have a child maintenance account if you already pay or receive child maintenance.
+                You can use the same account to manage all your cases and applications in one place.
+              </p>
+
+              <!-- Supporting content stop -->
+
+              <div class="govuk-!-padding-bottom-5"></div>
+
+              <!-- Buttons -->
+
+              <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+
+                <a class="govuk-link" href="do-you-know-your-pin-and-password">Already
+                  have an account?</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+
+    </main>
+  </div>
+
+
+
+
+
+
+
+  {% endblock %}

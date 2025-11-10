@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% set serviceName %} Apply for help arranging child maintenance {% endset%} {% block
+pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
+
+{% include "feedback-banner.html" %}
+
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="get" action="/apply/february2025/1-start-eligibility/urn-rp.html" novalidate>
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset" aria-describedby="live-uk-hint">
+              <legend
+                class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-fieldset__legend--xl govuk-!-margin-bottom-9">
+                <h1 class="govuk-fieldset__heading">
+                  Resetting your Personal Identification Number (PIN)
+                </h1>
+              </legend>
+
+              <p>Reset your PIN in your Child Maintenance online account.</p>
+              <p>
+                If you are having problems accessing your online acocunt call the Child Maintenance Service
+              </p>
+
+            </fieldset>
+
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+      </div>
+      {% include "exit-button.html" %}
+    </div>
+  </main>
+</div>
+
+
+
+
+{% endblock %}
