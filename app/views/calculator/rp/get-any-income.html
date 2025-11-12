@@ -1,60 +1,59 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
 
-<!--Feedback banner stop-->
-<div class="govuk-width-container">
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
     {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
     <main class="govuk-main-wrapper " id="main-content" role="main">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <form method="post" novalidate>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form method="post" novalidate>
 
-
-
-
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                        <h1 class="govuk-fieldset__heading">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
                           Does the other parent get any income?
                         </h1>
-                      </legend>
-                      <div class="govuk-radios" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="get-any-income-1" name="get-any-income-1" type="radio" value="get-any-income-1~/calculator/rp/know-other-parents-income.html">
-                          <label class="govuk-label govuk-radios__label" for="get-any-income-1">
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="get-any-income-1" name="get-any-income" type="radio" value="yes~know-other-parents-income.html">
+                    <label class="govuk-label govuk-radios__label" for="get-any-income-1">
                             Yes
                           </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="get-any-income-2" name="get-any-income-2" type="radio" value="get-any-income-2~/calculator/rp/what-is-your-childs-name.html">
-                          <label class="govuk-label govuk-radios__label" for="get-any-income-2">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="get-any-income-2" name="get-any-income" type="radio" value="no~what-is-your-childs-name.html">
+                    <label class="govuk-label govuk-radios__label" for="get-any-income-2">
                             No
                           </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="get-any-income-3" name="get-any-income-3" type="radio" value="get-any-income-3~/calculator/rp/if-the-other-parent-gets-taxable-income.html">
-                          <label class="govuk-label govuk-radios__label" for="get-any-income-3">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="get-any-income-3" name="get-any-income" type="radio" value="i don't know~if-the-other-parent-gets-taxable-income.html">
+                    <label class="govuk-label govuk-radios__label" for="get-any-income-3">
                             I don't know
                           </label>
-                        </div>
-                      </div>
-                    </fieldset>
                   </div>
+                </div>
+              </fieldset>
+            </div>
 
-        <br>
+            <br>
 
-        <!--end-->
-        <button type="submit" class="govuk-button">
+            <!--end-->
+            <button type="submit" class="govuk-button">
             Continue
         </button>
-    </form>
+          </form>
 
-</div>
-{% include "exit-button.html" %}
-</div>
-
-</main>
-</div>
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
 {% endblock %}

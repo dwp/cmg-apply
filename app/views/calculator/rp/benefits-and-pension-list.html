@@ -1,170 +1,181 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
-<!--Feedback banner stop-->
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+    <!--Feedback banner start-->
+    {% include "feedback-banner.html" %}
+    <!--Feedback banner stop-->
 
-
-
-<div class="govuk-width-container">
-    <form method="post" action="/calculator/rp/get-any-income" novalidate>
-    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
-    <main class="govuk-main-wrapper " id="main-content" role="main">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="benefit-hint">
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                            <h1 class="govuk-fieldset__heading">
+    <div class="govuk-width-container">
+        <form method="post" action="/calculator/rp/get-any-income" novalidate>
+            {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+            <main class="govuk-main-wrapper " id="main-content" role="main">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="benefit-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                    <h1 class="govuk-fieldset__heading">
                               Does the other parent get any benefits or State Pension?
                             </h1>
-                          </legend>
+                                </legend>
 
-                          <div id="benefit-hint" class="govuk-hint">
+                                <div id="benefit-hint" class="govuk-hint">
                             Select all that apply.
                           </div>
 
-                          <br>
+                                <br>
 
-                          <div id="benefits" class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="armed-forces" name="benefit" type="checkbox" value="armed-forces">
-                              <label class="govuk-label govuk-checkboxes__label" for="armed-forces">
-                                Armed Forces Compensation Scheme payments
-                              </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="bereavement-allowance" name="benefit" type="checkbox" value="bereavement-allowance">
-                              <label class="govuk-label govuk-checkboxes__label" for="bereavement-allowance">
-                                Bereavement Allowance
-                              </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="carers-allowance" name="benefit" type="checkbox" value="carers-allowance">
-                              <label class="govuk-label govuk-checkboxes__label" for="carers-allowance">
-                                Carer's Allowance
-                              </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="incapacity-benefit" name="benefit" type="checkbox" value="incapacity-benefit">
-                                <label class="govuk-label govuk-checkboxes__label" for="incapacity-benefit">
-                                Incapacity Benefit
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="income-support" name="benefit" type="checkbox" value="income-support">
-                                <label class="govuk-label govuk-checkboxes__label" for="income-support">
-                                Income Support
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="income-related-employment" name="benefit" type="checkbox" value="income-related-employment">
-                                <label class="govuk-label govuk-checkboxes__label" for="income-related-employment">
-                                Income-related Employment and Support Allowance
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="jobseekers-allowance" name="benefit" type="checkbox" value="jobseekers-allowance">
-                                <label class="govuk-label govuk-checkboxes__label" for="jobseekers-allowance">
-                                Jobseeker’s Allowance – contribution-based
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="jobseekers-allowance-2" name="benefit" type="checkbox" value="jobseekers-allowance-2">
-                                <label class="govuk-label govuk-checkboxes__label" for="jobseekers-allowance-2">
-                                Jobseeker’s Allowance – income-based
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="maternity-allowance" name="benefit" type="checkbox" value="maternity-allowance">
-                                <label class="govuk-label govuk-checkboxes__label" for="maternity-allowance">
-                                Maternity Allowance
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="non-uk" name="benefit" type="checkbox" value="non-uk">
-                                <label class="govuk-label govuk-checkboxes__label" for="non-uk">
-                                Non-UK Social Security Benefit
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="pension-credit" name="benefit" type="checkbox" value="pension-credit">
-                                <label class="govuk-label govuk-checkboxes__label" for="pension-credit">
-                                Pension Credit
-                                </label>
-                            </div>
-                        
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="skillseekers-training" name="benefit" type="checkbox" value="skillseekers-training">
-                                <label class="govuk-label govuk-checkboxes__label" for="skillseekers-training">
-                                Skillseekers training
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="state-pension" name="benefit" type="checkbox" value="state-pension">
-                                <label class="govuk-label govuk-checkboxes__label" for="state-pension">
-                                State Pension
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="training-allowance" name="benefit" type="checkbox" value="training-allowance">
-                                <label class="govuk-label govuk-checkboxes__label" for="training-allowance">
-                                Training Allowance
-                                </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="training-allowance" name="benefit" type="checkbox" value="universal-credit">
-                                <label class="govuk-label govuk-checkboxes__label" for="universal-credit">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="benefit" name="benefit" type="checkbox" value="universal credit">
+                                    <label class="govuk-label govuk-checkboxes__label" for="benefit">
                                 Universal Credit
                                 </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="war-disablement-pension" name="benefit" type="checkbox" value="war-disablement-pension">
-                                <label class="govuk-label govuk-checkboxes__label" for="war-disablement-pension">
+                                </div>
+                                <div id="benefits" class="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-2" name="benefit" type="checkbox" value="armed forces compensation scheme">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-2">
+                                Armed Forces Compensation Scheme payments
+                              </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-3" name="benefit" type="checkbox" value="bereavement allowance">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-3">
+                                Bereavement Allowance
+                              </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-4" name="benefit" type="checkbox" value="carers allowance">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-4">
+                                Carers Allowance/Carers Suppoert Payment
+                              </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-5" name="benefit" type="checkbox" value="incapacity benefit">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-5">
+                                Incapacity Benefit
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-6" name="benefit" type="checkbox" value="income support">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-6">
+                                Income Support
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-7" name="benefit" type="checkbox" value="income related employment support allowmane">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-7">
+                                Income-related Employment and Support Allowance
+                                </label>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="benefit-8" name="benefit" type="checkbox" value="industrial injuries disablement">
+                                            <label class="govuk-label govuk-checkboxes__label" for="benefit-8">
+                                Industrial Injuries Disablement Benefit
+                                </label>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-9" name="benefit" type="checkbox" value="contribution based jobseekersallowance">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-9">
+                                Jobseeker’s Allowance – contribution-based
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-10" name="benefit" type="checkbox" value="income based jobseekers allowance">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-10">
+                                Jobseeker’s Allowance – income-based
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-11" name="benefit" type="checkbox" value="maternity allowance">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-11">
+                                Maternity Allowance
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-12" name="benefit" type="checkbox" value="pension credit">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-12">
+                                Pension Credit
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-13" name="benefit" type="checkbox" value="persoanl independence payment">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-13">
+                                Personal Independence Payment
+                                </label>
+                                    </div>
+                                <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-14" name="benefit" type="checkbox" value="severe disability allowmance">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-14">
+                                Severe Disability Allowance
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-15" name="benefit" type="checkbox" value="skillseekers training">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-15">
+                                Skillseekers training
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-16" name="benefit" type="checkbox" value="state pension">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-16">
+                                State Pension
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-17" name="benefit" type="checkbox" value="training allowance">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-17">
+                                Training Allowance
+                                </label>
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-18" name="benefit" type="checkbox" value="war disablement pension">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-18">
                                 War Disablement Pension
                                 </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="civil-partner-pension" name="benefit" type="checkbox" value="civil-partner-pension">
-                                <label class="govuk-label govuk-checkboxes__label" for="civil-partner-pension">
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-19" name="benefit" type="checkbox" value="civil partner pension">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-19">
                                 War Widow’s, Widower’s or Surviving Civil Partner’s Pension
                                 </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="widows-pension" name="benefit" type="checkbox" value="widows-pension">
-                                <label class="govuk-label govuk-checkboxes__label" for="widows-pension">
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-20" name="benefit" type="checkbox" value="widows pension">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-20">
                                 Widow's Pension
                                 </label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="widow-parent" name="benefit" type="checkbox" value="widow-parent">
-                                <label class="govuk-label govuk-checkboxes__label" for="widow-parent">
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-21" name="benefit" type="checkbox" value="widowed parent allowance">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-21">
                                 Widowed Parent's Allowance
                                 </label>
-                            </div>
-                            <p> or </p>
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="none" name="benefit" type="checkbox" value="none">
-                                <label class="govuk-label govuk-checkboxes__label" for="none">
+                                    </div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="benefit-22" name="benefit" type="checkbox" value="none">
+                                        <label class="govuk-label govuk-checkboxes__label" for="benefit-22">
                                 None of these
                                 </label>
-                            </div>
+                                    </div>
 
+                                </div>
+
+                            </fieldset>
                         </div>
 
-                        </fieldset>
-                      </div>
+                        <br>
 
-                    <br>
-
-                    <button type="submit" class="govuk-button">
+                        <button type="submit" class="govuk-button">
                         Continue
                     </button>
 
-                </form>
-            </div>
-                                                                         {% include "exit-button.html" %}
+                    </form>
+                </div>
+                {% include "exit-button.html" %}
 
-        </div>
-    </main>
-</div>
+            </div>
+        </main>
+    </div>
 {% endblock %}

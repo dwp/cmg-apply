@@ -1,40 +1,40 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
-<!--Feedback banner stop-->
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
 
-                    <div class="govuk-width-container">
-                        <form method="post" action="/calculator/rp/get-any-income" novalidate>
-                        {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
-                        <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
-                          <div class="govuk-grid-row">
-                            <div class="govuk-grid-column-two-thirds">
-                              <h1 class="govuk-heading-xl">If the other parent gets benefits </h1>
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <form method="post" action="get-any-income" novalidate>
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">If the other parent gets benefits </h1>
 
-                              <p class="govuk-body">
+            <p class="govuk-body">
                                 If the other parent gets benefits or State Pension, the Child Maintenance Service calculates a 'Flat Rate' of £7 per week.
                               </p>
 
-                    <p class="govuk-body">The "Flat Rate" is only used if:</p>
+            <p class="govuk-body">The "Flat Rate" is only used if:</p>
 
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>the other parent does not have any other source of income</li>
-                      <li>the other parent has another source of income but gets certain benefits</li>
-                    </ul>
-                            
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the other parent does not have any other source of income</li>
+              <li>the other parent has another source of income but gets certain benefits</li>
+            </ul>
 
-              <button type="submit" class="govuk-button">
+            <button type="submit" class="govuk-button">
                 Continue
               </button>
 
-              </form>
+          </form>
 
-
-    </div>
-    {% include "exit-button.html" %}
-    </div>
+        </div>
+        {% include "exit-button.html" %}
+      </div>
     </main>
-    </div>
-    
-    {% endblock %}
-    
+  </div>
+
+{% endblock %}

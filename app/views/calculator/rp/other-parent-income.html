@@ -1,104 +1,85 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
-<!--Feedback banner stop-->
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
 
-<div class="govuk-width-container">
+  <div class="govuk-width-container">
     <form method="post" action="/calculator/rp/what-is-your-childs-name" novalidate>
-    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
-    <main class="govuk-main-wrapper " id="main-content" role="main">
+      {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+      <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <form method="post" novalidate>
+          <div class="govuk-grid-column-two-thirds">
+            <form method="post" novalidate>
 
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="pension-hint">
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                            <h1 class="govuk-fieldset__heading">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="pension-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading">
                               What is the other parent's total taxable income?
                             </h1>
-                          </legend>
+                  </legend>
 
-                          <div class="govuk-hint">
+                  <div class="govuk-hint">
                             This is their total taxable income after pension contributions, but before tax and National Insurance. It can be weekly, monthly or yearly.
                             For example, 100 or 1500.50
                         </div>
 
-                         
-          <br/>
+                  <br/>
 
-          <div class="govuk-form-group">
+                  <div class="govuk-form-group">
+                    <div class="govuk-input__wrapper">
+                      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                      <input class="govuk-input govuk-input--width-5" id="income-amount" name="income-amount" type="text" spellcheck="false">
+                    </div>
 
-          <label class="govuk-label" for="income-amount">
+                  </fieldset>
+                </div>
+              </fieldset>
 
-          </label>
-
-          <div class="govuk-input__wrapper">
-             <div class="govuk-input__prefix" aria-hidden="true">£</div>
-             <input class="govuk-input govuk-input--width-5" id="income-amount" name="income-amount" type="text" spellcheck="false">
-           </div>
-
-
-
-   </fieldset>
-   </div>
-   </fieldset>
-
-                        <br>
-                        <h1 class="govuk-heading-m">
-                    How regularly do they receive this income?
+              <br>
+              <h1 class="govuk-heading-m">
+                    Is this amount weekly, monthly or yearly?
                           </h1>
 
-                          <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
-    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="weekly" name="often-paid" type="radio" value="week" data-aria-controls="conditional-contact">
-        <label class="govuk-label govuk-radios__label" for="weekly">
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="often-paid" name="often-paid" type="radio" value="weekly">
+                      <label class="govuk-label govuk-radios__label" for="often-paid">
           Weekly
         </label>
-      </div>
-   
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="monthly" name="often-paid" type="radio" value="month" data-aria-controls="conditional-contact-4">
-        <label class="govuk-label govuk-radios__label" for="monthly">
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="often-paid-2" name="often-paid" type="radio" value="monthly">
+                      <label class="govuk-label govuk-radios__label" for="often-paid-2">
         Monthly
         </label>
-      </div>
+                    </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="4weeks" name="often-paid" type="radio" value="four weeks" data-aria-controls="conditional-contact-3">
-        <label class="govuk-label govuk-radios__label" for="4weeks">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="often-paid-3" name="often-paid" type="radio" value="yearly">
+                      <label class="govuk-label govuk-radios__label" for="often-paid-3">
           Yearly
         </label>
-      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
 
-
-
-
-      </div>
-
-
-
-
-  </fieldset>
-
-                          </div>
-
-                        <button type="submit" class="govuk-button">
+              <button type="submit" class="govuk-button">
                             Continue
                         </button>
-                        </form>
-                        </div>
-                        {% include "exit-button.html" %}
+            </form>
+          </div>
+          {% include "exit-button.html" %}
 
-                        </div>
-                        </main>
-                        </div>
-                        {% endblock %}
-
-
-
-
-
+        </div>
+      </main>
+    </div>
+  {% endblock %}

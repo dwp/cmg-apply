@@ -1,59 +1,61 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
 
-<!--Feedback banner stop-->
-<div class="govuk-width-container">
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
     {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
     <main class="govuk-main-wrapper " id="main-content" role="main">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <form method="post" novalidate>
-                    <!--start of radio-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form method="post" novalidate>
+            <!--start of radio-->
 
-
-                    <div class="govuk-form-group">
-                      <fieldset class="govuk-fieldset">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                          <h1 class="govuk-fieldset__heading">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
                             Does the other parent get any benefits or state pension?
                           </h1>
-                        </legend>
-                        <div class="govuk-radios" data-module="govuk-radios">
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="benefits-or-pension-1" name="benefits-or-pension-1" type="radio" value="benefits-or-pension-1~/calculator/rp/benefits-and-pension-list.html">
-                            <label class="govuk-label govuk-radios__label" for="benefits-or-pension-1">
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="benefits-or-pension-1" name="benefits-or-pension" type="radio" value="yes~benefits-and-pension-list.html">
+                    <label class="govuk-label govuk-radios__label" for="benefits-or-pension-1">
                               Yes
                             </label>
-                          </div>
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="benefits-or-pension-2" name="benefits-or-pension-2" type="radio" value="benefits-or-pension-2~/calculator/rp/get-any-income.html">
-                            <label class="govuk-label govuk-radios__label" for="benefits-or-pension-2">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="benefits-or-pension-2" name="benefits-or-pension" type="radio" value="no~get-any-income.html">
+                    <label class="govuk-label govuk-radios__label" for="benefits-or-pension-2">
                               No
                             </label>
-                          </div>
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="benefits-or-pension-3" name="benefits-or-pension-3" type="radio" value="benefits-or-pension-3~/calculator/rp/other-parent-receives-benefits.html">
-                            <label class="govuk-label govuk-radios__label" for="benefits-or-pension-3">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="benefits-or-pension-3" name="benefits-or-pension" type="radio" value="don't know~other-parent-receives-benefits.html">
+                    <label class="govuk-label govuk-radios__label" for="benefits-or-pension-3">
                               I don't know
                             </label>
-                          </div>
-                        </div>
-                      </fieldset>
-                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
 
-        <br>
-        <!--end-->
-        <button type="submit" class="govuk-button">
+            <br>
+            <!--end-->
+            <button type="submit" class="govuk-button">
             Continue
         </button>
-    </form>
+          </form>
 
-</div>
-{% include "exit-button.html" %}
+        </div>
+        {% include "exit-button.html" %}
 
-</div>
+      </div>
 
-</main>
-</div>
+    </main>
+  </div>
 {% endblock %}

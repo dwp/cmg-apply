@@ -1,6 +1,9 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Phase banner start-->
- 
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+    <!--Phase banner start-->
+
     <div class="govuk-width-container">
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -10,39 +13,36 @@
                     <h1 class="govuk-heading-xl">Calculate your child maintenance</h1>
 
                     <p class="govuk-body">You can use this calculator to work out an amount of child maintenance for your children. It will not send your details to the Department for Work and Pensions (DWP).</p>
-                    
 
- <!-- Welsh toggle -->
+                    <!-- Welsh toggle -->
 
                     <div class="govuk-inset-text">
                         <p class="govuk-body">
                             This service is also available <a href="#" class="govuk-link">in Welsh (Cymraeg)</a>.
                           </p>
-                      </div>
-                  
- <!--Service list-->
-                    <p class="govuk-body">The calculator:</p>
-    
-                    <ul class="govuk-list govuk-list--bullet">
-    
-                        <li>gives you an amount to discuss if you're <a class="govuk-link" href="https://www.gov.uk/child-maintenance-service/private-arrangement">making a private child maintenance arrangement with the other parent</a> - you do not have to use it.</li>
+                    </div>
 
-                        <li>estimates how much the government is likely to work out for you</li>
+                    <!--Service list-->
+                    <p class="govuk-body">The calculator:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+
+                        <li>gives you an amount to discuss if you're <a class="govuk-link" href="https://www.gov.uk/child-maintenance-service/private-arrangement">arranging child maintenance with the other parent</a> - you do not have to use it.</li>
+
+                        <li>shows what the government is likely to work out for you</li>
 
                     </ul>
 
-
- <!--Estimation warning-->
+                    <!--Estimation warning-->
 
                     <div class="govuk-inset-text">
                         This calculator only estimates your child maintenance payments - it cannot tell you exactly what you’ll get.
                         If you use the Child Maintenance Service the actual payments could be higher or lower.
                     </div>
 
-
-  <!--Service list-->
+                    <!--Service list-->
                     <p class="govuk-body">You will not have anything to pay through the Child Maintenance Service if you are:</p>
-    
+
                     <ul class="govuk-list govuk-list--bullet">
 
                         <li>sharing care equally with the other parent</li>
@@ -53,25 +53,7 @@
 
                     </ul>
 
-
                     <p class="govuk-body"> You can find out more about making an <a href="https://www.gov.uk/child-maintenance-service/private-arrangement">arrangement with the other parent</a>.</p>
-
-
- <!--Before you start-->
-
- <h2 class="govuk-heading-m">Before you start</h2>
-
- <p class="govuk-body">You’ll need details of the following for the parent who’ll be paying:</p>
-
- <ul class="govuk-list govuk-list--bullet">
-
-     <li>their income, including State Pension</li>
-
-     <li>any benefits they get</li>
-
-     <li>the number of nights your child stays with them</li>
-
- </ul>
 
 
                     <a href="/calculator/paying-or-receiving.html" role="button" draggable="false"
@@ -79,15 +61,29 @@
                     Start now
                     </a>
 
+                    
+                    <h2 class="govuk-heading-m">Before you start</h2>
+
+                    <p class="govuk-body">You’ll need details of the following for the parent who’ll be paying:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+
+                        <li>their income, including State Pension</li>
+
+                        <li>any benefits they get</li>
+
+                        <li>the number of nights your child stays with them</li>
+
+                    </ul>
 
                 </div>
 
-<!-- Related content and Hide this page -->
+                <!-- Related content and Hide this page -->
 
                 <div class="govuk-grid-column-one-third">
-            
+
                     <div class="govuk-button--sticky">
-    
+
                         <a href="https://www.bbc.co.uk/weather" role="button" draggable="false"
                             class="govuk-button govuk-button--warning govuk-!-padding-5 govuk-button--sticky govuk-!-width-full govuk-button--stick hide-on-small"
                             data-module="govuk-button">
@@ -95,66 +91,47 @@
                         </a>
                     </div>
                 </div>
-    
-    
-    </div>
-    </div>
+
+            </div>
+        </div>
     </main>
-    </div>
-    
-    
+</div>
 
+<style>
+    .survey-heading a {
+        background-color: #005ea5;
+        font-family: "nta", Arial, sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 1.11111;
+        display: block;
+        margin-top: 0;
+        margin-bottom: 30px;
+        padding: 30px;
+        color: #ffffff;
+        text-decoration: none;
+    }
 
+    .survey-heading a:hover {
 
+        text-decoration: underline;
+    }
 
+    .survey-heading {
+        text-align: center;
+        margin: 0;
 
+    }
 
+    c-related-navigation {
+        color: #0b0c0c;
+        border-top: 2px solid #005ea5;
+    }
 
+    .app-related-items {
+        border-top: 0 solid #005ea5;
+        padding-top: 0;
+    }
+</style>
 
-
-
-
-
-
-    <style>
-        .survey-heading a {
-            background-color: #005ea5;
-            font-family: "nta", Arial, sans-serif;
-            font-weight: 700;
-            font-size: 28px;
-            line-height: 1.11111;
-            display: block;
-            margin-top: 0px;
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            padding-top: 30px;
-            padding-left: 30px;
-            padding-right: 30px;
-            color: #ffffff;
-            text-decoration: none;
-        }
-    
-        .survey-heading a:hover {
-    
-            text-decoration: underline;
-        }
-    
-        .survey-heading {
-            text-align: center;
-            margin: 0px;
-    
-        }
-    
-        c-related-navigation {
-            color: #0b0c0c;
-            border-top: 2px solid #005ea5;
-        }
-    
-        .app-related-items {
-            border-top: 0px solid #005ea5;
-            padding-top: 0px;
-        }
-    </style>
-    
-    {% endblock %}
-    
+{% endblock %}
