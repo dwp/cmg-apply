@@ -12,7 +12,7 @@ content %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form method="get" novalidate>
+          <form method="" novalidate>
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
@@ -23,29 +23,29 @@ content %}
                 
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="arrangementType" name="arrangementType" type="radio" value="Sometimes stays overnight with the other parent~1-overnight-with-other-parent-regular.html" aria-describedby="signIn-item-hint">
-                    <label class="govuk-label govuk-radios__label" for="arrangementType">{% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                    <input class="govuk-radios__input" id="arrangementType" name="arrangementType" type="radio" value="My child stays overnight with me~1-overnight-with-other-parent-regular-v2.html" aria-describedby="signIn-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="arrangementType">{# {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
               {% else %}
               [Child's name]
-              {% endif %}sometimes stays overnight with the other parent</label>
-                    <div id="arrangementType-item-hint" class="govuk-hint govuk-radios__hint">A child usually stays overnight on a regular schedule</div>
+              {% endif %} #}My child stays overnight with me on a regular schedule or as needed</label>
+                    <div id="arrangementType-item-hint" class="govuk-hint govuk-radios__hint">This is sometimes called 'shared care'</div>
                   </div>
 
-                  <div class="govuk-radios__item">
+                  {# <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="arrangementType-3" name="arrangementType" type="radio" value="The child stays overnight with the other parent as needed~1-overnight-with-other-parent-irregular-v2.html" aria-describedby="arrangementType-3-item-hint">
                     <label class="govuk-label govuk-radios__label" for="arrangementType-3">{% if data['child-1-first-name']%} {{data['child-1-first-name']}}
               {% else %}
               [Child's name]
               {% endif %} stays overnight with the other parent as needed </label>
                     <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">For example, when you have to work overtime or are sick</div>
-                  </div>
+                  </div> #}
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="arrangementType-4" name="arrangementType" type="radio" value="The child never stays overnight with the other parent~1-overnight-local-authority.html" aria-describedby="arrangementType-4-item-hint">
-                    <label class="govuk-label govuk-radios__label" for="arrangementType-4">{% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                    <input class="govuk-radios__input" id="arrangementType-4" name="arrangementType" type="radio" value="My child never stays overnight with me~1-overnight-local-authority.html" aria-describedby="arrangementType-4-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="arrangementType-4">{# {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
               {% else %}
               [Child's name]
-              {% endif %} never stays overnight with the other parent</label>
+              {% endif %} #}My child never stays overnight with me</label>
                   </div>
                 </div>
 
