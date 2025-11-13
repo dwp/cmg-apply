@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% block pageTitle %} Local authority stays {% endblock %}
+{% block
+content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="get" action="1-overnight-summary.html" novalidate>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading"> How many nights does {% if data['child-1-first-name']%}
+                      {{data['child-1-first-name']}}
+                    {% else %}
+                  [Child's name]
+                  {% endif %}spend in local authority care?</h1>
+                </legend>
+                <div id="contact-hint" class="govuk-hint">This is when your child or children are subject to a care order and they stay overnight elsewhere, for example with a foster parent or in a care home</div>
+
+                <div class="govuk-form-group ">
+                  <label class="govuk-label govuk-!-margin-top-0" for="laNights">How many nights?</label>
+                  <input class="govuk-input govuk-input--width-2" id="laNights" name="laNights" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend">How often?</legend>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="laNightsFrequency" name="laNightsFrequency" type="radio" value="Weekly">
+                        <label class="govuk-label govuk-radios__label" for="laNightsFrequency">Weekly</label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="laNightsFrequency-2" name="laNightsFrequency" type="radio" value="Fortnightly">
+                        <label class="govuk-label govuk-radios__label" for="laNightsFrequency-2">Fortnightly</label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="laNightsFrequency-3" name="laNightsFrequency" type="radio" value="Monthly">
+                        <label class="govuk-label govuk-radios__label" for="laNightsFrequency-3">Monthly</label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="laNightsFrequency-4" name="laNightsFrequency" type="radio" value="Yearly">
+                        <label class="govuk-label govuk-radios__label" for="laNightsFrequency-4">Yearly</label>
+                      </div>
+
+                      {# <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+                    <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">None </label>
+                  </div> #}
+                    </div>
+                  </fieldset>
+                </div>
+
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Written agreement {% endblock %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% block
+content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="get" action="1-care-arrangement-type.html" novalidate>
+
+            <div class="govuk-form-group">
+              <h1 class="govuk-heading-xl">Which type of written agreement do you have?</h1>
+              
+              {{ govukInsetText({
+                                text: "You must upload the written agreement for overnight stays in your online account later."
+              }) }}
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="writtenAgreementType" name="writtenAgreementType" type="radio" 
+                    value="Court order">
+                  <label class="govuk-label govuk-radios__label" for="writtenAgreementType"> a current Court Order</label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="writtenAgreementType-2" name="writtenAgreementType" type="radio" value="Formal agreement">
+                  <label class="govuk-label govuk-radios__label" for="writtenAgreementType-2">a formal agreement, for example drawn up by a solicitor</label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="writtenAgreementType-3" name="writtenAgreementType" type="radio" value="Another official document~1-care-arrangement-type.html">
+                  <label class="govuk-label govuk-radios__label" for="writtenAgreementType-3">another official document, or example Children and Family Court Advisory and Support Service (CAFCAS) or Social Services reports</label>
+                </div>
+              </div>
+
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}
