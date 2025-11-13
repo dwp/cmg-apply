@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block pageTitle %} How often does the child stay extra nights with the other parent? {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="get" action='1-overnight-local-authority.html' >
+            <div class="govuk-form-group">
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+
+                {% if data['arrangementType'] == "The child stays overnight with the other parent as needed" %} Each year, how often does {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}stay with the other parent overnight? 
+                
+                {% endif %}
+
+              </h1>
+              {# <p class="govuk-body govuk-!-padding-top-0">Tell us about extra nights like school holidays or birthdays. Do not include nights you have already told us about.
+                </p> #}
+  
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="extranights-amount">How many nights?</label>
+               
+                <input class="govuk-input govuk-input--width-2 " id="extranights-amount" name="extranights-amount" type="number">
+              </div>
+            </div>
+
+            <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

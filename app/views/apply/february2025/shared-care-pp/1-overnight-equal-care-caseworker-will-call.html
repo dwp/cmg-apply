@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+    <!--Feedback banner start-->
+    {% include "feedback-banner.html" %}
+    <!--Feedback banner stop-->
+    <div class="govuk-width-container">
+        {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form method="post" novalidate>
+                        <!--start of radio-->
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="live-uk-hint">
+                                <legend
+                                class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-fieldset__legend--xl govuk-!-margin-bottom-9">
+                                    <h1 class="govuk-fieldset__heading">
+                                    A caseworker will call you after you submit your application
+                                </h1>
+                                </legend>
+
+                                {{ govukWarningText({
+                                                        text: "We will not save your information if you exit the service now.",
+                                            iconFallbackText: "Warning"
+                                }) }}
+                                <p class="govuk-body">We need to collect more information from you about your equal shared care arrangement. Please continue with your application.
+                            </p>
+                            <p class="govuk-body">A caseworker will contact you within 14 days after you submit your information.</p>
+                            </fieldset>
+                        </div>
+                        <a href="1-check-your-answers-small-equal.html" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Continue</a>
+
+                    </form>
+                </div>
+                {% include "exit-button.html" %}
+            </div>
+
+        </main>
+    </div>
+{% endblock %}
