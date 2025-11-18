@@ -43,13 +43,23 @@
                                     </dd>
                                 </div>
                                  
+                                {% if data['childLaNights'] == "Yes" %}
                                 <div class="govuk-summary-list__row">
                                     <dt class="govuk-summary-list__key">Local authority nights </dt>
-                                    <dd class="govuk-summary-list__value">{{data['laNightsFrequency']}} <br> {{data['laNights']}} nights</dd>
+                                    <dd class="govuk-summary-list__value">{{data['childLaNights']}} <br> {{data['laNightsFrequency']}} <br> {{data['laNights']}} nights</dd>
                                     <dd class="govuk-summary-list__actions">
                                         <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
                                     </dd>
                                 </div>
+                                {% else %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority nights </dt>
+                                    <dd class="govuk-summary-list__value">{{data['childLaNights']}} </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                {% endif %}
                                 
                                 <div class="govuk-summary-list__row">
                                     <dt class="govuk-summary-list__key">Total overnight stays with you</dt>
@@ -59,13 +69,23 @@
                                 {% endif %}
 
                                 {% if data['arrangementType'] == "My child never stays overnight with the other parent" %}
+                                {% if data['childLaNights'] == "Yes" %}
                                 <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">Local authority stays </dt>
-                                    <dd class="govuk-summary-list__value">{{data['laNightsFrequency']}} <br> {{data['laNights']}}</dd>
+                                    <dt class="govuk-summary-list__key">Local authority nights </dt>
+                                    <dd class="govuk-summary-list__value">{{data['childLaNights']}} <br> {{data['laNightsFrequency']}} <br> {{data['laNights']}} nights</dd>
                                     <dd class="govuk-summary-list__actions">
                                         <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
                                     </dd>
                                 </div>
+                                {% else %}
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">Local authority nights </dt>
+                                    <dd class="govuk-summary-list__value">{{data['childLaNights']}} </dd>
+                                    <dd class="govuk-summary-list__actions">
+                                        <a class="govuk-link" href="1-overnight-local-authority.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                                    </dd>
+                                </div>
+                                {% endif %}
                                
                                 <div class="govuk-summary-list__row">
                                     <dt class="govuk-summary-list__key">Total overnight stays with the other parent</dt>
