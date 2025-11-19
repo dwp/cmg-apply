@@ -1,76 +1,62 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
 
-<div class="govuk-width-container">
-    <form method="post" action="/calculator/rp/" novalidate>
-    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
-    <main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-width-container">
+      {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+      <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
 
-
-<div class="govuk-form-group">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h1 class="govuk-fieldset__heading">
+          <div class="govuk-grid-column-two-thirds">
+            <form method="post" action="" novalidate>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
           How many children live with the other parent?
         </h1>
-      </legend>
-      <div id="changedName-hint" class="govuk-hint">
+                </legend>
+                <div id="changedname-hint" class="govuk-hint">
         Do not include any children they already pay maintenance for.
       </div>
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="children-arrangement" name="children-arrangement" type="radio" value="none~/calculator/rp/support-children-privately-or-cms.html">
-          <label class="govuk-label govuk-radios__label" for="children-arrangement">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="children-arrangement" name="children-arrangement" type="radio" value="None~what-is-the-other-parents-name">
+                    <label class="govuk-label govuk-radios__label" for="children-arrangement">
             None
           </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="children-arrangement" name="children-arrangement" type="radio" value="1~/calculator/rp/support-children-privately-or-cms.html">
-          <label class="govuk-label govuk-radios__label" for="children-arrangement">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="children-arrangement-2" name="children-arrangement" type="radio" value="1~support-children-privately-or-cms">
+                    <label class="govuk-label govuk-radios__label" for="children-arrangement">
             1
           </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="children-arrangement" name="children-arrangement" type="radio" value="2~/calculator/rp/support-children-privately-or-cms.html">
-          <label class="govuk-label govuk-radios__label" for="children-arrangement">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="children-arrangement-3" name="children-arrangement" type="radio" value="2~support-children-privately-or-cms">
+                    <label class="govuk-label govuk-radios__label" for="children-arrangement-3">
            2
           </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="children-arrangement" name="children-arrangement" type="radio" value="3-or-more~/calculator/rp/support-children-privately-or-cms.html">
-          <label class="govuk-label govuk-radios__label" for="children-arrangement">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="children-arrangement-4" name="children-arrangement" type="radio" value="3 or more~support-children-privately-or-cms">
+                    <label class="govuk-label govuk-radios__label" for="children-arrangement-4">
             3 or more
           </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">Continue</button>
+
+          </form>
         </div>
+        {% include "exit-button.html" %}
       </div>
-    </fieldset>
+    </main>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<button type="submit" class="govuk-button">
-    Continue
-</button>
-
-</form>
-</div>
-{% include "exit-button.html" %}
-</div>
-</main>
-</div>
 {% endblock %}
-

@@ -1,22 +1,24 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
-<!--Feedback banner stop-->
-<div class="govuk-width-container">
-  <form method="post" action="/calculator/rp/child-confirmation" novalidate>
-  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
 
-  <main class="govuk-main-wrapper " id="main-content" role="main">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form class=“form” method=“post” novalidate>
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
 
-          <div class="govuk-form-group">
-             
-                <h1 class="govuk-heading-xl">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="child-confirmation" novalidate>
+            <div class="govuk-form-group">
+              <h1 class="govuk-heading-xl">
                   How often does {{data['child-one-first-name']}} stay overnight with the other parent?
                 </h1>
-             
+
               <p>
                 If you have not yet worked out how often {{data['child-one-first-name'] }} will stay overnight with
                 the other parent, tell us what's happening now.
@@ -26,8 +28,8 @@
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="shared-care-days" name="shared-care-weekly" type="radio" value="Weekly" data-aria-controls="conditional-contact">
-                  <label class="govuk-label govuk-radios__label" for="shared-care-days">
+                  <input class="govuk-radios__input" id="overnight-stays" name="overnight-stays" type="radio" value="weekly" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="overnight-stays">
                     Weekly
                   </label>
                 </div>
@@ -36,17 +38,17 @@
                     <label class="govuk-label" for="contact-by-email">
                       How many overnight stays in a week?
                     </label>
-  
+
                     <div class="govuk-input__wrapper">
                       <div class="govuk-input--width-10" aria-hidden="false"></div>
                       <input class="govuk-input govuk-input--width-5" id="shared-care-days-amount" name="shared-care-days-amount" type="text" spellcheck="false">
                     </div>
-                   
+
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="shared-care-days" name="shared-care-fortnightly" type="radio" value="Fortnightly" data-aria-controls="conditional-contact-2">
-                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                  <input class="govuk-radios__input" id="overnight-stays-2" name="overnight-stays" type="radio" value="fortnightly" data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-radios__label" for="overnight-stays-2">
                     Fortnightly
                   </label>
                 </div>
@@ -55,114 +57,117 @@
                     <label class="govuk-label" for="contact-by-phone">
                       How many overnight stays in a fortnight?
                     </label>
-  
+
                     <div class="govuk-input__wrapper">
                       <div class="govuk-input--width-10" aria-hidden="false"></div>
                       <input class="govuk-input govuk-input--width-5" id="shared-care-days-amount" name="shared-care-days-amount" type="text" spellcheck="false">
                     </div>
-  
+
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="shared-care-days" name="shared-care-monthly" type="radio" value="Monthly" data-aria-controls="conditional-contact-3">
-                  <label class="govuk-label govuk-radios__label" for="contact-3">
-                    Monthly
+                  <input class="govuk-radios__input" id="overnight-stays-3" name="overnight-stays" type="radio" value="4 weekly" data-aria-controls="conditional-contact-3">
+                  <label class="govuk-label govuk-radios__label" for="overnight-stays-3">
+                    4 Weekly
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="contact-by-text">
-                      How many overnight stays in a month?
+                      How many overnight stays in 4 weeks?
                     </label>
-  
+
                     <div class="govuk-input__wrapper">
                       <div class="govuk-input--width-10" aria-hidden="false"></div>
                       <input class="govuk-input govuk-input--width-5" id="shared-care-days-amount" name="shared-care-days-amount" type="text" spellcheck="false">
                     </div>
-  
+
                   </div>
                 </div>
-  
-  
-              <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="conditional-contact-5" name="shared-care-never" type="radio" value="Never">
-                  <label class="govuk-label govuk-radios__label" for="contact-5">
-                    Never
+                  <input class="govuk-radios__input" id="overnight-stays-4" name="overnight-stays" type="radio" value="monthly" data-aria-controls="conditional-contact-4">
+                  <label class="govuk-label govuk-radios__label" for="overnight-stays-4">
+                    Monthly
                   </label>
                 </div>
-            </fieldset>
-          </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-4">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-text">
+                      How many overnight stays in a month?
+                    </label>
 
-          <br>
-  
+                    <div class="govuk-input__wrapper">
+                      <div class="govuk-input--width-10" aria-hidden="false"></div>
+                      <input class="govuk-input govuk-input--width-5" id="shared-care-days-amount" name="shared-care-days-amount" type="text" spellcheck="false">
+                    </div>
 
-          <br>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="sharedCare" role="group">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
-                <h1 class="govuk-fieldset__heading" id="sharedCare">
+                  </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="overnight-stays-5" name="overnight-stays" type="radio" value="never">
+                    <label class="govuk-label govuk-radios__label" for="overnight-stays-5">
+                    Never
+                  </label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <br>
+
+              <br>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="sharedcare" role="group">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
+                    <h1 class="govuk-fieldset__heading" id="sharedcare">
 
                   Does {{data['child-one-first-name'] }} spend any additional nights with the other parent that you
                   have not already told us about?
                 </h1>
-                <span class="govuk-hint">For example, special occasions like school holidays or birthdays.</span>
-              </legend>
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="yes" name="special" type="radio" value="yes"
-                    data-aria-controls="conditional-how-contacted-conditional">
-                  <label class="govuk-label govuk-radios__label" for="yes">
+                    <span class="govuk-hint">For example, special occasions like school holidays or birthdays.</span>
+                  </legend>
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="additional-nights" name="additional-nights" type="radio" value="yes"
+                    data-aria-controls="conditional-additional-nights">
+                      <label class="govuk-label govuk-radios__label" for="additional-nights">
                     Yes
                   </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                  id="conditional-how-contacted-conditional">
-
-                  <div class="govuk-form-group">
-                    <div class="govuk-date-input__item">
-                      <label class="govuk-label govuk-date-input__label" for="special-nights">
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="conditional-additional-nights">
+                      <div class="govuk-form-group">
+                        <div class="govuk-date-input__item">
+                          <label class="govuk-label govuk-date-input__label" for="special-nights">
                         Number of additional nights a year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="special-nights"
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="special-nights"
                         name="special-nights" type="number" spellcheck="false">
-
+                        </div>
+                      </div>
                     </div>
-
                   </div>
-
-
-
-                  </div>
-
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="no" name="special" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="no">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-nights-2" name="additional-nights" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="additional-nights-2">
                     No
                   </label>
+                  </div>
                 </div>
+
               </div>
+              <br>
 
-          </div>
-          <br>
-
-
-
-
-          <button type="submit" class="govuk-button">
+              <button type="submit" class="govuk-button">
             Continue
           </button>
 
-        </form>
-
-      </div>
-
-
+            </form>
+          </div>
+        </div>
+        {% include "exit-button.html" %}
+      </main>
     </div>
-    {% include "exit-button.html" %}
-
-
-  </main>
-</div>
-{% endblock %}
+    
+  {% endblock %}

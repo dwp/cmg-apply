@@ -1,56 +1,58 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
 
-<!--Feedback banner stop-->
-<div class="govuk-width-container">
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
     {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
     <main class="govuk-main-wrapper " id="main-content" role="main">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <form method="post" novalidate>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form method="post" novalidate>
 
-
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                        <h1 class="govuk-fieldset__heading">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
                           Do you want to add the names of each parent to your calculation?
                         </h1>
-                      </legend>
-                      <div id="changedName-hint" class="govuk-hint">
+                </legend>
+                <div id="changedname-hint" class="govuk-hint">
                         You will be able to download a copy of your results to help you and the other parent make your own child maintenance arrangement.
                         Your name will be shown on your calculation summary but will not be stored.
                       </div>
-                      <div class="govuk-radios" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="get-any-income-1" name="get-any-income-1" type="radio" value="yes~/calculator/rp/what-is-your-name.html">
-                          <label class="govuk-label govuk-radios__label" for="get-any-income-1">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="add-parents-names" name="add-parents-names" type="radio" value="Yes~what-is-your-name.html">
+                    <label class="govuk-label govuk-radios__label" for="add-parents-names">
                             Yes
                           </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="get-any-income-2" name="get-any-income-2" type="radio" value="get-any-income-2~/calculator/rp/what-is-your-childs-name.html">
-                          <label class="govuk-label govuk-radios__label" for="get-any-income-2">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="add-parents-names-2" name="add-parents-names" type="radio" value="No~check-your-answers.html">
+                    <label class="govuk-label govuk-radios__label" for="add-parents-names-2">
                             No
                           </label>
-                        </div>
-                      </div>
-                    </fieldset>
                   </div>
+                </div>
+              </fieldset>
+            </div>
 
-        <br>
+            <br>
 
-        <!--end-->
-        <button type="submit" class="govuk-button">
+            <!--end-->
+            <button type="submit" class="govuk-button">
             Continue
         </button>
-    </form>
+          </form>
 
-</div>
-{% include "exit-button.html" %}
-</div>
+        </div>
+        {% include "exit-button.html" %}
+      </div>
 
-</main>
-</div>
+    </main>
+  </div>
 {% endblock %}

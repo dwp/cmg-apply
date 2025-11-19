@@ -1,53 +1,53 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+    <!--Feedback banner start-->
+    {% include "feedback-banner.html" %}
 
-<!--Feedback banner stop-->
-<div class="govuk-width-container">
-    <form method="post" action="/calculator/rp/overnight-stays" novalidate>
-    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
-    <main class="govuk-main-wrapper " id="main-content" role="main">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-               
-                <h1 class="govuk-heading-xl">What is your child's full name?</h1>
-              
-                  <div class="govuk-inset-text">
+    <!--Feedback banner stop-->
+    <div class="govuk-width-container">
+        {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form method="post" action="overnight-stays" novalidate>
+                        <h1 class="govuk-heading-xl">What is your child's full name?</h1>
+
+                        <div class="govuk-inset-text">
                     If you need to include more than one child in this calculation, we'll ask you about them next.
                   </div>
 
-                    <div class="govuk-form-group">
-                        <label class="govuk-label govuk-!-width-two-thirds" for="child-one-first-name">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-!-width-two-thirds" for="child-one-first-name">
                             First name
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="child-one-first-name" name="child-one-first-name" type="text" autocomplete="name"
+                            <input class="govuk-input govuk-!-width-two-thirds" id="child-one-first-name" name="child-one-first-name" type="text" autocomplete="name"
                             spellcheck="false">
-                    </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label govuk-!-width-two-thirds" for="child-one-middle-name">
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-!-width-two-thirds" for="child-one-middle-name">
                             Middle names (if they have any)
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="child-one-middle-name" name="child-one-middle-name" type="text" autocomplete="name"
+                            <input class="govuk-input govuk-!-width-two-thirds" id="child-one-middle-name" name="child-one-middle-name" type="text" autocomplete="name"
                             spellcheck="false">
-                    </div>
-                    <div class="govuk-form-group">
-                        <label class="govuk-label govuk-!-width-two-thirds" for="child-one-last-name">
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-!-width-two-thirds" for="child-one-last-name">
                             Last name
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="child-one-last-name" name="child-one-last-name" type="text" autocomplete="name"
+                            <input class="govuk-input govuk-!-width-two-thirds" id="child-one-last-name" name="child-one-last-name" type="text" autocomplete="name"
                             spellcheck="false">
-                    </div>
+                        </div>
 
-
-                    <button type="submit" class="govuk-button">
+                        <button type="submit" class="govuk-button">
                         Continue
                     </button>
 
-                </form>
-              </div>                                               {% include "exit-button.html" %}
-        </div>
-    </main>
-</div>
+                    </form>
+                </div>
+                {% include "exit-button.html" %}
+            </div>
+        </main>
+    </div>
 {% endblock %}
-
-                

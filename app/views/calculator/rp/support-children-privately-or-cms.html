@@ -1,78 +1,64 @@
-{% extends "layout.html" %} {% set serviceName %} Calculate child maintenance {% endset%} {% block pageTitle %} GOV.UK Prototype Kit {% endblock %} {% block content %}
-<!--Feedback banner start-->
-{% include "feedback-banner.html" %}
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
 
-<div class="govuk-width-container">
-    <form method="post" action="/calculator/rp/" novalidate>
+  <div class="govuk-width-container">
     {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
     <main class="govuk-main-wrapper " id="main-content" role="main">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-
-<div class="govuk-form-group">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h1 class="govuk-fieldset__heading">
+          <form method="post" action="do-you-want-to-add-names" novalidate>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
           How many children does the other parent financially support?
         </h1>
-      </legend>
+                </legend>
 
-      <div id="changedName-hint" class="govuk-hint">
+                <div id="changedname-hint" class="govuk-hint">
         This can include a child the other parent supports privately or using the Child Maintenance Service.
       </div>
 
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="none~/calculator/rp/do-you-want-to-add-names.html">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="financially-support" name="financially-support" type="radio" value="None">
+                    <label class="govuk-label govuk-radios__label" for="financially-support">
             None
           </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="1~/calculator/rp/do-you-want-to-add-names.html">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="financially-support-2" name="financially-support" type="radio" value="1">
+                    <label class="govuk-label govuk-radios__label" for="financially-support-2">
             1
           </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="2~/calculator/rp/do-you-want-to-add-names.html">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="financially-support-3" name="financially-support" type="radio" value="2">
+                    <label class="govuk-label govuk-radios__label" for="wheredoyoulive-3">
            2
           </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="3-or-more~/calculator/rp/do-you-want-to-add-names.html">
-          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="financially-support-4" name="financially-support" type="radio" value="3 or more">
+                    <label class="govuk-label govuk-radios__label" for="financially-support-4">
             3 or more
           </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">Continue</button>
+
+          </form>
         </div>
+        {% include "exit-button.html" %}
       </div>
-    </fieldset>
+    </main>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<button type="submit" class="govuk-button">
-    Continue
-</button>
-
-</form>
-</div>
-{% include "exit-button.html" %}
-</div>
-</main>
-</div>
 {% endblock %}
-
