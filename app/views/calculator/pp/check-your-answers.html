@@ -1,0 +1,201 @@
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} Check your answers {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+
+        <!--start of answers-->
+
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <form method="post" action="confirmation" novalidate>
+            <h1 class="govuk-heading-xl">Check your answers</h1>
+
+            <h2 class="govuk-heading-m">Other parent's details</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Paying or receiving child maintenance
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['parentType'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/calculator/paying-or-receiving.html">
+                  Change<span class="govuk-visually-hidden"> paying or receiving</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+               Other parent benefits or state pension
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['benefits-or-pension'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="benefits-or-pension.html">
+                  Change<span class="govuk-visually-hidden"> benefits or pensions</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Does the other parent get any income
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['get-any-income'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="get-any-income.html">
+                  Change<span class="govuk-visually-hidden"> get any income</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Other parent's total taxable income
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['income-amount'] }}
+                  <br>
+                  {{data['often-paid'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="other-parent-income.html">
+                  Change<span class="govuk-visually-hidden"> taxable income</span>
+                  </a>
+                </dd>
+              </div>
+
+              <br><br>
+
+              <h2 class="govuk-heading-m">Children’s details</h2>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Child's full name
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['child-one-first-name'] }}
+                  {{data['child-one-middle-name'] }}
+                  {{data['child-one-last-name'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="what-is-your-childs-name.html">
+                  Change<span class="govuk-visually-hidden"> child's name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+               How often does {{data['child-one-first-name'] }} stay overnight with the other parent
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['overnight-stays'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="overnight-stays.html">
+                  Change<span class="govuk-visually-hidden"> overnight stays</span>
+                  </a>
+                </dd>
+              </div>
+
+              <br><br>
+
+              <h2 class="govuk-heading-m">Additonal children</h2>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                How many children live with the other parent
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['children-arrangement'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="how-many-children-live-with-other-parent.html">
+                  Change<span class="govuk-visually-hidden"> other children</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                How many children does the other parent financially support
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['financially-support'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="support-children-privately-or-cms.html">
+                  Change<span class="govuk-visually-hidden"> financially support other children</span>
+                  </a>
+                </dd>
+              </div>
+
+              <br><br>
+
+              <h2 class="govuk-heading-m">Calculation details</h2>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Add the names of each parent to your calculation
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['add-parents-names'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="do-you-want-to-add-names.html">
+                  Change<span class="govuk-visually-hidden"> add parents names</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Your name
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['your-name'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="what-is-your-name.html">
+                  Change<span class="govuk-visually-hidden"> your name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Other parent's name
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['other-parents-name'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="what-is-the-other-parents-name.html">
+                  Change<span class="govuk-visually-hidden"> other parents name</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+            <button type="submit" class="govuk-button">
+            Continue
+          </button>
+          </form>
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

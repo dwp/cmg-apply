@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set serviceName %} Calculate child maintenance {% endset%}
-{% block pageTitle %} Paying or receiving calculation {% endblock %}
+{% block pageTitle %} Benefits or pension {% endblock %}
 {% block content %}
   <!--Feedback banner start-->
   {% include "feedback-banner.html" %}
@@ -13,46 +13,43 @@
         <div class="govuk-grid-column-two-thirds">
           <form method="post" novalidate>
             <!--start of radio-->
+
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   <h1 class="govuk-fieldset__heading">
-                            Will you be paying or receiving child maintenance payments?
-                  </h1>
-
-                  <div class="govuk-!-padding-bottom-5"></div>
-
-                  <div id="hint" class="govuk-hint">
-                          If you are receiving child maintenance, your child should live with you most of the time. You will not get child maintenance if the day-to-day care of your child is equal between parents. 
-                        </div>
+                            Do you get any benefits or state pension?
+                          </h1>
                 </legend>
-
-                <div class="govuk-radios">
+                <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="parenttype" name="parenttype" type="radio" value="Paying~/calculator/pp/more-than-one-parent.html">
-                    <label class="govuk-label govuk-radios__label" for="parenttype">
-                                Paying
-                    </label>
+                    <input class="govuk-radios__input" id="benefits-or-pension-1" name="benefits-or-pension" type="radio" value="Yes~benefits-and-pension-list.html">
+                    <label class="govuk-label govuk-radios__label" for="benefits-or-pension-1">
+                              Yes
+                            </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="parenttype-2" name="parenttype" type="radio" value="Receiving~/calculator/rp/benefits-or-pension.html">
-                    <label class="govuk-label govuk-radios__label" for="parenttype-2">
-                                Receiving
-                    </label>
+                    <input class="govuk-radios__input" id="benefits-or-pension-2" name="benefits-or-pension" type="radio" value="No~get-any-income.html">
+                    <label class="govuk-label govuk-radios__label" for="benefits-or-pension-2">
+                              No
+                            </label>
                   </div>
                 </div>
               </fieldset>
             </div>
 
+            
             <!--end-->
             <button type="submit" class="govuk-button">
             Continue
-          </button>
+        </button>
           </form>
 
         </div>
         {% include "exit-button.html" %}
+
       </div>
+
     </main>
   </div>
 {% endblock %}

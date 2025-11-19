@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} Calculator confirmation {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row govuk-!-margin-top-9">
+        <div class="govuk-grid-column-two-thirds ">
+
+          <div class="govuk-panel govuk-panel--confirmation ">
+            <h1 class="govuk-panel__title">
+             Your estimated child maintenance calculation
+          </h1>
+            <div class="govuk-panel__body">
+              <strong>£7.00 a week</strong> or <strong>£30.31 a month</strong>
+            </div>
+          </div>
+
+          <p class="govuk-body">Based on the information you gave us, the Child Maintenance Service would calculate this as
+          the estimated amount you should pay.
+        </p>
+
+          <p class="govuk-body">This amount will be less if you have to pay maintenance for children you have with someone else.
+        </p>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+            This calculation is an estimate &#8211; it does not guarantee how much you will pay if you make a child maintenance application. If you use the Child Maintenance Service, there may be other things we take into account that can make this amount higher or lower.
+          </strong>
+          </div>
+
+          <div class="govuk-body">
+            <a href="">Download a copy of your answers and calculation (downloads a PDF)</a> to save or share with the other parent.
+          </div>
+
+          <div class="govuk-body">Some PDF documnets aren't fully accessible to screen reader software, and may not show true colours &#8211; you can <a href="">download an accessible HTML file (downloads a HTML file)</a> of your answers and calculation. 
+          </div>
+
+          <div class="govuk-body">If you need to you can <a href="">make another calculation</a>.</div>
+
+          <h2 class="govuk-heading-m">Next steps</h2>
+
+          <div class="govuk-body">
+            Use this calculation to help you and the other parent agree how you will share the costs of raising your children.
+          </div>
+          <div class="govuk-body">
+            If a private arrangement is not right for you, find out more abouit the <a href="">Child Maintenance Service</a>.
+          </div>
+
+          <h3 class="govuk-heading-m">Give your feedback</h3>
+          <div class="govuk-body">
+            Help us improve the Child Maintenance Service by filling in a quick optional survey.
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">Continue to survey</button>
+
+        </div> <!-- govuk-grid-column-two-thrids -->
+
+        <div class="govuk-grid-column-one-third ">
+          <div class="govuk-button--sticky">
+            <a href="https://www.bbc.co.uk/weather" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-!-padding-5 govuk-button--sticky govuk-!-width-full govuk-button--stick hide-on-small"
+            data-module="govuk-button">
+            Hide this page
+            </a>
+          </div>
+
+          <h4 class="govuk-heading-s">Related content</h4>
+          <div class="govuk-body">
+            <a href="">If you already have a Child Maintenance Service case</a>
+          </div>
+
+          <h4 class="govuk-heading-s">Related guides</h4>
+          <div class="govuk-body">These guides can help you to&#58;</div>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#">Support your child during seperation</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#">Work out the cost of raising your child
+              </li>
+              <li>
+                <a class="govuk-link" href="#">Plan a conversation about child maintenance</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#">Write a child maintenance agreement</a>
+              </li>
+            </ul>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <h4 class="govuk-heading-s">Help with money</h4>
+            <div class="govuk-body">
+              <a href="">Free impartial help with money, backed by the government</a>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <h4 class="govuk-heading-s">Explore the topic</h4>
+            <div class="govuk-body">
+              <a href="">Marriage, civil partnerships and divorce</a>
+              <br>
+              <a href="">Divorce, seperation and legal issues</a>
+              <br>
+              <a href="">Having a child, parenting and adoption</a>
+            </div>
+
+          </div> <!-- govuk-grid-column-one-third -->
+
+        </div>
+      </main>
+    </div>
+
+  {% endblock %}

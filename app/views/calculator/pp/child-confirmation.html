@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} Child confirmation {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="" novalidate>
+            <span class="govuk-caption-xl">You have told us about</span>
+            <h1 class="govuk-heading-xl">{{data['child-one-first-name'] }}
+              {{data['child-one-middle-name'] }}
+              {{data['child-one-last-name'] }}</h1>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changedname-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                          Do you need to add another child?
+                        </h1>
+                </legend>
+                <div id="changedname-hint" class="govuk-hint">
+                        You should only add children who live with you most of the time.
+                      </div>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="add-child" name="add-child" type="radio" value="Yes~what-is-your-childs-name">
+                    <label class="govuk-label govuk-radios__label" for="add-child">
+                            Yes
+                          </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="add-child-2" name="add-child" type="radio" value="No~how-many-children-live-with-you">
+                    <label class="govuk-label govuk-radios__label" for="add-child-2">
+                            No
+                          </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+                        Continue
+            </button>
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+{% endblock %}

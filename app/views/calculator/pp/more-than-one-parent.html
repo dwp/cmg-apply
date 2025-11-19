@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set serviceName %} Calculate child maintenance {% endset%}
-{% block pageTitle %} Paying or receiving calculation {% endblock %}
+{% block pageTitle %} Payments to more than one parent {% endblock %}
 {% block content %}
   <!--Feedback banner start-->
   {% include "feedback-banner.html" %}
@@ -17,33 +17,28 @@
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   <h1 class="govuk-fieldset__heading">
-                            Will you be paying or receiving child maintenance payments?
+                            Will you be making payments to more than one other parent?
                   </h1>
-
-                  <div class="govuk-!-padding-bottom-5"></div>
-
-                  <div id="hint" class="govuk-hint">
-                          If you are receiving child maintenance, your child should live with you most of the time. You will not get child maintenance if the day-to-day care of your child is equal between parents. 
-                        </div>
                 </legend>
 
                 <div class="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="parenttype" name="parenttype" type="radio" value="Paying~/calculator/pp/more-than-one-parent.html">
-                    <label class="govuk-label govuk-radios__label" for="parenttype">
-                                Paying
+                    <input class="govuk-radios__input" id="more-than-one-parent" name="more-than-one-parent" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="more-than-one-parent">
+                        Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="parenttype-2" name="parenttype" type="radio" value="Receiving~/calculator/rp/benefits-or-pension.html">
-                    <label class="govuk-label govuk-radios__label" for="parenttype-2">
-                                Receiving
+                    <input class="govuk-radios__input" id="more-than-one-parent-2" name="more-than-one-parent" type="radio" value="No~benefits-or-pension">
+                    <label class="govuk-label govuk-radios__label" for="more-than-one-parent-2">
+                        No
                     </label>
                   </div>
                 </div>
               </fieldset>
             </div>
 
+            <br>
             <!--end-->
             <button type="submit" class="govuk-button">
             Continue
