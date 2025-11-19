@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set serviceName %} Calculate child maintenance {% endset%}
-{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block pageTitle %} Supporting other children {% endblock %}
 {% block content %}
   <!--Feedback banner start-->
   {% include "feedback-banner.html" %}
@@ -15,40 +15,38 @@
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                  <h1 class="govuk-fieldset__heading">
-          How many children does the other parent financially support?
-        </h1>
+                  <h1 class="govuk-fieldset__heading">How many children does the other parent financially support?
+                  </h1>
                 </legend>
 
-                <div id="changedname-hint" class="govuk-hint">
-        This can include a child the other parent supports privately or using the Child Maintenance Service.
-      </div>
+                <div id="changedname-hint" class="govuk-hint">This can include a child the other parent supports privately or using the Child Maintenance Service.
+                </div>
 
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="financially-support" name="financially-support" type="radio" value="None">
-                    <label class="govuk-label govuk-radios__label" for="financially-support">
-            None
-          </label>
+                    <label class="govuk-label govuk-radios__label" for="financially-support">None
+                    </label>
                   </div>
+
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="financially-support-2" name="financially-support" type="radio" value="1">
-                    <label class="govuk-label govuk-radios__label" for="financially-support-2">
-            1
-          </label>
+                    <label class="govuk-label govuk-radios__label" for="financially-support-2">1
+                  </label>
                   </div>
+
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="financially-support-3" name="financially-support" type="radio" value="2">
-                    <label class="govuk-label govuk-radios__label" for="wheredoyoulive-3">
-           2
-          </label>
+                    <label class="govuk-label govuk-radios__label" for="wheredoyoulive-3">2
+                  </label>
                   </div>
+
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="financially-support-4" name="financially-support" type="radio" value="3 or more">
-                    <label class="govuk-label govuk-radios__label" for="financially-support-4">
-            3 or more
-          </label>
+                    <label class="govuk-label govuk-radios__label" for="financially-support-4">3 or more
+                    </label>
                   </div>
+
                 </div>
               </fieldset>
             </div>

@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 {% set serviceName %} Calculate child maintenance {% endset%}
-{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block pageTitle %} Benefits and pensions list {% endblock %}
 {% block content %}
     <!--Feedback banner start-->
     {% include "feedback-banner.html" %}
     <!--Feedback banner stop-->
 
     <div class="govuk-width-container">
-        <form method="post" action="/calculator/rp/get-any-income" novalidate>
-            {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
-            <main class="govuk-main-wrapper " id="main-content" role="main">
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-two-thirds">
+        {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form method="post" action="get-any-income" novalidate>
                         <div class="govuk-form-group">
                             <fieldset class="govuk-fieldset" aria-describedby="benefit-hint">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -105,7 +105,7 @@
                                 Personal Independence Payment
                                 </label>
                                     </div>
-                                <div class="govuk-checkboxes__item">
+                                    <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input" id="benefit-14" name="benefit" type="checkbox" value="severe disability allowmance">
                                         <label class="govuk-label govuk-checkboxes__label" for="benefit-14">
                                 Severe Disability Allowance
@@ -174,7 +174,6 @@
                     </form>
                 </div>
                 {% include "exit-button.html" %}
-
             </div>
         </main>
     </div>

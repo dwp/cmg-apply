@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set serviceName %} Calculate child maintenance {% endset%}
-{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block pageTitle %} Other parents income {% endblock %}
 {% block content %}
   <!--Feedback banner start-->
   {% include "feedback-banner.html" %}
@@ -50,32 +50,28 @@
                   <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="often-paid" name="often-paid" type="radio" value="Weekly">
-                      <label class="govuk-label govuk-radios__label" for="often-paid">
-          Weekly
-        </label>
+                      <label class="govuk-label govuk-radios__label" for="often-paid">Weekly</label>
                     </div>
 
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="often-paid-2" name="often-paid" type="radio" value="Monthly">
-                      <label class="govuk-label govuk-radios__label" for="often-paid-2">
-        Monthly
-        </label>
+                      <label class="govuk-label govuk-radios__label" for="often-paid-2">Monthly</label>
                     </div>
 
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="often-paid-3" name="often-paid" type="radio" value="Yearly">
-                      <label class="govuk-label govuk-radios__label" for="often-paid-3">
-          Yearly
-        </label>
+                      <label class="govuk-label govuk-radios__label" for="often-paid-3">Yearly</label>
                     </div>
                   </div>
+
                 </fieldset>
               </div>
 
               <button type="submit" class="govuk-button">
                             Continue
-                        </button>
+              </button>
             </form>
+
           </div>
           {% include "exit-button.html" %}
 
