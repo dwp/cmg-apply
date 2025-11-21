@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set serviceName %} Calculate child maintenance {% endset%}
-{% block pageTitle %} Payments to more than one parent {% endblock %}
+{% block pageTitle %} Benefits or pension {% endblock %}
 {% block content %}
   <!--Feedback banner start-->
   {% include "feedback-banner.html" %}
@@ -13,41 +13,43 @@
         <div class="govuk-grid-column-two-thirds">
           <form method="post" novalidate>
             <!--start of radio-->
+
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   <h1 class="govuk-fieldset__heading">
-                            Will you be making payments to more than one other parent?
-                  </h1>
+                            Do you get any benefits or state pension?
+                          </h1>
                 </legend>
-
-                <div class="govuk-radios">
+                <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="more-than-one-parent" name="more-than-one-parent" type="radio" value="Yes~how-many-receiving-parents">
-                    <label class="govuk-label govuk-radios__label" for="more-than-one-parent">
-                        Yes
-                    </label>
+                    <input class="govuk-radios__input" id="benefitsOrpension-1" name="benefitsOrpension" type="radio" value="Yes~benefits-and-pension-list-multi-rp.html">
+                    <label class="govuk-label govuk-radios__label" for="benefitsOrpension-1">
+                              Yes
+                            </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="more-than-one-parent-2" name="more-than-one-parent" type="radio" value="No~benefits-or-pension">
-                    <label class="govuk-label govuk-radios__label" for="more-than-one-parent-2">
-                        No
-                    </label>
+                    <input class="govuk-radios__input" id="benefitsOrpension-2" name="benefitsOrpension" type="radio" value="No~get-any-income-multi-rp.html">
+                    <label class="govuk-label govuk-radios__label" for="benefitsOrpension-2">
+                              No
+                            </label>
                   </div>
                 </div>
               </fieldset>
             </div>
 
-            <br>
+            
             <!--end-->
             <button type="submit" class="govuk-button">
             Continue
-          </button>
+        </button>
           </form>
 
         </div>
         {% include "exit-button.html" %}
+
       </div>
+
     </main>
   </div>
 {% endblock %}

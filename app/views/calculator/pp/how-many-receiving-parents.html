@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% set serviceName %} Calculate child maintenance {% endset%}
+{% block pageTitle %} Child confirmation {% endblock %}
+{% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="benefits-or-pension-multi-rp" novalidate>
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--xl" for="how-many-rps">
+                How many people will you be paying Child Maintenance to?
+              </label>
+            </h1>
+            <div id="event-name-hint" class="govuk-hint">
+              We call these people 'receving parents'
+            </div>
+            <input class="govuk-input govuk-input--width-5" id="how-many-rps" name="how-many-rps" type="text" aria-describedby="how-many-rps-hint">
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+        </form>
+
+      </div>
+      {% include "exit-button.html" %}
+    </div>
+  </main>
+</div>
+{% endblock %}
