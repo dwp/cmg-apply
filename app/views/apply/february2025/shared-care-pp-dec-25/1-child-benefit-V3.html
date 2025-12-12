@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block pageTitle %} Does someone receive Child Benefit payments for this child? {% endblock %}
+{% block
+content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="post" action="1-written-agreement-question" novalidate>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="cifba-benefit-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                  Do you get Child Benefit payments for {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+                  {% else %}
+                  [Child's name]
+                  {% endif %}?
+                </h1>
+                </legend>
+
+                <div class="govuk-!-padding-bottom-5"></div>
+
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="childBenefit-1" name="childBenefit" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="childBenefit-1">
+                    Yes
+                  </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="childBenefit-2" name="childBenefit" type="radio"
+                    value="No">
+                    <label class="govuk-label govuk-radios__label" for="childBenefit-2">
+                    No
+                  </label>
+                  </div>
+
+                  <div class="govuk-radios__divider">or</div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="childBenefit-3" name="childBenefit" type="radio"
+                    value="I don't know">
+                    <label class="govuk-label govuk-radios__label" for="childBenefit-3">
+                    I don't know
+                  </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

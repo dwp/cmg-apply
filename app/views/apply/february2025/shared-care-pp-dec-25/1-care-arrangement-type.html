@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% block pageTitle %} Which type of overnight arrangement? {% endblock %}
+{% block
+content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form method="" novalidate>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">Which type of overnight arrangement do you have?</h1>
+                </legend>
+                
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="arrangementType" name="arrangementType" type="radio" value="My child stays overnight with me~1-overnight-with-other-parent-regular-v2.html" aria-describedby="signIn-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="arrangementType">{# {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+              {% else %}
+              [Child's name]
+              {% endif %} #}My child stays overnight with me on a regular schedule or as needed</label>
+                    <div id="arrangementType-item-hint" class="govuk-hint govuk-radios__hint">This is sometimes called 'shared care'</div>
+                  </div>
+
+                  {# <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="arrangementType-3" name="arrangementType" type="radio" value="The child stays overnight with the other parent as needed~1-overnight-with-other-parent-irregular-v2.html" aria-describedby="arrangementType-3-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="arrangementType-3">{% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+              {% else %}
+              [Child's name]
+              {% endif %} stays overnight with the other parent as needed </label>
+                    <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">For example, when you have to work overtime or are sick</div>
+                  </div> #}
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="arrangementType-4" name="arrangementType" type="radio" value="My child never stays overnight with me~1-local-authority-question.html" aria-describedby="arrangementType-4-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="arrangementType-4">{# {% if data['child-1-first-name']%} {{data['child-1-first-name']}}
+              {% else %}
+              [Child's name]
+              {% endif %} #}My child never stays overnight with me</label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+          </form>
+
+        </div>
+        {% include "exit-button.html" %}
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

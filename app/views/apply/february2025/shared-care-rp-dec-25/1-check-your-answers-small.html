@@ -1,0 +1,210 @@
+{% extends "layout.html" %} {% block pageTitle %} Check this child's details {% endblock %} {% block content %}
+<!--Feedback banner start-->
+{% include "feedback-banner.html" %}
+<!--Feedback banner stop-->
+<div class="govuk-width-container">
+  {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <form method="post" novalidate>
+          <h1 class="govuk-heading-xl">Check {% if data['child-1-first-name']%} {{data['child-1-first-name'] }}&acute;s
+          {% else %}
+          [Child's name]
+          {% endif %}details
+          </h1>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['child-1-first-name'] }} {{data['child-1-middle-name'] }} {{data['child-1-last-name'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-name.html">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['child-1-date-of-birth-day'] }} {{data['child-1-date-of-birth-month'] }}
+                {{data['child-1-date-of-birth-year'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-dob.html">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Is the other parent named on {{data['child-1-first-name'] }}'s birth certificate?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['birth-certificate'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-birth-certificate.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Child benefit
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['childBenefit'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-child-benefit-V3.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Written agreement
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['writtenAgreement'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-written-agreement-question.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['writtenAgreement'] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Type of written agreement
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['writtenAgreementType'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-written-agreement.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Overnight care arrangement
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['arrangementType'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-overnight-summary.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['arrangementType'] == "My child never stays overnight with me" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Overnight stays each year
+              </dt>
+              <dd class="govuk-summary-list__value">
+               None
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                {# <a class="govuk-link" href="1-overnight-frequency.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a> #}
+              </dd>
+            </div>
+            {% else %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Overnight stays each year
+              </dt>
+              <dd class="govuk-summary-list__value">
+               163
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-overnight-summary.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {# <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Additional information
+              </dt>
+              <dd class="govuk-summary-list__value">
+                
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-overnight-frequency.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> #}
+          </dl>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you need to add another child?
+                </h1>
+              </legend>
+              <div id="changedName-hint" class="govuk-hint">
+                Only include children you need this child maintenance arrangement for.
+              </div>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="addchild" name="addchild" type="radio" value="">
+                  <label class="govuk-label govuk-radios__label" for="addchild">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="addchild-2" name="addchild" type="radio"
+                    value="">
+                  <label class="govuk-label govuk-radios__label" for="addchild-2">
+                    No
+                  </label>
+
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {# <button type="submit" class="govuk-button">
+            Continue
+          </button> #}
+
+          <a href="1-additional-information.html" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Continue</a>
+
+
+        </form>
+
+      </div>
+      {% include "exit-button.html" %}
+    </div>
+  </main>
+</div>
+
+
+{% endblock %}

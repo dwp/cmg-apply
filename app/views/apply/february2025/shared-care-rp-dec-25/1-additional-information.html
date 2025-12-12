@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block pageTitle %} GOV.UK Prototype Kit {% endblock %}
+{% block content %}
+  <!--Feedback banner start-->
+  {% include "feedback-banner.html" %}
+  <!--Feedback banner stop-->
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: 'Back', href: 'javascript:history.back()' }) }}
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form action='' method='post'>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">Do you want to tell us more about {% if data['child-1-first-name']%} {{data['child-1-first-name']}}&acute;s
+                                    {% else %}
+                                    [Child's name]
+                                    {% endif %}overnight stays?</h1>
+                </legend>
+                <div id="contact-hint" class="govuk-hint">Tell us about unusual circumstances that might affect your arrangement. Do not include any nights that you have already told us about.
+                </div>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">Yes</label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      {# <div id="more-detail-hint" class="govuk-hint">Do not enter any numbers of nights or overnight stays you have already told us about.</div> #}
+                      <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                      <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+                        You can enter up to 700 characters
+                    </div>
+                  </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="contact-2"> No</label>
+                  </div>
+                </div>
+              
+            </fieldset>
+          </div>
+
+          {# <button type="submit" class="govuk-button">
+            Continue
+          </button> #}
+          <a href="../sections" role="button" draggable="false" class="govuk-button " data-module="govuk-button">Continue</a>
+
+        </form>
+
+      </div>
+      {% include "exit-button.html" %}
+    </div>
+  </main>
+</div>
+
+{% endblock %}
