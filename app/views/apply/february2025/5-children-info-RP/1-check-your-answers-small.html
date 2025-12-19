@@ -9,7 +9,10 @@
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
         <form method="post" novalidate>
-          <h1 class="govuk-heading-xl">Check {{data['child-1-first-name'] }} {{data['child-1-last-name'] }}'s details
+          <h1 class="govuk-heading-xl">Check {% if data['child-1-first-name']%} {{data['child-1-first-name'] }}&acute;s
+          {% else %}
+          [Child's name]
+          {% endif %}details
           </h1>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -46,7 +49,7 @@
                 Is the other parent named on {{data['child-1-first-name'] }}'s birth certificate?
               </dt>
               <dd class="govuk-summary-list__value">
-                Yes
+                {{data['birth-certificate'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="1-birth-certificate.html">
@@ -60,7 +63,7 @@
                 Child benefit
               </dt>
               <dd class="govuk-summary-list__value">
-                Yes
+                {{data['childBenefit'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="1-child-benefit-V3.html">
@@ -68,34 +71,94 @@
                 </a>
               </dd>
             </div>
+
+            {# <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Written agreement
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['writtenAgreement'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-written-agreement-question.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> #}
+
+            {# {% if data['writtenAgreement'] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Type of written agreement
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['writtenAgreementType'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-written-agreement.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %} #}
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Overnight care arrangement
               </dt>
               <dd class="govuk-summary-list__value">
-                My chils stays overnigth with the other parent
+                {{data['arrangementType'] }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="1-child-benefit-V3.html">
+                <a class="govuk-link" href="1-overnight-summary.html">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div>
 
+            {% if data['arrangementType'] == "My child never stays overnight with me" %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Overnight stays each year
               </dt>
               <dd class="govuk-summary-list__value">
-                134
+               None
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="1-child-benefit-V3.html">
+                {# <a class="govuk-link" href="1-overnight-frequency.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a> #}
+              </dd>
+            </div>
+            {% else %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Overnight stays each year
+              </dt>
+              <dd class="govuk-summary-list__value">
+               163
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-overnight-summary.html">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div>
+            {% endif %}
+
+            {# <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Additional information
+              </dt>
+              <dd class="govuk-summary-list__value">
+                
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="1-overnight-frequency.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div> #}
           </dl>
 
           <div class="govuk-form-group">
