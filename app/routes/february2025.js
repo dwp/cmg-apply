@@ -643,7 +643,7 @@ router.post('/apply/february2025/7-other-parent-rp/other-parent-start', function
 
 
 router.post('/apply/february2025/6-service-types-RP/check-your-answers-bank', function (req, res) {
-    res.redirect('../7-other-parent-RP/pp-name')
+    res.redirect('../7-other-parent-RP/pp-information-message')
 });
 
 router.post('/apply/february2025/7-other-parent-RP/pp-name', function (req, res) {
