@@ -627,7 +627,7 @@ router.post('/apply/february2025/7-other-parent/check-your-answers', function (r
 
 //Section 7: Other Parent RP
 router.post('/apply/february2025/6-service-types-RP/check-your-answers', function (req, res) {
-    res.redirect('../7-other-parent-RP/pp-name')
+    res.redirect('../7-other-parent-RP/pp-information-message')
 });
 
 //Section 7: Other Parent RP
