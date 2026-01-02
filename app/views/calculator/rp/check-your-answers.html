@@ -23,7 +23,7 @@
                 Paying or receiving child maintenance
               </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['parentType'] }}
+                  {{data['parenttype'] }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="/calculator/paying-or-receiving.html">
@@ -46,6 +46,22 @@
                 </dd>
               </div>
 
+              {% if data['benefits-or-pension'] == "Yes" %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                Type of benefit
+              </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['benefit'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="benefits-andpension-list.html">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                 Does the other parent get any income
@@ -60,22 +76,39 @@
                 </dd>
               </div>
 
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
+              {% if data['get-any-income'] == "Yes" %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                Do you know the other parent's income
+              </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['otherParentIncome'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="get-any-income.html">
+                  Change<span class="govuk-visually-hidden"> get any income</span>
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+              {% if data['otherParentIncome'] == "Yes" %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                 Other parent's total taxable income
               </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['income-amount'] }}
-                  <br>
-                  {{data['often-paid'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="other-parent-income.html">
+                  <dd class="govuk-summary-list__value">
+                  £{{data['income-amount'] }}
+                    <br>
+                    {{data['often-paid'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="other-parent-income.html">
                   Change<span class="govuk-visually-hidden"> taxable income</span>
-                  </a>
-                </dd>
-              </div>
-
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
               <br><br>
 
               <h2 class="govuk-heading-m">Children’s details</h2>
@@ -98,10 +131,33 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-               How often does {{data['child-one-first-name'] }} stay overnight with the other parent
+                How often does {{data['child-one-first-name'] }} stay overnight with the other parent
               </dt>
                 <dd class="govuk-summary-list__value">
+                  {% if data['overnight-stays'] == "Never" %}
+                    {{data['overnight-stays'] }}
+                  {% else %}
+                    {{data['overnightStays'] }} nights <br>
                   {{data['overnight-stays'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="overnight-stays.html">
+                  Change<span class="govuk-visually-hidden"> overnight stays</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Additional nights
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['additional-nights'] }}
+                  <br>
+                  {% if data['additional-nights'] == "Yes" %}
+                    {{data['special-nights'] }} nights
+                  {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="overnight-stays.html">
@@ -127,6 +183,7 @@
                   </a>
                 </dd>
               </div>
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                 How many children does the other parent financially support
@@ -159,6 +216,7 @@
                 </dd>
               </div>
 
+              {% if data['add-parents-names'] == "Yes" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                 Your name
@@ -186,6 +244,7 @@
                   </a>
                 </dd>
               </div>
+              {% endif %}
 
             </dl>
             <button type="submit" class="govuk-button">
