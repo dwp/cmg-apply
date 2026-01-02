@@ -34,10 +34,10 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-               Other parent benefits or state pension
+               Do you get any benefits or state pension
               </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['benefits-or-pension'] }}
+                  {{data['benefitsOrpension'] }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="benefits-or-pension.html">
@@ -46,9 +46,25 @@
                 </dd>
               </div>
 
+              {% if data['benefitsOrpension'] == "Yes" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                Does the other parent get any income
+               Type of benefit
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['benefits'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="benefits-or-pension.html">
+                  Change<span class="govuk-visually-hidden"> benefits or pensions</span>
+                  </a>
+                </dd>
+              </div>
+              {% endif %}
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Do you receive any income
               </dt>
                 <dd class="govuk-summary-list__value">
                   {{data['get-any-income'] }}
@@ -60,12 +76,13 @@
                 </dd>
               </div>
 
+               {% if data['get-any-income'] == "Yes" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                Other parent's total taxable income
+                Your total taxable income
               </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['income-amount'] }}
+                  £{{data['income-amount'] }}
                   <br>
                   {{data['often-paid'] }}
                 </dd>
@@ -75,6 +92,7 @@
                   </a>
                 </dd>
               </div>
+              {% endif %}
 
               <br><br>
 
@@ -101,7 +119,30 @@
                How often does {{data['child-one-first-name'] }} stay overnight with the other parent
               </dt>
                 <dd class="govuk-summary-list__value">
+                  {% if data['overnight-stays'] == "Never" %}
+                    {{data['overnight-stays'] }}
+                  {% else %}
+                    {{data['overnightStays'] }} nights <br>
                   {{data['overnight-stays'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="overnight-stays.html">
+                  Change<span class="govuk-visually-hidden"> overnight stays</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Additional nights
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['additional-nights'] }}
+                  <br>
+                  {% if data['additional-nights'] == "Yes" %}
+                    {{data['special-nights'] }} nights
+                  {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="overnight-stays.html">
@@ -116,7 +157,7 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                How many children live with the other parent
+                How many children live with you
               </dt>
                 <dd class="govuk-summary-list__value">
                   {{data['children-arrangement'] }}
@@ -124,19 +165,6 @@
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="how-many-children-live-with-other-parent.html">
                   Change<span class="govuk-visually-hidden"> other children</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                How many children does the other parent financially support
-              </dt>
-                <dd class="govuk-summary-list__value">
-                  {{data['financially-support'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="support-children-privately-or-cms.html">
-                  Change<span class="govuk-visually-hidden"> financially support other children</span>
                   </a>
                 </dd>
               </div>
@@ -159,6 +187,7 @@
                 </dd>
               </div>
 
+              {% if data['add-parents-names'] == "Yes" %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                 Your name
@@ -186,6 +215,7 @@
                   </a>
                 </dd>
               </div>
+              {% endif %}
 
             </dl>
             <button type="submit" class="govuk-button">
