@@ -6,6 +6,7 @@
   },
   "name": "govuk-prototype-kit",
   "dependencies": {
+    "@dwp-govuk/govuk-prototype-kit": "^1.0.0",
     "@dwp/dwp-frontend": "3.4.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.4",
@@ -15,7 +16,6 @@
     "jquery": "3.7.1",
     "notifications-node-client": "8.2.0",
     "qs": "^6.14.1",
-    "radio-button-redirect": "^1.2.0",
-    "@dwp-govuk/govuk-prototype-kit": "latest"
+    "radio-button-redirect": "^1.2.0"
   }
 }
