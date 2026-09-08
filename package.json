@@ -6,16 +6,16 @@
   },
   "name": "govuk-prototype-kit",
   "dependencies": {
-    "@dwp-govuk/govuk-prototype-kit": "^1.0.0",
+    "govuk-prototype-kit": "13.20.4",
     "@dwp/dwp-frontend": "3.4.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.4",
-    "@ministryofjustice/frontend": "5.1.5",
-    "axios": "^1.12.2",
-    "govuk-frontend": "5.13.0",
+    "@ministryofjustice/frontend": "5.2.1",
+    "axios": "^1.20.0",
+    "govuk-frontend": "5.14.0",
     "jquery": "3.7.1",
-    "notifications-node-client": "8.2.0",
-    "qs": "^6.14.1",
+    "notifications-node-client": "8.5.0",
+    "qs": "^6.16.0",
     "radio-button-redirect": "^1.2.0"
   }
 }
